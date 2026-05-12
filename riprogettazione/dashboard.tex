@@ -1,0 +1,33 @@
+\subsection{Dashboard}
+
+La Dashboard è la prima schermata che l'utente vede dopo l'accesso e funge da pannello di controllo generale dell'esperienza su BrainBox. Nella versione precedente 
+presentava statistiche aggregate, una sezione per gli esami in programma e un elenco delle attività recenti, ma con testi in parte in inglese e una struttura visiva poco organizzata. Nella versione riprogettata la Dashboard è stata tradotta interamente in italiano e arricchita: accoglie l'utente con un messaggio di benvenuto personalizzato, mostra una panoramica delle attività della settimana, gli esami imminenti con indicazione dei giorni rimanenti, le attività pianificate per oggi e gli appunti 
+caricati di recente, tutti raggiungibili con un link diretto alla sezione corrispondente.
+
+\paragraph{Design pattern applicati}
+
+\begin{itemize}
+    \item \textbf{Dashboard} (Tidwell): Il pattern prevede di raccogliere in un'unica 
+    pagina i dati e le informazioni più rilevanti per l'utente, aggiornati in tempo reale, in modo che possa ottenere una panoramica immediata della propria situazione senza 
+    dover navigare tra le diverse sezioni. Nella versione riprogettata la Dashboard centralizza in un colpo d'occhio lo stato degli appunti, degli esami imminenti, delle 
+    attività di oggi e dell'attività settimanale, riducendo il bisogno di spostarsi tra le sezioni per raccogliere queste informazioni.
+
+    \item \textbf{Titled Sections} (Tidwell): Il pattern prevede di suddividere una pagina densa di contenuti in sezioni distinte, ciascuna con un titolo visivamente riconoscibile, per facilitare la scansione e la comprensione immediata della struttura. Nella versione riprogettata la Dashboard è organizzata in blocchi chiaramente separati (\textit{Panoramica}, \textit{Questa settimana}, \textit{Esami}, 
+    \textit{Attività di oggi} e \textit{Appunti recenti}) ognuno con titolo e contenuto omogeneo, rendendo immediato per l'utente identificare l'informazione che cerca.
+
+    \item \textbf{One-Window Drilldown} (Tidwell): Il pattern prevede di mostrare una lista di elementi in una schermata e di permettere all'utente di accedere al dettaglio di ciascuno navigando nella sezione corrispondente. Nella Dashboard ogni sezione espone un riepilogo degli elementi più recenti o rilevanti (ultimi appunti, prossimi esami, attività di oggi) accompagnato da un link \textit{"Vedi tutti"} che porta direttamente alla sezione dedicata, evitando di sovraccaricare la Dashboard con informazioni complete.
+
+\end{itemize}
+
+\paragraph{Altre modifiche}
+Il testo dell'interfaccia è stato interamente tradotto in italiano. Il pulsante 
+\textit{"Passa a BrainBox Pro +"} (P17), presente nella versione precedente senza 
+alcuna funzione attiva, è stato rimosso.
+
+Problemi di usabilità risolti:
+\begin{itemize}
+  \item P11 (Mix italiano/inglese nella dashboard): Tutto il testo è stato tradotto 
+  in italiano.
+  \item P17 (Il pulsante "Passa a BrainBox Pro +" non è funzionante): Il pulsante 
+  è stato rimosso.
+\end{itemize}

@@ -1,0 +1,59 @@
+\subsection{Esami}
+
+\begin{scenario}{Scenario: La pianificazione di un nuovo esame}
+  Ho un esame importante tra qualche mese e ho deciso di usare BrainBox per organizzarmi. Inizialmente ho perso diversi minuti a cercare la sezione giusta: non avrei mai immaginato che la pianificazione si trovasse sotto la voce \textit{«StudyFlow AI»}, un nome che trovo \textbf{poco pertinente e fuorviante}.
+
+  Una volta entrato, clicco sul pulsante \textit{«NEW EXAM»}. Il sistema mi chiede di inserire il nome della materia e la data. Dopo aver salvato, l'esame compare in lista e noto che il sistema mi mostra quanti giorni mancano alla prova. Tuttavia, mi rendo conto che \textbf{la configurazione è solo all'inizio}. Per aggiungere i task di studio, non posso farlo durante la creazione, ma devo cliccare in un riquadro separato accanto alla lista; avrei decisamente preferito inserire queste scadenze \textbf{direttamente nel modulo di configurazione iniziale}, non solo in un secondo momento.
+
+  Il percorso diventa ancora più macchinoso quando scopro di poter collegare del materiale salvato ne \textit{«I Miei Appunti»}: anche in questo caso, il sistema \textbf{non me lo ha proposto durante la creazione dell'esame}, obbligandomi a ulteriori passaggi manuali. La cosa più grave, però, accade quando ho bisogno di fare delle modifiche: mi accorgo che \textbf{non esiste un modo per eliminare, rinominare o cambiare la data} di un esame già creato. Se sbaglio, sono costretto a ricominciare da capo.
+
+  Inoltre, se entro nel dettaglio di un esame, mi imbatto in un
+  \textbf{calendario non ancora funzionante}. In ogni caso, trovo poco sensato poter accedere ai miei impegni solo quando mi trovo confinato dentro una specifica
+  sezione: avrei preferito avere il mio calendario \textbf{sempre a portata di mano},
+  da qualsiasi parte del sito. Infine, noto che il sistema crea
+  \textbf{confusione tra gli esami passati e quelli ancora da sostenere}, mostrandomi tutto insieme senza alcuna distinzione.
+\end{scenario}
+
+Lo scenario mette in luce una serie di criticità che frammentano l'esperienza dell'utente in più punti: dalla difficoltà iniziale nel trovare la sezione, al flusso di creazione incompleto, fino all'assenza di opzioni di modifica e a un calendario non operativo. Il risultato è un percorso discontinuo, in cui l'utente è costretto a tornare più volte sugli stessi passi per completare un'operazione che dovrebbe essere lineare. Per rispondere a questi problemi,
+la riprogettazione ha puntato a consolidare l'intero flusso in un'unica esperienza coerente.
+
+Nella versione riprogettata, la sezione Esami, ex \textit{StudyFlow AI}, permette all'utente di gestire i propri esami universitari in un unico spazio: è possibile creare un esame, collegare ad esso i propri file di studio già caricati in \textit{Appunti} e definire un elenco di attività da completare per prepararsi al meglio. Le scadenze degli esami inseriti 
+vengono inoltre riportate automaticamente nel calendario della navbar, così l'utente può verificare in qualsiasi momento quanto manca a ciascun appello senza dover accedere alla sezione dedicata.
+
+\paragraph{Design pattern applicati}
+\begin{itemize}
+
+\item \textbf{Modal Panel} (Tidwell): Il pattern prevede l'utilizzo di un pannello sovrapposto alla schermata corrente che blocca temporaneamente l'interazione con il resto dell'interfaccia, concentrando l'attenzione dell'utente su una singola azione focalizzata. È particolarmente adatto per richiedere conferma prima di operazioni distruttive e irreversibili, come l'eliminazione di un elemento, poiché impedisce che l'azione venga eseguita per errore o distrazione. Nella versione precedente l'eliminazione di una task mostrava un messaggio dal testo ambiguo e inaspettato, e non era possibile eliminare un esame. Nella versione riprogettata entrambe le operazioni presentano un Modal Panel dedicato che chiede esplicitamente conferma prima di procedere, rendendo l'azione comprensibile e reversibile fino all'ultimo.
+
+  Problemi di usabilità risolti:
+  \begin{itemize}
+    \item P87 (Eliminando una task compare un avviso dal testo strano): È stato sostituito con un Modal Panel dal testo chiaro e coerente con il contesto.
+    \item P91 (Impossibile eliminare un esame, solo crearne di nuovi): È stata aggiunta la possibilità di eliminare un esame tramite un'azione dedicata, con relativo Modal Panel di conferma.
+  \end{itemize}
+
+\item \textbf{Error Messages} (Tidwell): Il pattern prevede di mostrare messaggi di errore direttamente accanto al campo che li ha generati, in modo che l'utente capisca immediatamente cosa non va e come correggerlo. Nel form di inserimento di un nuovo esame mancava qualsiasi controllo sulla data: era possibile inserire una 
+data antecedente a quella corrente, generando un esame che non veniva poi visualizzato nella pagina principale senza alcuna spiegazione. Nella versione riprogettata, il tentativo di inserire una data passata genera un messaggio di errore direttamente sotto al campo, impedendo il salvataggio e informando l'utente del vincolo violato.
+
+  Problemi di usabilità risolti:
+  \begin{itemize}
+    \item P84 (Possibile inserire un esame con data antecedente a quella corrente, che poi non viene visualizzato): Il form ora valida la data e genera un messaggio di errore esplicito sotto al campo se si tenta di inserire una data passata.
+  \end{itemize}
+
+\end{itemize}
+
+\paragraph{Altre modifiche}
+Il testo dell'interfaccia è stato interamente tradotto in italiano ed è stato adottato un linguaggio coerente con le altre sezioni: la sezione è stata rinominata \textit{Esami} e il pulsante \textit{NEW EXAM} è stato sostituito con \textit{+ Nuovo}, in linea con la convenzione adottata nelle altre sezioni.
+
+Nella visualizzazione dei dettagli di un esame, la gestione del collegamento dei materiali è stata corretta: in precedenza il pulsante \textit{"Aggiungi materiale esistente"} mostrava il messaggio \textit{"Tutti i tuoi documenti sono già stati 
+collegati!"} anche quando non era ancora stato caricato nessun file, e il pulsante \textit{"Collega materiali"} compariva privo di funzione attiva. Nella versione riprogettata, quando non sono presenti materiali collegati, compare il messaggio \textit{"Nessun materiale collegato. Usa il pulsante «Aggiungi file» per associare 
+appunti esistenti."} e il pulsante risulta correttamente attivo e funzionante. \\
+
+Problemi di usabilità risolti:
+\begin{itemize}
+  \item P46 (Il titolo della pagina non corrisponde al tab selezionato): Il tab \textit{StudyFlow AI} è stato rinominato \textit{Esami} e di conseguenza anche il titolo della pagina.
+  \item P47 (Il bottone "NEW EXAM" si trova in una posizione poco funzionale): Il layout è stato allineato a quello delle altre sezioni, con il pulsante \textit{"+ Nuovo"} posizionato in alto a destra accanto alla barra di ricerca e ai filtri.
+  \item P48 (Il bottone "NEW EXAM" è scritto in maiuscolo a differenza degli altri): Il pulsante è stato rinominato \textit{+ Nuovo}, in linea con la convenzione adottata nelle altre sezioni.
+  \item P49 (La pagina presenta contenuti in inglese): Tutto il testo è stato tradotto in italiano.
+  \item P85 (Messaggio "Tutti i tuoi documenti sono già stati collegati!" mostrato anche quando il repository è vuoto): Il messaggio è stato sostituito con un invito contestuale che guida l'utente verso l'azione corretta.
+  \item P86 (Il pulsante "Collega materiali" compare senza funzione attiva quando non ci sono materiali): Il pulsante è ora correttamente attivo e funzionante in tutte le condizioni.
+\end{itemize}

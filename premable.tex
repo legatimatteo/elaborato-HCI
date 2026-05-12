@@ -1,0 +1,135 @@
+\usepackage[english,italian]{babel}
+\usepackage{amsmath, amssymb, pifont, geometry, hyperref, newlfont, caption, multirow, tabularx, svg, pdfpages, placeins, colortbl, amsmath, float, subcaption}
+\usepackage{array} % Per le tabelle
+\usepackage{graphicx} % Per includere immagini (necessario anche per pgfplots/tikz)
+\usepackage{tikz} % Motore grafico
+\usepackage{pgf-pie}
+\usepackage{pgfplots} % Interfaccia per i grafici
+\usepackage[table]{xcolor}
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Listato}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=ynt
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+\hypersetup{
+  bookmarksopen=true,
+  pdfauthor=Riccardo Valtorta
+}
+
+\lstdefinestyle{myStyle}{
+  language=SQL,
+  basicstyle=\small\ttfamily,
+  keepspaces=true
+}
+
+\lstdefinestyle{myStyle2}{
+  language=SQL,
+  basicstyle=\small\ttfamily,
+  keepspaces=true,
+  numbers = left,
+  numbersep=1pt
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{myStyle3}{
+  language=SQL,
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+\lstdefinestyle{py}{
+  language=Python,
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \fbox{\oldincludegraphics[#1]{#2}}%
+}
+
+\newcommand{\getNumeroProblema}{%
+  \refstepcounter{table}\thetable%
+}
+
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{calc}
+\usetikzlibrary{fpu} % Necessario per \pgfmathprintnumber
+
+% --- PREAMBOLO (Da inserire all'inizio del documento, prima di \begin{document}) ---
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{pifont} % Per il simbolo della spunta (dingbat)
+
+% Definisco i colori personalizzati (puoi modificarli qui)
+\definecolor{successgreen}{RGB}{40, 167, 69} % Verde stile "successo"
+\definecolor{failred}{RGB}{220, 53, 69}      % Rosso stile "errore"
+
+% Definisco i comandi per i simboli
+% \found = Problema individuato (Spunta Verde)
+\newcommand{\found}{\textcolor{successgreen}{\Large\ding{51}}}
+% \notfound = Problema NON individuato (X Rossa)
+\newcommand{\notfound}{\textcolor{failred}{\Large\ding{55}}}
+
+% -----------------------------------------------------------------------------------
+% Per gli scenari
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+\newtcolorbox{scenario}[2][]{
+  enhanced,
+  arc=3pt,
+  outer arc=3pt,
+  boxrule=0.5pt,
+  colback=gray!4,
+  colframe=gray!50,
+  fontupper=\small\sffamily,
+  top=6pt, bottom=6pt, left=8pt, right=8pt,
+  title={\small\sffamily\textbf{#2}},
+  colbacktitle=gray!18,
+  coltitle=black!80,
+  titlerule=0.3pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  #1
+}

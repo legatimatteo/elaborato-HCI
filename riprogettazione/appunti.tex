@@ -1,0 +1,105 @@
+\subsection{Appunti}
+
+\begin{scenario}{Scenario: Primo accesso alla pagina I Miei Appunti}
+  Accedo alla pagina che dovrebbe chiamarsi \textit{«I Miei Appunti»}, ma la prima cosa che noto è il titolo della sezione (\textit{«Resource Repository»}) che è \textbf{in inglese e non coerente con il link che ho appena cliccato}. Davanti a me compaiono due avvisi che mi segnalano l'assenza
+  di cartelle e documenti principali; capisco che è logico, visto che non ho ancora caricato nulla, ma mi sarei aspettato un invito tipo \textit{«Carica qui il tuo primo file»}. Cerco i tasti per iniziare, ma \textbf{non sono dentro la pagina}: devo
+  risalire con lo sguardo fino alla barra di navigazione in alto per trovare i pulsanti \textit{«Carica file»} e \textit{«Nuova cartella»}. 
+
+  Procedo comunque a creare la mia prima cartella. Il sistema mi chiede il nome e se voglio renderla pubblica tramite un flag; clicco su \textit{«Crea cartella»} e vedo che l'operazione va a buon fine. Entro nella cartella appena creata, ma mi ritrovo punto e a capo: compare di nuovo il messaggio che non sono stati trovati documenti e, per creare una sotto-cartella, devo di nuovo andare a cercare il tasto in alto nella navbar. Una volta creata anche la sotto-cartella, \textbf{cerco un tasto \textit{«Indietro»} per risalire il percorso, ma non lo trovo}. Mi accorgo
+  però che esiste una traccia del percorso tipo \textit{«Dashboard $>$ I Miei Materiali $>$ Cartella 1»}: clicco lì sopra per muovermi tra i livelli.
+
+  Decido finalmente di caricare un file. Si apre una schermata dove posso trascinare il documento e noto una barra di avanzamento divisa in tre step: \textit{«Upload»}, \textit{«Dettagli»} e \textit{«Fatto»}. Provo a caricare un PDF, ma \textbf{il sistema si blocca e mi restituisce una scritta generica in inglese}. Non capisco cosa non vada, quindi procedo per tentativi: \textbf{sembra esserci un limite di dimensione per i file, ma non essendo specificato da nessuna parte}, vado a tentoni finché non ne trovo uno che il sistema accetta.
+
+  Passo allo step \textit{«Dettagli»}. Mentre compilo i menu a tendina, mi accorgo che \textbf{la voce \textit{«Seleziona il dipartimento»}, che dovrebbe essere solo un'istruzione, è in realtà un'opzione selezionabile}, e questo accade in tutti i menu a tendina. Intanto, \textbf{gli avvisi di errore continuano a comparire solo in inglese}. Inserisco il titolo, salvo la descrizione che è opzionale e spunto il quadratino per la
+  pubblicazione. Quando clicco su \textit{«Salva e completa»}, \textbf{dicitura
+  ambigua, visto che dovrebbe esserci ancora un passaggio}, spunta un messaggio di errore, stavolta in italiano: \textit{«Il corso selezionato non è valido per la tua università»}.
+  Capisco che \textbf{il database ha poche opzioni o che i menu non si aggiornano
+  correttamente tra loro}. Dopo vari tentativi, se ho la fortuna di trovare una combinazione che il sistema accetta, arrivo finalmente allo step \textit{«Fatto»}.
+
+  Qui trovo solo un ringraziamento e un link per tornare ai documenti, \textbf{senza possibilità di revisionare tutti i dati inseriti prima del salvataggio}.
+\end{scenario}
+
+Da questo scenario sorgono molti problemi di usabilità. In particolare, viene sottolineata la presenza di molto testo in inglese, non coerente con l'interfaccia in italiano, la posizione dei bottoni per caricare i file e creare nuove cartelle poco intuitiva e la non possibilità di controllare i dati inseriti prima del caricamento di un file.
+
+\begin{scenario}{Scenario: Navigazione appunti}
+  Voglio riorganizzare i miei materiali di studio e verificare se ci sono nuovi appunti utili per i corsi che sto seguendo. Accedo alla mia schermata principale e clicco per entrare nella sezione
+  \textit{«I miei appunti»}. Cerco un file specifico per nome; una volta trovato, lo apro. La visualizzazione del documento è corretta, ma \textbf{l'interfaccia a lato mi sembra caotica e poco leggibile}. Il blocco dei \textit{«file raccomandati»} lo trovo \textbf{poco rilevante} in quel momento, quasi di disturbo rispetto al mio obiettivo di consultazione.
+
+  Decido quindi di esplorare cosa ha caricato la community per i nuovi corsi. Clicco sulla sezione dedicata, ma rimango deluso: mi aspettavo che si aprisse un tab dedicato, coerente con la navigazione dei miei appunti, mentre \textbf{vengo reindirizzato a una pagina visivamente slegata} dal resto dell'interfaccia. Apro un file trovato nella lista, ma la \textbf{gestione dei commenti è scomoda}: sono costretto a scorrere continuamente
+  la barra di navigazione laterale per riuscire a leggerli.
+
+  Apprezzo però la possibilità di \textbf{salvare il file} per riprenderlo in futuro; lo faccio e torno alla mia area personale. Clicco su \textit{«Appunti salvati»} e finalmente trovo il file lì, confermando che almeno questa \textbf{funzionalità di recupero è immediata e soddisfacente}.
+\end{scenario}
+
+Lo scenario di navigazione degli appunti ha evidenziato altre due criticità principali. La prima riguarda la pagina di visualizzazione di un documento: la colonna laterale risultava caotica e poco leggibile, con il blocco dei file raccomandati percepito come di disturbo rispetto all'obiettivo primario di consultazione. La gestione dei commenti risultava inoltre scomoda, richiedendo uno scorrimento continuo della barra laterale per poterli leggere. 
+La seconda riguarda la sezione \textit{Esplora Appunti}, oggi rinominata \textit{Community}: l'utente si aspettava una continuità visiva con la sezione \textit{I Miei Appunti}, mentre veniva reindirizzato a una pagina visivamente slegata dal resto dell'interfaccia. Positiva invece la funzionalità di salvataggio dei file dalla Community, che l'utente ha trovato immediata e soddisfacente, confermando che il flusso di recupero dei contenuti salvati tramite il tab \textit{«Appunti salvati»} era già chiaro e funzionante.
+
+\paragraph{Design pattern applicati}
+\begin{itemize}
+  \item \textbf{Wizard + Modal Panel + Progress Indicator} (Tidwell): Nella versione precedente era già presente un wizard per gestire il caricamento di un file, con un indicatore a tre step per guidare l'utente e comunicargli a che punto si trova nel processo. L'intero wizard è presentato come un pannello sovrapposto all'interfaccia principale, concentrando l'attenzione dell'utente esclusivamente sul processo di caricamento senza distrazioni. Nella versione riprogettata il wizard è stato ridisegnato in modo coerente con gli altri wizard presenti nell'applicazione e i nomi degli step sono stati resi più chiari e tradotti in italiano.
+
+  Problemi di usabilità risolti:
+    \begin{itemize}
+      \item P27 (Il titolo dello step di caricamento "Upload" è in inglese): E' stato tradotto lo step "Upload" in "Allegato".
+      \item P28 (Il titolo "Fatto" è generico e non consente di rivedere i dati inseriti prima del salvataggio): E' stato tradotto lo step "Fatto" in "Riepilogo". 
+    \end{itemize} 
+
+  \item \textbf{Two-Panel Selector} (Tidwell): Il pattern prevede di dividere l'interfaccia in due pannelli: uno a sinistra dedicato alla navigazione e selezione della struttura, e uno a destra per visualizzare il contenuto dell'elemento selezionato. È stato scelto questo pattern in sostituzione del solo breadcrumb presente nella versione precedente, in quanto più adatto alla gestione di gerarchie profonde: con molte cartelle annidate, un breadcrumb avrebbe occupato spazio orizzontale crescente e reso difficile la navigazione, mentre il pannello laterale espone sempre l'intera struttura delle cartelle in modo compatto e navigabile. Inoltre, separando fisicamente le cartelle dai documenti, il pannello destro risulta dedicato esclusivamente ai file, senza che le cartelle occupino spazio nell'area di contenuto e rendano più difficile la consultazione degli appunti.  
+
+  Problemi di usabilità risolti:
+  \begin{itemize}
+    \item P21 (I pulsanti "CARICA FILE" e "Nuova cartella" sono posizionati nella navbar invece che dentro la pagina): Sono stati ricollocati i bottoni. Un bottone "Nuovo+" per caricare i file o creare nuove trascrizioni o audio note nell'area principale di gestione dei file e un bottoncino "+" nel pannello sinistro dedicato alle cartelle.
+  \end{itemize} 
+
+  \item \textbf{Pagination} (Tidwell): Il pattern prevede di suddividere una lista molto lunga in pagine di dimensione fissa, caricate una alla volta, fornendo controlli di navigazione per spostarsi tra di esse. È particolarmente utile quando la lista potrebbe crescere indefinitamente, come nel caso di una collezione personale di appunti o dei documenti condivisi in Community, poiché evita che l'utente si trovi davanti a una pagina interminabile e difficile da scorrere. La paginazione restituisce inoltre all'utente il controllo sulla navigazione, permettendogli di sapere quanti elementi sono presenti in totale e a che punto si trova nella lista, come indicato dal contatore \textit{"Showing X to Y of Z results"} e dai controlli numerici in fondo alla pagina.
+
+  \item \textbf{Input Hints} (Tidwell): Il pattern prevede di affiancare ai campi di input suggerimenti testuali che chiariscono cosa è richiesto e in quale formato, evitando che l'utente debba procedere per tentativi. Nel wizard di caricamento file mancavano indicazioni chiare sui limiti di dimensione e sui formati supportati, e nel secondo step i campi obbligatori non erano distinguibili da quelli facoltativi. Sono stati quindi aggiunti suggerimenti testuali nel primo step di upload e i campi obbligatori sono stati contrassegnati con un asterisco.
+
+  Problemi di usabilità risolti:
+    \begin{itemize}
+      \item P59 (Nessun messaggio di errore se si carica un file non supportato): Sono stati aggiunti messaggi che informano l'utente sui vincoli di caricamento accettati dal sistema.
+    \end{itemize} 
+
+  \item \textbf{Error Messages} (Tidwell): Ogni campo obbligatorio non compilato ora genera un messaggio di errore in italiano direttamente sotto al campo incriminato, invece di un messaggio generico in inglese al momento della conferma/salvataggio.
+
+  Problemi di usabilità risolti:
+    \begin{itemize}
+      \item P30 (I messaggi di errore nella sezione "Dettagli" sono in inglese): Sono stati tradotti i messaggi di errore in italiano.
+      \item P59 (Nessun messaggio di errore se si carica un file non supportato): Sono stati aggiunti messaggi di errore nel caso di caricamento di un file non corretto.
+      \item P93 (La mancata selezione di campi obbligatori (università, dipartimento) non genera messaggi di errore chiari al momento del salvataggio): In questa nuova versione ogni campo obbligatorio non selezionato genera un messaggio di errore alla conferma che compare al di sotto del relativo campo.
+    \end{itemize} 
+
+  \item \textbf{Clear Entry Points} (Tidwell): Il pattern prevede di presentare all'utente pochi e chiari punti di ingresso quando si trova davanti a una pagina senza contenuti, evitando che rimanga disorientato senza sapere come procedere. Nella versione precedente, la sezione "Appunti" vuota mostrava solo un messaggio passivo di assenza di contenuti, senza guidare l'utente verso alcuna azione. Nella versione riprogettata, la pagina vuota presenta un messaggio contestuale accompagnato da due bottoni con chiamate all'azione chiare: "Carica il primo file" e "Sfoglia la community", orientando immediatamente l'utente verso le operazioni più rilevanti.
+
+  Problemi di usabilità risolti:
+  \begin{itemize}
+    \item P51 (Le pagine vuote mostrano solo "Nessun documento" senza invitare l'utente ad agire): Quando un utente visualizza la sezione "Appunti" vuota, trova un messaggio con due bottoni che lo indirizzano verso le azioni principali disponibili ("Carica il tuo primo file", "Sfoglia la community").
+  \end{itemize}
+
+  \item \textbf{Input Prompt} (Tidwell): Il pattern prevede di inserire in un campo di input un testo istruttivo che guida l'utente su cosa fare, senza che tale testo costituisca un'opzione valida. Nella versione precedente, i menu a tendina per università e dipartimento presentavano già una voce segnaposto \textit{«Seleziona...»} visibile prima dell'apertura del menu, ma questa voce rimaneva selezionabile anche all'interno della lista delle opzioni, come se fosse una scelta valida. Nella versione riprogettata il placeholder è stato mantenuto come etichetta istruttiva visibile sul campo chiuso, ma una volta aperto il menu non compare più come opzione selezionabile, rendendo immediatamente chiaro all'utente quali siano le sole scelte effettive.
+
+  Problemi di usabilità risolti:
+  \begin{itemize}
+    \item P92 (Durante il caricamento di un file, nei menu a tendina per università e dipartimento, la voce segnaposto "Seleziona..." risulta selezionabile come se fosse un'opzione valida): Il placeholder è ora esclusivamente un testo istruttivo e non compare tra le opzioni selezionabili del menu.
+  \end{itemize}
+
+  \item \textbf{Module Tabs} (Tidwell): Il pattern prevede di organizzare contenuti omogenei in aree tabulate, mostrando un solo modulo alla volta e permettendo all'utente di spostarsi tra i gruppi tramite click sul tab corrispondente. Nella versione precedente i tre tab erano già presenti, ma selezionandone uno la barra dei tab scompariva, impedendo all'utente di navigare liberamente tra le sezioni senza dover tornare alla pagina precedente. Inoltre i tab non avevano etichette chiare e i layout delle rispettive schermate erano incoerenti tra loro. Nella versione riprogettata i tab sono sempre visibili e navigabili, sono stati rinominati in "I Miei appunti", "Salvati" e "Appunti condivisi" con etichette immediatamente comprensibili, e fungono da filtro sull'intera collezione di file: "I Miei appunti" mostra tutti i file caricati dall'utente, "Salvati" quelli salvati dalla community, e "Appunti condivisi" quelli che l'utente ha reso pubblici, permettendo di individuare rapidamente un sottoinsieme specifico di contenuti.
+
+  Problemi di usabilità risolti:
+  \begin{itemize}
+    \item P24 (Il tab "I Miei Materiali" ha un titolo fuorviante): Il tab sono stati rinominati con "I Miei Appunti".
+    \item P25 (Una volta selezionato un tab non è più possibile navigare tra le sezioni perché la barra dei tab scompare): I tab sono ora sempre visibili cliccabili indipendentemente dalla sezione aperta.
+    \item P26 (Le pagine a cui si accede tramite i tab presentano dei layout incoerenti tra loro): Le tre sezioni condividono ora la stessa struttura e lo stesso layout.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Altre modifiche}
+Il testo dell'interfaccia è stato interamente tradotto in italiano, eliminando i termini in inglese presenti nella versione precedente. Le colonne di visualizzazione dei file sono state ridefinite con le voci "NOME", "CORSO", "DURATA", "DIM.", "STATO" e "DATA", pensate per essere compatibili con tutti i tipi di contenuto gestiti dalla piattaforma. Questa modifica si è resa necessaria in seguito all'accorpamento in un'unica sezione di file caricati manualmente e trascrizioni e audio note generati dagli strumenti AI: avendo tipologie di file eterogenee, le colonne dovevano rappresentare attributi comuni e significativi per ciascuna di esse, permettendo all'utente di consultare e confrontare i propri contenuti in modo uniforme. \\
+
+Problemi di usabilità risolti:
+\begin{itemize}
+  \begin{itemize}
+    \item P20 (Titolo della pagina "I Miei Appunti" scritto in inglese:     "Resource Repository"): E' stato tradotto il titolo in italiano e lo si è mantenuto coerente con il nome nella sidebar "Appunti".
+    \item P32 (Messaggio "no folder trovato" è un mix italiano/inglese): E' stato tradotto il messaggio di avviso.
+  \end{itemize}
+\end{itemize}

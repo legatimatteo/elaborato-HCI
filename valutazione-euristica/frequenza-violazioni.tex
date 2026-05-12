@@ -1,0 +1,197 @@
+In questa sezione viene presentata l'analisi quantitativa dei problemi riscontrati durante la valutazione euristica. I dati sono stati classificati secondo i 10 principi euristici di Nielsen utilizzati per identificare le principali criticità dell'interfaccia.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        ybar,
+        bar width=18pt,
+        width=0.9\textwidth,
+        height=8cm,
+        symbolic x coords={P1, P2, P3, P4, P5, P6, P7, P8, P9, P10},
+        xtick=data,
+        xticklabels={1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+        x tick label style={font=\small},
+        xlabel={Principi di Nielsen},
+        ylabel={Numero di Violazioni},
+        ymin=0,
+        ymax=35,
+        ymajorgrids=true,
+        grid style={dashed, gray!30},
+        enlarge x limits=0.05,
+        nodes near coords,
+        every node near coord/.style={font=\small, color=black},
+      ]
+      \addplot+[ybar, fill=blue!70, draw=black] coordinates {
+        (P1,22)
+        (P2,21)
+        (P3,10)
+        (P4,29)
+        (P5,25)
+        (P6,14)
+        (P7,22)
+        (P8,10)
+        (P9,11)
+        (P10,1)
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Distribuzione dei principi di Nielsen riscontrati.}
+  \label{fig:violazioni-nielsen}
+\end{figure}
+
+Dall'analisi del grafico emerge uno scenario chiaro sulle problematiche di BrainBox, con una concentrazione di violazioni su principi specifici:
+
+\begin{itemize}
+  \item \textbf{Assicurare consistenza (p4 - 29 violazioni):} È la criticità principale.
+    Il sistema presenta numerose incoerenze: termini diversi per indicare la stessa funzione
+    e stili grafici differenti tra le sezioni.
+    Questo rende difficile per l'utente comprendere come funziona il sistema.
+
+  \item \textbf{Riconoscimento piuttosto che uso della memoria (p5 - 25 violazioni):}
+    L'interfaccia richiede all'utente di ricordare informazioni da una pagina all'altra
+    invece di mostrarle quando necessario. Questo aumenta il carico cognitivo e rende
+    l'utilizzo del sistema più complesso.
+
+  \item \textbf{Visualizzare tutte e sole le informazioni necessarie (p7 - 22 violazioni):}
+    L'interfaccia presenta troppi elementi che distraggono l'utente dall'obiettivo principale,
+    oppure mancano gerarchie chiare per distinguere le informazioni importanti da quelle secondarie.
+
+  \item \textbf{Far vedere lo stato del sistema (p1 - 22 violazioni):} Il sistema non fornisce feedback
+    adeguato all'utente, che rimane incerto sull'esito delle operazioni (es. durante il caricamento di file audio).
+
+  \item \textbf{Adeguare il sistema al mondo reale (p2 - 21 violazioni):} Il sistema presenta
+    testi in lingua inglese non tradotti, icone poco intuitive e titoli fuorvianti che ostacolano la comprensione immediata delle funzionalità da parte degli utenti.
+\end{itemize}
+
+Per una visione d'insieme più sintetica, le violazioni sono state raggruppate nelle tre principali categorie in cui si suddivisono i principi di Nielsen: percezione, cognizione ed errori. La distribuzione percentuale è mostrata nel grafico sottostante.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+
+    % ---- PIE CHART (percentuali corrette) ----
+    \pie[
+      color={blue!55!white, red!50!white, green!55!white},
+      radius=2.3,
+      text=%,     % <-- questa riga evita il testo dentro gli spicchi
+      rotate=20
+    ]{
+      32.1/Percezione,
+      54.6/Cognizione,
+      13.3/Errori
+    }
+
+    % ---- LEADER LINES + LABELS (violazioni reali) ----
+
+    % Angoli medi con rotate=20:
+    % Percezione ~57°
+    % Cognizione ~213°
+    % Errori ~336°
+
+    % --- Percezione ---
+    \draw[thick] (57:2.3) -- ++(57:0.6) -- +(0.6,0)
+    node[right]{\textbf{Percezione} (53 violazioni)};
+
+    % --- Cognizione ---
+    \draw[thick] (213:2.3) -- ++(213:0.6) -- +(-0.6,0)
+    node[left]{\textbf{Cognizione} (90 violazioni)};
+
+    % --- Errori ---
+    \draw[thick] (336:2.3) -- ++(336:0.6) -- +(0.6,0)
+    node[right]{\textbf{Errori} (22 violazioni)};
+
+  \end{tikzpicture}
+  \caption{Classificazione dei problemi riscontrati per categoria di appartenenza.}
+\end{figure}
+
+Dal grafico emerge chiaramente che la maggior parte dei problemi riguarda la categoria \textbf{Cognizione}, che comprende le violazioni sui principi 4,5,6,7.
+Questo indica che le difficoltà principali non sono di natura tecnica, ma cognitive: l'utente deve fare uno sforzo eccessivo per comprendere e utilizzare il sistema.
+
+La categoria \textbf{Percezione} include i problemi che violano i principi 1,2,3. Questi problemi rendono difficile individuare le informazioni necessarie a causa di un'interfaccia disordinata o della mancanza di feedback visivi.
+
+La categoria \textbf{Errori} è la meno frequente e comprende le violazioni sui principi 8,9,10. Nonostante il numero ridotto, questi problemi possono bloccare completamente l'utilizzo del sistema quando si verificano.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        ybar,
+        bar width=18pt,
+        width=0.9\textwidth,
+        height=8cm,
+        symbolic x coords={P1, P2, P3, P4},
+        xtick=data,
+        xticklabels={Homepage, Globale, Registrazione/Login, Dashboard},
+        x tick label style={font=\small},
+        xlabel={Sezioni principali del sito},
+        ylabel={Numero di Violazioni},
+        ymin=0,
+        ymax=85,
+        ymajorgrids=true,
+        grid style={dashed, gray!30},
+        enlarge x limits=0.05,
+        nodes near coords,
+        every node near coord/.style={font=\small, color=black},
+      ]
+      \addplot+[ybar, fill=blue!70, draw=black] coordinates {
+        (P1,9)
+        (P2,2)
+        (P3,6)
+        (P4,76)
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Classificazione dei problemi riscontrati per sezione di appartenenza.}
+  \label{fig:violazioni-sezioni-sito}
+\end{figure}
+
+Come si può osservare, la Dashboard presenta il numero più elevato di violazioni, con ben 76 problematiche identificate, rappresentando così l'area più critica del sito in termini di usabilità.
+La Homepage registra 9 violazioni, posizionandosi come la seconda sezione più problematica, sebbene con un numero significativamente inferiore rispetto alla Dashboard.
+Le sezioni di Registrazione/Login presenta 6 violazioni, mentre a livello globale Globali risultano esserci solo 2 violazioni rilevate.
+La marcata differenza tra il numero di violazioni nella Dashboard e nelle altre sezioni suggerisce che questa area del sito, caratterizzata da una maggiore complessità funzionale e interattiva, richiede un'attenzione particolare per garantire un'esperienza fruibile e usabile da tutti gli utenti.
+
+\pagebreak
+Considerato che la Dashboard rappresenta la sezione del sito con il maggior numero di violazioni rilevate, si è reso necessario un approfondimento più dettagliato di quest'area. Per questo motivo, è stato elaborato un ulteriore grafico che suddivide e analizza la distribuzione dei problemi di usabilità all'interno delle singole pagine che compongono la Dashboard.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        xbar,
+        bar width=20pt,
+        width=0.9\textwidth,
+        height=8cm,
+        symbolic y coords={S0, S1, S2, S3, S4, S5, S6},
+        ytick=data,
+        yticklabels={Generale, Profilo, I miei appunti, Esplora appunti, Sbobinatore AI, AudioNote AI, StudyFlow AI},
+        y tick label style={font=\small},
+        xlabel={Numero di Problemi},
+        xmin=0,
+        xmax=28,
+        xmajorgrids=true,
+        grid style={dashed, gray!30},
+        enlarge y limits=0.15,
+        nodes near coords,
+        every node near coord/.style={font=\small, color=black},
+      ]
+      \addplot+[xbar, fill=blue!70, draw=black] coordinates {
+        (26,S0)
+        (2,S1)
+        (22,S2)
+        (13,S3)
+        (7,S4)
+        (6,S5)
+        (5,S6)
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \label{fig:problemi-dashboard}
+  \caption{Distribuzione dei problemi di usabilità rilevati nelle diverse sezioni dell'applicazione.}
+\end{figure}
+
+Come si può osservare, la sezione "I miei appunti" presenta il numero più elevato di violazioni, con ben 22 problematiche identificate, rappresentando così l'area più critica dell'applicazione in termini di usabilità.
+I problemi di natura generale, che interessano trasversalmente l'intera piattaforma, ammontano a 26 violazioni, costituendo una categoria significativa che richiede interventi sistemici.
+La sezione "Esplora appunti" registra 13 violazioni, posizionandosi come la terza area più problematica, seguita dalle funzionalità AI: "Sbobinatore AI" con 7 violazioni, "AudioNote AI" con 6 e "StudyFlow AI" con 5.
+La sezione "Profilo" risulta essere la meno problematica tra le pagine specifiche, con sole 2 violazioni rilevate.
+La marcata concentrazione di problematiche nella sezione "I miei appunti" e nei problemi generali suggerisce che queste aree, caratterizzate da una maggiore complessità funzionale e da un impatto trasversale sull'esperienza utente, richiedono un'attenzione particolare per garantire un'esperienza fruibile e usabile da tutti gli utenti.

@@ -1,0 +1,96 @@
+\section{Riprogettazione}
+Partendo dai problemi di usabilità identificati nella fase di valutazione euristica, si è proceduto alla riprogettazione dell'interfaccia di BrainBox. In primo luogo, sono stati redatti degli scenari d'uso che hanno permesso di mettere a fuoco le criticità più impattanti dal punto di vista dell'utente: simulando situazioni concrete di utilizzo, è stato più semplice individuare i punti in cui l'interfaccia originale risultava carente o confusionaria e definire le scelte progettuali più rilevanti. Questi scenari vengono riportati nei sottocapitoli dedicati alle 
+rispettive sezioni. Per quanto riguarda le scelte di layout, struttura visiva e interazione, ci si è invece appoggiati ai design pattern di Jennifer Tidwell, \textit{"Designing Interfaces — Patterns for Effective Interaction Design"} terza edizione e alle leggi della Gestalt, che hanno fornito un riferimento solido su cui basare e giustificare le decisioni progettuali in modo strutturato.
+
+Prima di entrare nel dettaglio delle singole sezioni, vengono presentati i prototipi realizzati in Figma, le scelte di layout adottate per l'intera interfaccia e la palette colori, elementi trasversali che hanno guidato la coerenza visiva dell'intero progetto.
+
+L'attenzione si è concentrata in particolare sulle sezioni principali 
+dell'applicazione, \textit{Appunti}, \textit{Esami}, \textit{Community} e gli strumenti AI, che presentavano le criticità più significative e su cui è stato necessario intervenire in modo più profondo, ripensando non solo aspetti di dettaglio ma in alcuni casi la struttura stessa delle sezioni. Sono state comunque riviste anche \textit{Homepage}, \textit{Registrazione e Login} e \textit{Dashboard}, con interventi più mirati sui problemi riscontrati. Per ciascuna sezione vengono descritti i pattern applicati, le modifiche apportate e i problemi di usabilità 
+risolti; nei casi in cui un problema non sia stato affrontato o sia stato rivalutato, viene fornita una spiegazione esplicita della scelta.
+
+\paragraph{Prototipi}
+Prima di procedere con l'implementazione, le principali scelte progettuali sono 
+state tradotte in prototipi realizzati con Figma. L'obiettivo non era definire 
+ogni dettaglio visivo, ma fissare le idee progettuali più rilevanti, struttura 
+delle pagine, organizzazione dei contenuti e collocazione degli elementi 
+principali, in modo da avere un riferimento condiviso durante lo sviluppo. 
+Di seguito vengono presentati i prototipi che rispecchiano più fedelmente 
+il risultato implementato; altri mockup realizzati durante la fase progettuale 
+non vengono riportati in quanto hanno subito modifiche durante lo sviluppo, 
+dovute sia a rivalutazioni delle scelte di usabilità sia a vincoli tecnici 
+emersi in fase di implementazione.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includesvg[width=0.7\textwidth]{./figures/mockup/Pagina Registrazione Step 1}}
+    \caption{Mockup della modale}
+    \label{fig:mockup_registrazione}
+\end{figure}
+
+Il primo prototipo di Figura \ref{fig:mockup_registrazione} illustra la struttura della modale utilizzata per i form multi-step, di cui la registrazione rappresenta un esempio. Questa struttura è stata mantenuta coerente in tutte le modali presenti nell'applicazione, garantendo all'utente un'esperienza uniforme indipendentemente dall'operazione che sta compiendo. L'idea progettuale era quella di offrire un form pulito e focalizzato, in cui l'utente sa sempre a che punto si trova grazie all'indicatore degli step, può tornare indietro in qualsiasi momento senza perdere i dati già inseriti e, prima di confermare, ha la possibilità di rivedere un riepilogo 
+di tutto ciò che ha compilato.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includesvg[width=0.7\textwidth]{./figures/mockup/Dashboard}}
+    \caption{Mockup dashboard}
+    \label{fig:mockup_dashboard}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \fbox{\includegraphics[width=\textwidth]{./figures/mockup/menu-tendina-notifiche}}
+         \caption{Menu notifiche}
+         \label{fig:notifiche}
+     \end{subfigure}
+     \qquad
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \fbox{\includegraphics[width=\textwidth]{./figures/mockup/menu-tendina-calendario}}
+         \caption{Menu calendario}
+         \label{fig:calendario}
+     \end{subfigure}
+     
+     \caption{}
+     \label{fig:mockup_menu}
+\end{figure}
+
+Il secondo prototipo di Figura \ref{fig:mockup_dashboard} mostra la \textit{Dashboard} riprogettata, che permette di apprezzare alcune delle scelte progettuali più rilevanti dell'intera applicazione. Il pannello di navigazione sinistro è stato completamente rivisto: i nomi delle sezioni sono stati semplificati e resi immediatamente comprensibili, e le funzionalità AI sono state accorpate all'interno di \textit{Appunti}, dove risulta più logico trovarle in quanto i file generati vengono salvati e gestiti insieme agli altri materiali di studio. La \textit{Dashboard} stessa è stata ridisegnata nella suddivisione in blocchi, offrendo una panoramica più chiara e interattiva dell'attività dell'utente e fungendo da anteprima delle principali sezioni dell'applicazione.
+
+La Figura \ref{fig:notifiche} e la Figura \ref{fig:calendario} successive mostrano invece il menu delle notifiche e il menu del calendario, entrambi progettati da zero in quanto assenti nella versione originale. Il calendario in particolare è stato spostato nella navbar, rendendolo accessibile da qualsiasi sezione dell'applicazione senza dover navigare altrove, così da permettere all'utente di consultare le scadenze degli esami in qualsiasi momento.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\includesvg[width=0.7\textwidth]{./figures/mockup/Appunti - apri file}}
+    \caption{Mockup visualizzazione appunti}
+    \label{fig:mockup_appunti}
+\end{figure}
+
+L'ultimo prototipo di Figura \ref{fig:mockup_appunti} illustra la pagina di visualizzazione di un documento. La scelta progettuale è stata quella di mantenere la struttura generale già presente nella versione originale, intervenendo principalmente sulla chiarezza del pannello laterale destro. In particolare, le informazioni sono state organizzate in due blocchi distinti e visivamente separati (oltre ad un blocco, aggiunto in fase di implementazione, che specifica il nome utente a cui appartiene il documento): i dettagli del documento nella parte superiore e la sezione commenti in quella inferiore, poiché nella versione precedente la mancanza di una separazione netta rendeva il pannello confusionario.
+
+\paragraph{Layout}
+La struttura utilizzata nelle pagine interne riprende quella della versione originale del sito. Si tratta di una sorta di column grid, composta da una sidebar fissa a sinistra che contiene la navigazione principale, e da un'area di contenuto a destra che occupa la parte restante dello schermo. Questa organizzazione permette all'utente di sapere sempre dove si trova all'interno dell'applicazione, mantenendo la navigazione sempre visibile e accessibile. La separazione tra le due aree crea inoltre un raggruppamento visivo chiaro, che aiuta l'utente a distinguere immediatamente gli elementi di navigazione dal contenuto della pagina.
+
+Durante la riprogettazione dell'interfaccia si è tenuto conto delle \textit{leggi della Gestalt}, principi visivi che guidano il modo in cui l'utente percepisce e interpreta ciò che vede sullo schermo. Nella versione originale del sito alcune di queste leggi non erano sempre rispettate, e questo è stato uno degli aspetti su cui si è cercato di intervenire. La \textit{legge di prossimità}, ad esempio, suggerisce che elementi vicini tra loro vengono percepiti come appartenenti allo stesso gruppo: nell'interfaccia riprogettata questo si vede nella sidebar, dove le voci di navigazione sono raggruppate vicine tra loro, oppure nei form, dove ogni label è posizionata subito sopra al campo a cui si riferisce. La \textit{legge di chiusura} è invece alla base dell'uso delle card, che grazie al bordo arrotondato e allo sfondo bianco creano un contenitore visivo ben definito, rendendo immediato capire quali informazioni fanno parte dello stesso blocco. La \textit{legge di similarità} si applica al modo in cui tutti i bottoni principali condividono la stessa forma e lo stesso colore azzurro, così come tutte le voci della sidebar hanno la stessa dimensione e lo stesso stile, aiutando l'utente a riconoscere elementi con la stessa funzione. Infine la \textit{legge del contrasto} è usata per far emergere le azioni principali: il bottone azzurro su sfondo bianco cattura subito l'attenzione, guidando l'utente verso l'azione che ci si aspetta compia.
+
+\paragraph{Palette colori}
+La palette adottata per l'interfaccia di BrainBox è composta da quattro colori principali: il bianco, il grigio chiaro, l'azzurro e il nero. La scelta di questi colori segue la regola 60-30-10 di Michal Malewicz, che indica come ripartire i colori in un'interfaccia per ottenere un risultato visivamente bilanciato. Il 60\% dello spazio è occupato dal colore dominante, in questo caso bianco e grigio chiaro insieme, che copre gli elementi più grandi come lo sfondo delle pagine, le card e la sidebar, dando all'interfaccia un aspetto pulito e non pesante. Il 30\% è invece riservato all'azzurro, che è il colore che caratterizza l'interfaccia e compare su tutti gli elementi con cui l'utente interagisce: bottoni, link, bordi dei campi di testo e voci di navigazione attive. Il nero chiude con il 10\%, usato solo per testo e icone: poca superficie, ma con un contrasto molto alto che rende tutto facilmente leggibile. La scelta di usare solo quattro colori, senza aggiungere sfumature o colori extra, è stata fatta per tenere l'interfaccia semplice e coerente. Fanno eccezione il verde e il rosso, usati in modo molto limitato per i badge di stato, come ad esempio per indicare se un appunto è pubblico o se un esame è scaduto. Il contrasto tra i colori è stato verificato con la formula di luminanza percepita del W3C, che ha confermato che in tutti i casi il testo risulta leggibile sullo sfondo corrispondente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/palette1.png}
+    \caption{Palette}
+    \label{fig:palette}
+\end{figure}
+
+\input{riprogettazione/homepage}
+\input{riprogettazione/registrazione-login}
+\input{riprogettazione/navbar-sidebar}
+\input{riprogettazione/dashboard}
+\input{riprogettazione/appunti}
+  \input{riprogettazione/visualizzazione-documento}
+  \input{riprogettazione/generatore-trascrizioni-audio}
+\input{riprogettazione/esami}
+\input{riprogettazione/community}
