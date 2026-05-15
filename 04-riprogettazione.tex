@@ -8,7 +8,7 @@ L'attenzione si è concentrata in particolare sulle sezioni principali
 dell'applicazione, \textit{Appunti}, \textit{Esami}, \textit{Community} e gli strumenti AI, che presentavano le criticità più significative e su cui è stato necessario intervenire in modo più profondo, ripensando non solo aspetti di dettaglio ma in alcuni casi la struttura stessa delle sezioni. Sono state comunque riviste anche \textit{Homepage}, \textit{Registrazione e Login} e \textit{Dashboard}, con interventi più mirati sui problemi riscontrati. Per ciascuna sezione vengono descritti i pattern applicati, le modifiche apportate e i problemi di usabilità 
 risolti; nei casi in cui un problema non sia stato affrontato o sia stato rivalutato, viene fornita una spiegazione esplicita della scelta.
 
-\paragraph{Prototipi}
+\subsubsection*{Prototipi}
 Prima di procedere con l'implementazione, le principali scelte progettuali sono 
 state tradotte in prototipi realizzati con Figma. L'obiettivo non era definire 
 ogni dettaglio visivo, ma fissare le idee progettuali più rilevanti, struttura 
@@ -38,14 +38,14 @@ di tutto ciò che ha compilato.
      \centering
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=0.7\textwidth]{./figures/mockup/menu-tendina-notifiche}
+         \includegraphics[width=\textwidth]{./figures/mockup/menu-tendina-notifiche}
          \caption{Menu notifiche}
          \label{fig:notifiche}
      \end{subfigure}
      \qquad
      \begin{subfigure}[b]{0.3\textwidth}
          \centering
-         \includegraphics[width=0.7\textwidth]{./figures/mockup/menu-tendina-calendario}
+         \includegraphics[width=\textwidth]{./figures/mockup/menu-tendina-calendario}
          \caption{Menu calendario}
          \label{fig:calendario}
      \end{subfigure}
@@ -67,19 +67,71 @@ La Figura \ref{fig:notifiche} e la Figura \ref{fig:calendario} successive mostra
 
 L'ultimo prototipo di Figura \ref{fig:mockup_appunti} illustra la pagina di visualizzazione di un documento. La scelta progettuale è stata quella di mantenere la struttura generale già presente nella versione originale, intervenendo principalmente sulla chiarezza del pannello laterale destro. In particolare, le informazioni sono state organizzate in due blocchi distinti e visivamente separati (oltre ad un blocco, aggiunto in fase di implementazione, che specifica il nome utente a cui appartiene il documento): i dettagli del documento nella parte superiore e la sezione commenti in quella inferiore, poiché nella versione precedente la mancanza di una separazione netta rendeva il pannello confusionario.
 
-\paragraph{Layout}
+\subsubsection*{Layout}
 La struttura utilizzata nelle pagine interne riprende quella della versione originale del sito. Si tratta di una sorta di column grid, composta da una sidebar fissa a sinistra che contiene la navigazione principale, e da un'area di contenuto a destra che occupa la parte restante dello schermo. Questa organizzazione permette all'utente di sapere sempre dove si trova all'interno dell'applicazione, mantenendo la navigazione sempre visibile e accessibile. La separazione tra le due aree crea inoltre un raggruppamento visivo chiaro, che aiuta l'utente a distinguere immediatamente gli elementi di navigazione dal contenuto della pagina.
 
 Durante la riprogettazione dell'interfaccia si è tenuto conto delle \textit{leggi della Gestalt}, principi visivi che guidano il modo in cui l'utente percepisce e interpreta ciò che vede sullo schermo. Nella versione originale del sito alcune di queste leggi non erano sempre rispettate, e questo è stato uno degli aspetti su cui si è cercato di intervenire. La \textit{legge di prossimità}, ad esempio, suggerisce che elementi vicini tra loro vengono percepiti come appartenenti allo stesso gruppo: nell'interfaccia riprogettata questo si vede nella sidebar, dove le voci di navigazione sono raggruppate vicine tra loro, oppure nei form, dove ogni label è posizionata subito sopra al campo a cui si riferisce. La \textit{legge di chiusura} è invece alla base dell'uso delle card, che grazie al bordo arrotondato e allo sfondo bianco creano un contenitore visivo ben definito, rendendo immediato capire quali informazioni fanno parte dello stesso blocco. La \textit{legge di similarità} si applica al modo in cui tutti i bottoni principali condividono la stessa forma e lo stesso colore azzurro, così come tutte le voci della sidebar hanno la stessa dimensione e lo stesso stile, aiutando l'utente a riconoscere elementi con la stessa funzione. Infine la \textit{legge del contrasto} è usata per far emergere le azioni principali: il bottone azzurro su sfondo bianco cattura subito l'attenzione, guidando l'utente verso l'azione che ci si aspetta compia.
 
-\paragraph{Palette colori}
-La palette adottata per l'interfaccia di BrainBox è composta da quattro colori principali: il bianco, il grigio chiaro, l'azzurro e il nero. La scelta di questi colori segue la regola 60-30-10 di Michal Malewicz, che indica come ripartire i colori in un'interfaccia per ottenere un risultato visivamente bilanciato. Il 60\% dello spazio è occupato dal colore dominante, in questo caso bianco e grigio chiaro insieme, che copre gli elementi più grandi come lo sfondo delle pagine, le card e la sidebar, dando all'interfaccia un aspetto pulito e non pesante. Il 30\% è invece riservato all'azzurro, che è il colore che caratterizza l'interfaccia e compare su tutti gli elementi con cui l'utente interagisce: bottoni, link, bordi dei campi di testo e voci di navigazione attive. Il nero chiude con il 10\%, usato solo per testo e icone: poca superficie, ma con un contrasto molto alto che rende tutto facilmente leggibile. La scelta di usare solo quattro colori, senza aggiungere sfumature o colori extra, è stata fatta per tenere l'interfaccia semplice e coerente. Fanno eccezione il verde e il rosso, usati in modo molto limitato per i badge di stato, come ad esempio per indicare se un appunto è pubblico o se un esame è scaduto. Il contrasto tra i colori è stato verificato con la formula di luminanza percepita del W3C, che ha confermato che in tutti i casi il testo risulta leggibile sullo sfondo corrispondente.
+\subsubsection*{Palette colori}
+La palette adottata per l'interfaccia di BrainBox è composta da quattro colori principali: il bianco, il grigio chiaro, l'azzurro e il nero. La scelta di questi colori segue la regola 60-30-10 di Michal Malewicz, che indica come ripartire i colori in un'interfaccia per ottenere un risultato visivamente bilanciato. Il 60\% dello spazio è occupato dal colore dominante, in questo caso bianco e grigio chiaro insieme, che copre gli elementi più grandi come lo sfondo delle pagine, le card e la sidebar, dando all'interfaccia un aspetto pulito e non pesante. Il 30\% è invece riservato all'azzurro, che è il colore che caratterizza l'interfaccia e compare su tutti gli elementi con cui l'utente interagisce: bottoni, link, bordi dei campi di testo e voci di navigazione attive; questo colore viene declinato in più varianti tonali per coprire i diversi stati interattivi (come attivo, disabilitato e hover) mantenendo coerenza visiva senza impoverire la ricchezza degli elementi. Il nero chiude con il 10\%, usato solo per testo e icone: poca superficie, ma con un contrasto molto alto che rende tutto facilmente leggibile. Fanno eccezione il verde e il rosso, usati in modo molto limitato per i badge di stato, come ad esempio per indicare se un appunto è pubblico o se un esame è scaduto. Il contrasto tra i colori è stato verificato con la formula di luminanza percepita del W3C, che ha confermato che in tutti i casi il testo risulta leggibile sullo sfondo corrispondente.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/palette1.png}
-    \caption{Palette}
-    \label{fig:palette}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/Palette principale.pdf}
+        \caption{Palette principale}
+        \label{fig:palette}
+    \end{subfigure}
+    \qquad
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/Sfumature azzurro.pdf}
+        \caption{Sfumature azzurro}
+        \label{fig:sfumatuure}
+    \end{subfigure}
+
+    \caption{Il colore azzurro è stato declinato in una scala di varianti tonali, ciascuna con un ruolo specifico nell'interfaccia: la variante chiara (\texttt{\#5AC8FA}) è usata per elementi secondari come lo stato di elaborazione dei file generati dalle funzioni AI e i passaggi del cursore, il valore base (\texttt{\#007AFF}) è riservato ai bottoni principali, ai link e alle azioni primarie, mentre la variante scura (\texttt{\#0040DD}) viene applicata agli stati di pressione e selezione per dare un feedback visivo immediato all'utente.}
+    \label{fig:palettes}
+\end{figure}
+
+\subsubsection*{Componenti comuni}
+Durante la riprogettazione sono stati sviluppati alcuni componenti trasversali, riutilizzati in più sezioni dell'applicazione per garantire coerenza visiva e comportamentale. Di seguito vengono presentati i più significativi.
+
+Il primo è la \textbf{modale di conferma eliminazione} (Figura \ref{fig:confirm_delete}), mostrata ogni volta che l'utente tenta di eliminare un elemento come un appunto o un esame: un pannello sovrapposto con icona di avviso, testo esplicito sull'operazione che si sta per compiere e due pulsanti chiari, \textit{Annulla} e \textit{Elimina}, per confermare o annullare.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figures/fig-riprogettazione-fisica/confirm-delete}
+    \caption{Modale di conferma eliminazione}
+    \label{fig:confirm_delete}
+\end{figure}
+
+Il secondo è l'\textbf{empty state} (Figura \ref{fig:empyty_state}), visualizzato ogni volta che una sezione non contiene ancora contenuti. Invece di mostrare semplicemente un messaggio di assenza, invita l'utente ad agire tramite un testo contestuale e uno o più pulsanti con chiamate all'azione chiare.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figures/fig-riprogettazione-fisica/empty-state}
+    \caption{Empty state}
+    \label{fig:empyty_state}
+\end{figure}
+
+Il terzo sono gli \textbf{steps} (Figura \ref{fig:stepper}), impiegati in tutti i wizard multi-step dell'applicazione. Mostrano all'utente i passi del processo, evidenziano quello corrente e indicano quelli già completati, permettendo di orientarsi facilmente all'interno di operazioni articolate.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figures/fig-riprogettazione-fisica/stepper}
+    \caption{Steps}
+    \label{fig:stepper}
+\end{figure}
+
+Il quarto è l'\textbf{area di drop dei file} (Figura \ref{fig:dropzone}), utilizzata in tutti i wizard in cui è richiesto il caricamento di un file. Mostra i formati accettati e il limite di dimensione direttamente nell'area di trascinamento, eliminando l'ambiguità su cosa sia possibile caricare.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figures/fig-riprogettazione-fisica/dropzone}
+    \caption{Drop dei file}
+    \label{fig:dropzone}
 \end{figure}
 
 \input{riprogettazione/homepage}
