@@ -1,20 +1,36 @@
 \section{Esperimento con gli utenti}
 
-\begin{table}[htbp]
+\subsection{Scopo dell'esperimento}
+L'obiettivo principale di questa fase di sperimentazione è stato raccogliere dati concreti sull'utilizzo del sistema da parte di un campione di utenti reali, così da poter valutare oggettivamente l'efficacia delle nostre scelte di riprogettazione. Nello specifico, con questi test volevamo verificare se le modifiche apportate avessero reso l'interazione con il sito più intuitiva e meno macchinosa rispetto alla versione originale. Un altro aspetto fondamentale che ci interessava indagare era la diminuzione dello sforzo cognitivo richiesto all'utente: volevamo capire se l'introduzione di pattern grafici ricorrenti e una migliore affordance aiutassero effettivamente le persone a comprendere meglio l'interfaccia. Infine, i test ci sono serviti per misurare la robustezza del sistema e capire se la nuova struttura permette di rimediare facilmente a eventuali sbagli. In questo modo, abbiamo potuto verificare di aver risolto alucni dei problemi di usabilità emersi in precedenza, garantendo una navigazione più fluida e una ricerca delle informazioni più immediata e gratificante.
+
+\subsection{Caratteristiche dell'esperimento}
+Innanzitutto, è stato necessario definire le modalità di gestione delle due condizioni sperimentali del sistema (la \textit{Versione A} originale e la \textit{Versione B} riprogettata). Per confrontare l'usabilità dei due sistemi, si è optato per un approccio \textit{within-subjects}, prevedendo che ogni partecipante provasse entrambe le condizioni. La scelta di questa metodologia rispetto all'altro approccio \textit{between-subjects}, che avrebbe escluso a monte il problema dell'effetto dell'apprendimento, è stata motivata dal fatto che la riprogettazione ha comportato una ristrutturazione in parte profonda, introducendo cambiamenti sostanziali anche a livello funzionale in alcune parti del sistema. Di conseguenza, è stato ritenuto più significativo valutare come lo stesso utente si ponesse di fronte alle diverse logiche di funzionamento.
+Oltre a questo aspetto, l'approccio scelto ha offerto il vantaggio di ottimizzare le risorse, richiedendo un numero più contenuto di partecipanti. Poichè l'apprendimento intrinseco nel passaggio da una versione all'altra avrebbe potuto sfalsare i dati raccolti, il problema è stato controllato applicando la tecnica del \textit{counterbalancing}: il campione di utenti è stato infatti diviso approssimativamente a metà, per cui un gruppo ha testato prima la condizione sperimentale A e successivamente la B, mentre il secondo gruppo ha seguito l'ordine inverso. 
+
+\subsection{Ambiente}
+Per garantire la massima naturalezza durante l'interazione e simulare un contesto di utilizzo reale, si è deciso di condurre gli esperimenti in luoghi familiari e confortevoli per gli utenti, mettendoli così a proprio agio. È stata prestata particolare attenzione affinché gli ambienti scelti fossero privi di distrazioni o interferenze esterne, permettendo ai partecipanti di concentrarsi esclusivamente sullo svolgimento dei compiti assegnati.
+
+Al fine di mantenere le condizioni di test rigorosamente identiche per tutti i soggetti, le prove sono state eseguite sul computer dello sperimentatore. Questa scelta ha consentito di standardizzare gli strumenti utilizzati e ha facilitato l'esecuzione in background dei software necessari per il monitoraggio e la misurazione delle interazioni.
+
+Per quanto riguarda la somministrazione dei questionari, ci si è avvalsi della piattaforma Google Moduli. I form sono stati compilati in formato digitale, una soluzione che ha permesso di evitare l'uso di supporti cartacei, velocizzando notevolmente la fase di compilazione e snellendo la successiva elaborazione e analisi dei dati. 
+
+Infine, per assicurare che la preparazione della postazione fosse uniforme per ogni partecipante, gli sperimentatori hanno seguito scrupolosamente una specifica \textit{checklist} (Tabella \ref{checklist}) preliminare prima di dare inizio a ciascuna sessione.
+
+\begin{table}[H]
   \centering
   \small
-  \renewcommand{\arraystretch}{1.2}
-  \begin{tabular}{|>{\raggedright\bfseries\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{11.5cm}|}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\bfseries\arraybackslash}p{3.5cm}|>{\raggedright\arraybackslash}X|}
     \hline
     \rowcolor{gray!30}
     \multicolumn{2}{|c|}{\textbf{CHECKLIST}} \\
     \hline
     Prima di accogliere l'utente &
     \vspace{-8pt}
-    \begin{itemize}
+    \begin{itemize}[itemsep=2pt, topsep=2pt, parsep=0pt]
       \item navigare sul drive e scaricare il materiale necessario
       \item caricare i file necessari su BrainBox
-      \item attivare Click counter online (link per Chrome: https://chromewebstore.google.com/detail/click-counter-online/kldnchgjdegapeicpdpnocopljohlgih) per il conteggio del numero di click
+      \item attivare il tool per il conteggio del numero di click
       \item nel caso in cui si usassero i seed, eseguire il comando \verb|php artisan migrate:fresh --seed| (solo la prima volta)
       \item Per versione A: eseguire i comandi \verb|npm run dev| e \verb|php artisan serve|
       \item Per versione B: eseguire il comando \verb|dev.bat| su windows e \verb|./dev.sh| su linux.
@@ -23,22 +39,20 @@
     \hline
     Prima dell'esperimento &
     \vspace{-8pt}
-    \begin{itemize}
+    \begin{itemize}[itemsep=2pt, topsep=2pt, parsep=0pt]
       \item salutare l'utente e ringraziarlo per la disponibilità
       \item sottolineare che l'esperimento è volto alla valutazione del sito
       \item garantire la riservatezza dei dati richiesti e dei risultati
       \item descrivere la struttura generale dell'esperimento
-      \item sottolineare che non si potranno chiedere consigli durante l'esperimento
       \item indicare la possibilità di abbandonare il task se reputato troppo difficile
       \item far compilare il questionario personale, ribadendo la riservatezza dei dati
       \item consegnare all'utente il modulo dei compiti
-      \item illustrare brevemente il contenuto delle pagine della parte dedicata all'amministratore, descrivendo solo l'utilità generale di ciascuna pagina senza dare informazioni sui singoli elementi che la compongono
     \end{itemize}
     \vspace{-6pt} \\
     \hline
     Durante l'esperimento &
     \vspace{-8pt}
-    \begin{itemize}
+    \begin{itemize}[itemsep=2pt, topsep=2pt, parsep=0pt]
       \item tenere conto del numero di errori e del tempo in cui viene eseguito un singolo compito
       \item se l'utente chiede aiuto, spiegare cortesemente che non è possibile fornire consigli
     \end{itemize}
@@ -46,12 +60,95 @@
     \hline
     Dopo l'esperimento &
     \vspace{-8pt}
-    \begin{itemize}
+    \begin{itemize}[itemsep=2pt, topsep=2pt, parsep=0pt]
       \item chiedere opinioni riguardo al sito in generale (cosa è piaciuto di più, cosa di meno, cosa cambierebbe, cosa aggiungerebbe)
       \item ringraziare l'utente per la disponibilità, sottolineando l'importanza del suo contributo
       \item remunerarlo (offrendogli un caffè o un cioccolatino)
     \end{itemize}
     \vspace{-6pt} \\
     \hline
-  \end{tabular}
+  \end{tabularx}
+  \caption{Checklist}
+  \label{checklist}
 \end{table}
+
+\subsection{Dati raccolti}
+Al fine di valutare in modo completo e rigoroso l'usabilità delle due versioni del sistema, durante le sessioni di test è stata raccolta una serie di informazioni, combinando metriche di natura quantitativa e qualitativa. L'integrazione di questi due approcci ha consentito, da un lato, di misurare oggettivamente le performance degli utenti nello svolgimento dei singoli compiti e, dall'altro, di indagare la loro percezione soggettiva dell'interfaccia. In questo modo è stato possibile non solo quantificare l'efficienza e l'efficacia del sistema, ma anche comprendere a fondo il livello di soddisfazione generale e identificare l'origine di eventuali problemi di usabilità. Nello specifico, per ogni sessione sperimentale sono stati registrati i seguenti dati:
+
+\begin{enumerate}
+  \item DATI QUANTITATIVI
+  \begin{itemize}
+    \item \textbf{Completamento:} indicare se l'utente è riuscito a portare a termine la singola azione con successo o meno.
+    \item \textbf{Numero di errori:} quante azioni non rilevanti o sbagliate ha compiuto l'utente rispetto al percorso ideale del task.
+    \item \textbf{Tempo impiegato:} i secondi o minuti necessari per concludere il task, escludendo il tempo di lettura della consegna iniziale.
+    \item \textbf{Numero di click:} quanti click effettivi ha fatto l'utente per arrivare all'obiettivo prefissato.
+  \end{itemize}
+  \item DATI QUALITATIVI
+  \begin{itemize}
+    \item \textbf{Commenti dell'utente}: le frasi, i dubbi o i suggerimenti espressi a voce alta dalla persona mentre esegue il test o alla fine di esso.
+    \item \textbf{Annotazioni dello sperimentatore:} osservazioni appuntate dagli sperimentatori su come si comporta l'utente, eventuali esitazioni, frustrazioni.
+  \end{itemize}
+  \item VALUTAZIONI SOGGETTIVE E QUESTIONARI
+  \begin{itemize}
+    \item \textbf{Grado di difficoltà percepita:} per ogni task, è stato chiesto all'utente di valutare quanto gli è sembrato complesso su una \textit{scala Likert} da 1 a 5 (da "Molto facile" a "Molto difficile").
+    \item \textbf{Questionari finali:} è stato somministrato il questionario \textit{SUS (System Usability Scale)} per ottenere un punteggio globale sull'interfaccia.
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Scelta sperimentatori}
+Per lo svolgimento degli esperimenti, abbiamo deciso di coinvolgere attivamente tutti e tre i componenti del gruppo nel ruolo di sperimentatori. Nello specifico, ognuno di noi ha agito contemporaneamente sia da osservatore che da facilitatore. Il nostro obiettivo, infatti, era rassicurare la persona testata, lasciandola completamente libera di esplorare il sistema e di muoversi in autonomia.  Durante le sessioni, i nostri interventi come facilitatori sono stati ridotti al minimo: ci siamo limitati a fornire indicazioni puramente generali solo qualora fosse strettamente necessario o esplicitamente richiesto dall'utente. In questi rari casi, abbiamo prestato la massima attenzione a non influenzare in alcun modo le sue scelte. In particolare, quando il ruolo di sperimentatore era ricoperto dal progettista originale del sistema, è stata accuratamente evitata qualsiasi spiegazione di natura tecnica che potesse alterare la spontaneità dell'interazione o mascherare un potenziale problema di usabilità. Infine, per quanto riguarda la conduzione pratica dei test, non si sono verificate disparità all'interno del team. Sebbene due dei membri del gruppo non conoscessero l'applicativo in partenza, le fasi precedenti del progetto hanno garantito un'adeguata preparazione: l'esecuzione della valutazione euristica e la successiva partecipazione attiva al processo di riprogettazione hanno permesso di studiare a fondo l'interfaccia. In questo modo, tutti gli sperimentatori hanno acquisito un'esperienza solida e completa sull'applicazione, risultando ugualmente qualificati per guidare e osservare gli utenti durante le prove.
+
+\subsection{Scelta degli utenti}
+Poiché il sistema in esame è destinato principalmente a una popolazione di studenti universitari, il campione è stato accuratamente selezionato per rispecchiare fedelmente questo target. Sono stati reclutati studenti provenienti da facoltà differenti e, ove possibile, da atenei diversi, al fine di garantire la massima eterogeneità e rappresentatività. 
+
+Per inquadrare correttamente il profilo dei partecipanti e confermare l'adeguatezza del campione, nella fase pre-esperimento è stato somministrato un apposito questionario anagrafico e conoscitivo.
+
+Le informazioni raccolte includono: 
+\begin{itemize}
+  \item Sesso
+  \item Età
+  \item Titolo di studio
+  \item Livello di conoscenze informatiche
+  \item Principale utilizzo del web
+  \item Abitudine all'utilizzo di piattaforme per la gestione di documenti e lo studio collaborativo (es. Google Drive, OneDrive, Notion)
+  \item Utilizzo pregresso di strumenti basati sull'Intelligenza Artificiale per trascrivere audio, riassumere lezioni o generare contenuti vocali
+\end{itemize} 
+
+\subsection{Scelta compiti}
+
+\subsection{Formulazione modello}
+
+\subsection{Fasi dell'esperimento}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
