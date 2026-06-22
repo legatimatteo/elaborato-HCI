@@ -1,11 +1,10 @@
 \section{Esperimento con gli utenti}
 
-\subsection{Scopo dell'esperimento}
+\subsection{Scopo}
 L'obiettivo principale di questa fase di sperimentazione è stato raccogliere dati concreti sull'utilizzo del sistema da parte di un campione di utenti reali, così da poter valutare oggettivamente l'efficacia delle nostre scelte di riprogettazione. Nello specifico, con questi test volevamo verificare se le modifiche apportate avessero reso l'interazione con il sito più intuitiva e meno macchinosa rispetto alla versione originale. Un altro aspetto fondamentale che ci interessava indagare era la diminuzione dello sforzo cognitivo richiesto all'utente: volevamo capire se l'introduzione di pattern grafici ricorrenti e una migliore affordance aiutassero effettivamente le persone a comprendere meglio l'interfaccia. Infine, i test ci sono serviti per misurare la robustezza del sistema e capire se la nuova struttura permette di rimediare facilmente a eventuali sbagli. In questo modo, abbiamo potuto verificare di aver risolto alucni dei problemi di usabilità emersi in precedenza, garantendo una navigazione più fluida e una ricerca delle informazioni più immediata e gratificante.
 
-\subsection{Caratteristiche dell'esperimento}
-Innanzitutto, è stato necessario definire le modalità di gestione delle due condizioni sperimentali del sistema (la \textit{Versione A} originale e la \textit{Versione B} riprogettata). Per confrontare l'usabilità dei due sistemi, si è optato per un approccio \textit{within-subjects}, prevedendo che ogni partecipante provasse entrambe le condizioni. La scelta di questa metodologia rispetto all'altro approccio \textit{between-subjects}, che avrebbe escluso a monte il problema dell'effetto dell'apprendimento, è stata motivata dal fatto che la riprogettazione ha comportato una ristrutturazione in parte profonda, introducendo cambiamenti sostanziali anche a livello funzionale in alcune parti del sistema. Di conseguenza, è stato ritenuto più significativo valutare come lo stesso utente si ponesse di fronte alle diverse logiche di funzionamento.
-Oltre a questo aspetto, l'approccio scelto ha offerto il vantaggio di ottimizzare le risorse, richiedendo un numero più contenuto di partecipanti. Poichè l'apprendimento intrinseco nel passaggio da una versione all'altra avrebbe potuto sfalsare i dati raccolti, il problema è stato controllato applicando la tecnica del \textit{counterbalancing}: il campione di utenti è stato infatti diviso approssimativamente a metà, per cui un gruppo ha testato prima la condizione sperimentale A e successivamente la B, mentre il secondo gruppo ha seguito l'ordine inverso. 
+\subsection{Caratteristiche}
+Innanzitutto, è stato necessario definire le modalità di gestione delle due condizioni sperimentali del sistema (la \textit{Versione A} originale e la \textit{Versione B} riprogettata). Per confrontare l'usabilità dei due sistemi, si è optato per un approccio \textit{within-subjects}, prevedendo che ogni partecipante provasse entrambe le condizioni. La scelta di questa metodologia rispetto all'altro approccio \textit{between-subjects}, che avrebbe escluso a monte il problema dell'effetto dell'apprendimento, è stata motivata dal fatto che la riprogettazione ha comportato una ristrutturazione in parte profonda, introducendo cambiamenti sostanziali anche a livello funzionale in alcune parti del sistema. Di conseguenza, è stato ritenuto più significativo valutare come lo stesso utente si ponesse di fronte alle diverse logiche di funzionamento. Oltre a questo aspetto, l'approccio scelto ha offerto il vantaggio di ottimizzare le risorse, richiedendo un numero più contenuto di partecipanti. Poichè l'apprendimento intrinseco nel passaggio da una versione all'altra avrebbe potuto sfalsare i dati raccolti, il problema è stato controllato applicando la tecnica del \textit{counterbalancing}: il campione di utenti è stato infatti diviso approssimativamente a metà, per cui un gruppo ha testato prima la condizione sperimentale A e successivamente la B, mentre il secondo gruppo ha seguito l'ordine inverso. 
 
 \subsection{Ambiente}
 Per garantire la massima naturalezza durante l'interazione e simulare un contesto di utilizzo reale, si è deciso di condurre gli esperimenti in luoghi familiari e confortevoli per gli utenti, mettendoli così a proprio agio. È stata prestata particolare attenzione affinché gli ambienti scelti fossero privi di distrazioni o interferenze esterne, permettendo ai partecipanti di concentrarsi esclusivamente sullo svolgimento dei compiti assegnati.
@@ -72,38 +71,13 @@ Infine, per assicurare che la preparazione della postazione fosse uniforme per o
   \label{checklist}
 \end{table}
 
-\subsection{Dati raccolti}
-Al fine di valutare in modo completo e rigoroso l'usabilità delle due versioni del sistema, durante le sessioni di test è stata raccolta una serie di informazioni, combinando metriche di natura quantitativa e qualitativa. L'integrazione di questi due approcci ha consentito, da un lato, di misurare oggettivamente le performance degli utenti nello svolgimento dei singoli compiti e, dall'altro, di indagare la loro percezione soggettiva dell'interfaccia. In questo modo è stato possibile non solo quantificare l'efficienza e l'efficacia del sistema, ma anche comprendere a fondo il livello di soddisfazione generale e identificare l'origine di eventuali problemi di usabilità. Nello specifico, per ogni sessione sperimentale sono stati registrati i seguenti dati:
-
-\begin{enumerate}
-  \item DATI QUANTITATIVI
-  \begin{itemize}
-    \item \textbf{Completamento:} indicare se l'utente è riuscito a portare a termine la singola azione con successo o meno.
-    \item \textbf{Numero di errori:} quante azioni non rilevanti o sbagliate ha compiuto l'utente rispetto al percorso ideale del task.
-    \item \textbf{Tempo impiegato:} i secondi o minuti necessari per concludere il task, escludendo il tempo di lettura della consegna iniziale.
-    \item \textbf{Numero di click:} quanti click effettivi ha fatto l'utente per arrivare all'obiettivo prefissato.
-  \end{itemize}
-  \item DATI QUALITATIVI
-  \begin{itemize}
-    \item \textbf{Commenti dell'utente}: le frasi, i dubbi o i suggerimenti espressi a voce alta dalla persona mentre esegue il test o alla fine di esso.
-    \item \textbf{Annotazioni dello sperimentatore:} osservazioni appuntate dagli sperimentatori su come si comporta l'utente, eventuali esitazioni, frustrazioni.
-  \end{itemize}
-  \item VALUTAZIONI SOGGETTIVE E QUESTIONARI
-  \begin{itemize}
-    \item \textbf{Grado di difficoltà percepita:} per ogni task, è stato chiesto all'utente di valutare quanto gli è sembrato complesso su una \textit{scala Likert} da 1 a 5 (da "Molto facile" a "Molto difficile").
-    \item \textbf{Questionari finali:} è stato somministrato il questionario \textit{SUS (System Usability Scale)} per ottenere un punteggio globale sull'interfaccia.
-  \end{itemize}
-\end{enumerate}
-
-\subsection{Scelta sperimentatori}
+\subsection{Scelta degli sperimentatori}
 Per lo svolgimento degli esperimenti, abbiamo deciso di coinvolgere attivamente tutti e tre i componenti del gruppo nel ruolo di sperimentatori. Nello specifico, ognuno di noi ha agito contemporaneamente sia da osservatore che da facilitatore. Il nostro obiettivo, infatti, era rassicurare la persona testata, lasciandola completamente libera di esplorare il sistema e di muoversi in autonomia.  Durante le sessioni, i nostri interventi come facilitatori sono stati ridotti al minimo: ci siamo limitati a fornire indicazioni puramente generali solo qualora fosse strettamente necessario o esplicitamente richiesto dall'utente. In questi rari casi, abbiamo prestato la massima attenzione a non influenzare in alcun modo le sue scelte. In particolare, quando il ruolo di sperimentatore era ricoperto dal progettista originale del sistema, è stata accuratamente evitata qualsiasi spiegazione di natura tecnica che potesse alterare la spontaneità dell'interazione o mascherare un potenziale problema di usabilità. Infine, per quanto riguarda la conduzione pratica dei test, non si sono verificate disparità all'interno del team. Sebbene due dei membri del gruppo non conoscessero l'applicativo in partenza, le fasi precedenti del progetto hanno garantito un'adeguata preparazione: l'esecuzione della valutazione euristica e la successiva partecipazione attiva al processo di riprogettazione hanno permesso di studiare a fondo l'interfaccia. In questo modo, tutti gli sperimentatori hanno acquisito un'esperienza solida e completa sull'applicazione, risultando ugualmente qualificati per guidare e osservare gli utenti durante le prove.
 
 \subsection{Scelta degli utenti}
 Poiché il sistema in esame è destinato principalmente a una popolazione di studenti universitari, il campione è stato accuratamente selezionato per rispecchiare fedelmente questo target. Sono stati reclutati studenti provenienti da facoltà differenti e, ove possibile, da atenei diversi, al fine di garantire la massima eterogeneità e rappresentatività. 
 
-Per inquadrare correttamente il profilo dei partecipanti e confermare l'adeguatezza del campione, nella fase pre-esperimento è stato somministrato un apposito questionario anagrafico e conoscitivo.
-
-Le informazioni raccolte includono: 
+Per inquadrare correttamente il profilo dei partecipanti e confermare l'adeguatezza del campione, nella fase pre-esperimento è stato somministrato un apposito questionario anagrafico e conoscitivo. Le informazioni raccolte includono: 
 \begin{itemize}
   \item Sesso
   \item Età
@@ -114,11 +88,32 @@ Le informazioni raccolte includono:
   \item Utilizzo pregresso di strumenti basati sull'Intelligenza Artificiale per trascrivere audio, riassumere lezioni o generare contenuti vocali
 \end{itemize} 
 
-\subsection{Scelta compiti}
+\subsection{Scelta dei compiti}
 
-\subsection{Formulazione modello}
+\subsection{Moduli utilizzati}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./figures/05-esperimento-utenti/Consenso informato}
+    \caption{Consenso informato}
+    \label{fig:consenso_informato}
+\end{figure}
 
-\subsection{Fasi dell'esperimento}
+A seguito dell'accettazione del modulo di consenso informato, all'utente è stato sottoposto un questionario anagrafico digitale per la raccolta dei principali dati demografici, garantendone il trattamento in forma rigorosamente anonima.
+
+Terminata questa fase preliminare, l'esecuzione pratica del test è stata supportata dall'utilizzo parallelo di due ulteriori moduli, strutturati per affiancare sia il partecipante che l'osservatore per l'intera durata dell'esperimento:
+\begin{itemize}
+    \item \textbf{Questionario di valutazione (lato utente):} mantenuto aperto dal partecipante durante la sessione, permetteva di leggere la descrizione dei singoli compiti (o scenari) da svolgere e di esprimere, immediatamente dopo ciascuna esecuzione, un giudizio sulla difficoltà percepita. Al termine di tutti i task, il medesimo modulo presentava il questionario SUS (System Usability Scale) per raccogliere la valutazione complessiva dell'interfaccia.
+    \item \textbf{Modulo di monitoraggio (lato sperimentatore):} strutturato anch'esso per singoli compiti, è stato utilizzato dall'osservatore per annotare in tempo reale le metriche quantitative dell'esperimento, quali la durata di esecuzione, il numero di click effettuati e l'esito dell'azione.
+\end{itemize}
+
+Per completezza, si riportano i collegamenti ai moduli utilizzati:
+\begin{itemize}
+    \item \textbf{Modulo Anagrafica:} \url{https://forms.gle/vhNKsp5a388iPzY19}
+    \item \textbf{Questionario di valutazione:} \url{https://forms.gle/jdHvKHEfNMu7Mipd7}
+    \item \textbf{Modulo per lo sperimentatore:} \url{https://forms.gle/zc2d1J7gKTwWw6J38}
+\end{itemize}
+
+
 
 
 
