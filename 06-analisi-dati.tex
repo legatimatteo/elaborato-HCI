@@ -15,3 +15,229 @@ Per limitare l'effetto di apprendimento derivante dall'utilizzo di entrambe le v
 Tuttavia, si è scelto di non effettuare una suddivisione perfettamente equa, assegnando un peso maggiore alla sequenza A-B. Tale decisione è stata motivata dalla volontà di simulare più fedelmente uno scenario reale di aggiornamento del sistema: l'obiettivo è stato quello di raccogliere un maggior numero di osservazioni sul comportamento tipico di un utente che passa dal sistema originale a quello riprogettato. Il sottogruppo B-A è stato comunque mantenuto per garantire il rigore statistico necessario a isolare e valutare l'effetto di apprendimento nell'analisi dei dati.
 
 Nelle sezioni successive verranno dapprima presentate le caratteristiche del campione di partecipanti, per poi passare all'analisi dei dati raccolti per i singoli compiti. Infine, verranno analizzati i risultati del questionario SUS (\textit{System Usability Scale}) e i commenti raccolti durante l'intervista finale.
+
+\subsection{Caratteristiche dei partecipanti}
+
+In questa sezione vengono esaminati i dati relativi al profilo anagrafico, al titolo di studio, alle competenze informatiche e alle abitudini d'uso delle tecnologie dei 15 utenti che hanno preso parte alla fase di sperimentazione. La raccolta di queste informazioni, avvenuta nella fase preliminare dei test tramite l'apposito modulo, è stata finalizzata a verificare l'omogeneità del campione e la sua rispondenza rispetto al target di riferimento della piattaforma.
+
+\paragraph{Dati demografici e titolo di studio}
+L'analisi dei dati evidenzia che il campione è interamente composto da utenti appartenenti alla fascia d'età compresa tra i 19 e i 25 anni. Dal punto di vista della ripartizione per sesso, si registra una prevalenza di partecipanti di sesso maschile (11 utenti) rispetto a quello femminile (4 utenti) (Figura~\ref{fig:6-1}). Per quanto riguarda il livello di istruzione, i partecipanti si suddividono tra coloro che sono in possesso di un diploma di scuola superiore (8 utenti) e coloro che hanno già conseguito un titolo di laurea (7 utenti) (Figura~\ref{fig:6-2}). Tale distribuzione risulta coerente con il profilo utente dello studente universitario medio delineato nella fase iniziale del progetto.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.9\textwidth,
+				height=7cm,
+				symbolic x coords={Maschi, Femmine},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Numero di utenti},
+				ymin=0, ymax=15,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Maschi,11) (Femmine,4)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Ripartizione del campione di utenti in base al sesso.}
+	\label{fig:6-1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.9\textwidth,
+				height=7cm,
+				symbolic x coords={Diploma Superiore, Laurea},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Numero di utenti},
+				ymin=0, ymax=12,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Diploma Superiore,8) (Laurea,7)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Distribuzione del titolo di studio conseguito dai partecipanti.}
+	\label{fig:6-2}
+\end{figure}
+
+\paragraph{Conoscenze informatiche e utilizzo del web}
+Relativamente alle competenze informatiche autovalutate, il campione presenta una distribuzione concentrata sui livelli intermedi e avanzati: 2 utenti dichiarano competenze di livello base, 6 di livello intermedio, 3 di livello avanzato e 4 di livello esperto (Figura~\ref{fig:6-3}). Il computer viene utilizzato principalmente per attività legate allo studio (13 utenti), mentre solo una minoranza lo utilizza prevalentemente per hobby o svago (2 utenti) (Figura~\ref{fig:6-4}). La frequenza di navigazione su internet risulta massima per l'intero campione, con un utilizzo quotidiano dichiarato superiore a una volta al giorno da parte di tutti i partecipanti. Questo quadro delinea un gruppo di utenti dotato di una forte familiarità generica con l'utilizzo di interfacce web.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.9\textwidth,
+				height=7cm,
+				symbolic x coords={Base, Intermedio, Avanzato, Esperto},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Numero di utenti},
+				ymin=0, ymax=8,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.25,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Base,2) (Intermedio,6) (Avanzato,3) (Esperto,4)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Livello di conoscenze informatiche dichiarato dagli utenti.}
+	\label{fig:6-3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.9\textwidth,
+				height=7cm,
+				symbolic x coords={Studio, Hobby},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Numero di utenti},
+				ymin=0, ymax=15,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Studio,13) (Hobby,2)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Scopo principale di utilizzo del web dichiarato dai partecipanti.}
+	\label{fig:6-4}
+\end{figure}
+
+\paragraph{Familiarità con strumenti di studio e sistemi AI}
+Un valore di rilievo per la valutazione del sistema è rappresentato dall'esperienza pregressa dei partecipanti con strumenti simili o con funzionalità basate su intelligenza artificiale. Per quanto riguarda l'adozione abituale di piattaforme per la gestione di documenti, 7 utenti dichiarano di utilizzarle abitualmente, 5 occasionalmente, 2 raramente e un solo utente dichiara di non averne mai fatto uso (Figura~\ref{fig:6-5}).
+
+Inoltre, la quasi totalità del campione dichiara di aver già utilizzato in precedenza strumenti AI per la trascrizione automatica o la sintesi vocale: 5 utenti li utilizzano spesso per motivi di studio o lavoro, 7 li hanno utilizzati raramente o per curiosità, mentre solo 3 partecipanti non hanno alcuna esperienza pregressa con tali tecnologie (Figura~\ref{fig:6-6}). Questa caratteristica garantisce che i soggetti coinvolti presentassero caratteristiche il più possibile simili a quelle dei potenziali utenti della piattaforma.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.9\textwidth,
+				height=7cm,
+				symbolic x coords={Abitualmente, Occasionalmente, Raramente, Mai},
+				xtick=data,
+				x tick label style={rotate=15,anchor=north east, font=\small},
+				ylabel={Numero di utenti},
+				ymin=0, ymax=10,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.25,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Abitualmente,7) (Occasionalmente,5) (Raramente,2) (Mai,1)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Frequenza di utilizzo di piattaforme per la gestione dello studio.}
+	\label{fig:6-5}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.9\textwidth,
+				height=7cm,
+				symbolic x coords={Spesso (Studio/Lavoro), Raramente (Curiosità), No},
+				xtick=data,
+				x tick label style={text width=2.5cm, align=center, font=\small},
+				ylabel={Numero di utenti},
+				ymin=0, ymax=10,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.3,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Spesso (Studio/Lavoro),5) (Raramente (Curiosità),7) (No,3)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Esperienza pregressa con strumenti AI di trascrizione o sintesi vocale.}
+	\label{fig:6-6}
+\end{figure}
+
+\paragraph{Analisi della distribuzione dei gruppi sperimentali}
+Allo scopo di descrivere l'articolazione del campione, viene esaminata la distribuzione dei partecipanti tra il sottogruppo associato all'ordine A-B (9 utenti) e quello associato all'ordine B-A (6 utenti). L'analisi delle principali variabili (sesso, titolo di studio e conoscenze informatiche autovalutate) permette di osservare la composizione dei due gruppi.
+
+Come riportato nella Tabella~\ref{tab:6-1}, la ripartizione del sesso e del titolo di studio mostra una composizione sovrapponibile nei due raggruppamenti.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto della distribuzione anagrafica e accademica tra i gruppi A-B e B-A.}
+	\label{tab:6-1}
+	\begin{tabular}{|l|c|c|c|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Variabile}        & \textbf{Gruppo A-B (9 utenti)} & \textbf{Gruppo B-A (6 utenti)} & \textbf{Totale} \\ \hline
+		\textit{Sesso}            &                                &                                &                 \\ \hline
+		~~Maschi                  & 7 (77,8\%)                     & 4 (66,7\%)                     & 11              \\ \hline
+		~~Femmine                 & 2 (22,2\%)                     & 2 (33,3\%)                     & 4               \\ \hline
+		\textit{Titolo di studio} &                                &                                &                 \\ \hline
+		~~Diploma Superiore       & 5 (55,6\%)                     & 3 (50,0\%)                     & 8               \\ \hline
+		~~Laurea                  & 4 (44,4\%)                     & 3 (50,0\%)                     & 7               \\ \hline
+	\end{tabular}
+\end{table}
+
+Per quanto concerne le conoscenze informatiche, la Figura~\ref{fig:6-7} mostra la distribuzione tra i due gruppi di esecuzione. Si osserva come in entrambi i gruppi vi sia una prevalenza di livelli intermedi, avanzati ed esperti. La presenza di utenti con competenze di livello ``Base'' risulta divisa in parti uguali (un utente per ciascun gruppo), evidenziando profili tecnologici di partenza confrontabili tra i due gruppi.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=10pt,
+				width=0.9\textwidth,
+				height=7cm,
+				symbolic x coords={Base, Intermedio, Avanzato, Esperto},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Numero di utenti},
+				ymin=0, ymax=8,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.25,
+				legend style={at={(0.5,-0.15)}, anchor=north, legend columns=-1, font=\small},
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Base,1) (Intermedio,4) (Avanzato,2) (Esperto,2)};
+			\addplot+[ybar, fill=blue!30, draw=black] coordinates {(Base,1) (Intermedio,2) (Avanzato,1) (Esperto,2)};
+			\legend{Gruppo A-B, Gruppo B-A}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto del livello di conoscenze informatiche tra i due gruppi di esecuzione.}
+	\label{fig:6-7}
+\end{figure}
