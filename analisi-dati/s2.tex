@@ -1,0 +1,65 @@
+\subsubsection{Scenario S2: L'organizzatore seriale}
+
+Lo Scenario S2 ha richiesto agli utenti di simulare l'organizzazione del materiale didattico all'inizio di un nuovo anno accademico. L'obiettivo operativo consisteva nel creare una gerarchia di file configurando una cartella dedicata all'esame di "Basi di Dati" , procedendo poi al caricamento del programma ufficiale del corso al suo interno. Infine, l'utente doveva caricare un file audio della lezione e convertirlo in testo, sfruttando gli strumenti di Intelligenza Artificiale messi a disposizione dalla piattaforma.
+
+\paragraph{Analisi delle prestazioni generali}
+
+Come si può notare dai dati aggregati per lo Scenario S2 (Tabella~\ref{tab:6-s2-1}), il tasso di completamento (\textit{Success Rate}) si è attestato al 100{,}00\% per entrambe le versioni del sistema. L'analisi quantitativa dei dati aggregati evidenzia un chiaro miglioramento dell'usabilità nella versione post-riprogettazione (B). Il tasso di completamento (\textit{Success Rate}) rimane pari al 100{,}00\% in entrambe le varianti del sistema. Tuttavia, si osserva una forte riduzione della media degli errori, che passa da 2{,}80 nella versione originale (A) a 0{,}47 nella versione B, con un miglioramento dell'83{,}33\%.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Metriche prestazionali globali aggregate per lo Scenario S2.}
+	\label{tab:6-s2-1}
+	\begin{tabular}{|l|c|c|c|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
+		Success Rate     & 100{,}00\%                      & 100{,}00\%                                 & 0{,}00\%            \\ \hline
+		Media Errori     & 2{,}80                          & 0{,}47                                     & -83{,}33\%          \\ \hline
+		Mediana Tempo    & 4.29.00                         & 2.33.00                                    & -43{,}12\%          \\ \hline
+		Mediana Click    & 42                              & 19                                         & -54{,}76\%          \\ \hline
+		Media Difficoltà & 3{,}40                          & 2{,}00                                     & -41{,}18\%          \\ \hline
+	\end{tabular}
+\end{table}
+
+La riduzione degli errori e il dimezzamento dei click necessari mostrano l'efficacia della riprogettazione. Il nuovo flusso risulta più semplice e immediato, permettendo agli utenti di organizzare e caricare i materiali con meno passaggi e minori difficoltà.
+
+\paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
+
+Le osservazioni raccolte durante i test aiutano a spiegare le differenze emerse tra le due versioni. Nella versione originale (A), gli utenti hanno incontrato diverse difficoltà durante il caricamento e la gestione dei materiali.
+
+\begin{itemize}
+	\item \textbf{Flusso poco flessibile}: diversi partecipanti hanno espresso insoddisfazione per alcuni passaggi obbligati. In particolare, alcuni utenti hanno affermato che avrebbero ``preferito caricare direttamente il file creando la cartella nel mentre'', segnalando una procedura percepita come troppo rigida.
+	\item \textbf{Difficoltà nel trovare le funzionalità AI}: alcuni utenti hanno tentato di caricare direttamente i file audio all'interno delle cartelle senza individuare facilmente gli strumenti di Intelligenza Artificiale dedicati alla trascrizione.
+
+	\item \textbf{Feedback poco chiari}: il sistema non forniva indicazioni sufficienti quando alcuni campi obbligatori non venivano compilati. Di conseguenza, gli utenti non comprendevano immediatamente il motivo del mancato completamento dell'operazione. Ulteriore confusione è stata causata da alcuni valori preimpostati e da aggiornamenti improvvisi della pagina durante l'inserimento dei dati.
+\end{itemize}
+
+Per la versione post-riprogettazione (B), i commenti raccolti confermano invece un netto miglioramento dell'esperienza d'uso. La riduzione di click ed errori suggerisce che la riorganizzazione dei comandi, l'introduzione di feedback più chiari e il miglioramento del processo di caricamento abbiano reso il flusso più lineare. Diversi utenti hanno infatti definito la nuova procedura come ``intuitiva''.
+
+\paragraph{Valutazione dell'effetto di apprendimento}
+
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-s2-2}), emerge come una struttura più chiara dell'interfaccia favorisca l'apprendimento delle attività richieste.
+
+Nel gruppo che ha utilizzato prima la versione A e poi la versione B, il primo approccio all'interfaccia originale ha comportato tempi elevati, con una mediana pari a 5.38.00. Il passaggio alla versione riprogettata ha portato a una riduzione del 52{,}07\%, facendo scendere il tempo mediano a 2.42.00.
+
+Il risultato più interessante emerge però dal gruppo che ha utilizzato le interfacce nell'ordine B--A. Gli utenti hanno completato inizialmente lo scenario nella versione B in 2.20.00, acquisendo rapidamente familiarità con il flusso di lavoro. Successivamente, passando alla versione originale, hanno concluso il compito in 2.46.00.
+
+Questo risultato suggerisce un forte effetto di apprendimento. Gli utenti che hanno iniziato con la versione B hanno sviluppato un modello mentale più chiaro delle operazioni da svolgere e sono quindi riusciti a orientarsi meglio anche nella versione originale. Di conseguenza, hanno impiegato circa la metà del tempo rispetto agli utenti che hanno affrontato la versione A senza alcuna esperienza precedente (2.46.00 contro 5.38.00).
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-s2-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 5.38.00                                    & 2.42.00                                    & -52,07\%            \\ \hline
+		Ordine B--A                   & 2.46.00                                    & 2.20.00                                    & -15,66\%            \\ \hline
+	\end{tabular}
+\end{table}
