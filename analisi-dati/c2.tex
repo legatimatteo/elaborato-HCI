@@ -1,0 +1,69 @@
+\subsubsection{Compito C2: Caricamento e organizzazione dei materiali di studio}
+Il compito C2 prevedeva il caricamento di un documento o di un appunto sulla piattaforma e la contestuale creazione di una cartella per la sua archiviazione e organizzazione. L'obiettivo di questo compito era valutare l'usabilità della sezione dedicata alla gestione dei file personali, verificando l'effettiva riduzione degli errori sistematici riscontrati nella versione originale (quali il posizionamento poco intuitivo dei comandi di upload, la scarsa visibilità del pulsante di creazione delle cartelle e le interruzioni causate dai bug di refresh dei form) attraverso un'interfaccia visiva più pulita, una maggiore evidenza dei pulsanti d'azione e un flusso operativo più lineare nella versione riprogettata.
+
+\paragraph{Analisi delle prestazioni generali}
+Come si può notare dai dati aggregati per il compito C2 (Tabella~\ref{tab:6-c2-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. I dati rilevano un abbattimento del 75,00\% nella media degli errori (passando da 1,07 a 0,27) e una drastica contrazione della mediana dei click (-74,07\%, da 27 a soli 7) a favore della versione riprogettata. Si osserva inoltre un impercettibile calo della mediana del tempo di esecuzione (-0,83\%) e una riduzione della difficoltà percepita del 19,35\% per la versione B.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Metriche prestazionali globali aggregate per il compito C2.}
+	\label{tab:6-c2-1}
+	\begin{tabular}{|l|c|c|c|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
+		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
+		Media Errori     & 1,07                            & 0,27                                       & -75,00\%            \\ \hline
+		Mediana Tempo    & 2:01                            & 2:00                                       & -0,83\%             \\ \hline
+		Mediana Click    & 27                              & 7                                          & -74,07\%            \\ \hline
+		Media Difficoltà & 2,07                            & 1,67                                       & -19,35\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+La marcata riduzione del numero medio di errori e il drastico calo dei click complessivi dimostrano l'efficacia della riorganizzazione dell'interfaccia per questo compito. L'ottimizzazione dei flussi ha snellito notevolmente l'interazione, prevenendo errori di inserimento e click superflui che caratterizzavano la versione originale, mantenendo quasi inalterato il tempo di completamento a fronte di una maggiore precisione.
+
+\paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
+
+I dati quantitativi trovano un forte riscontro qualitativo nelle annotazioni degli sperimentatori e nei commenti espliciti rilasciati dagli utenti durante il test (\textit{thinking aloud}).
+
+Per la versione originale (A), sono emerse diverse criticità ricorrenti:
+
+\begin{itemize}
+	\item \textbf{Problemi di visibilità e posizionamento}: gli utenti hanno riscontrato notevoli difficoltà nell'individuare i pulsanti per caricare i file e creare le cartelle. È emerso che posizionare il comando di caricamento in alto è risultato poco intuitivo. Inoltre, l'eccessiva densità di elementi a sinistra ha generato confusione visiva.
+
+	\item \textbf{Creazione e gestione cartelle fallace}: la procedura ha disorientato l'utente, in quanto alcuni hanno confuso la creazione di una cartella con la creazione di un esame. L'impossibilità di spostare agevolmente un file all'interno di una cartella in un momento successivo ha generato ulteriore frustrazione.
+
+	\item \textbf{Bug di refresh e form imperfetti}: analogamente ad altri flussi, durante il caricamento dei documenti il fastidioso bug dell' ``effetto flash'' ha causato la perdita del contesto, portando gli utenti a dimenticare campi essenziali come il corso di riferimento. L'assenza di adeguati messaggi di validazione che segnalassero i campi non compilati ha aggravato il problema.
+
+	\item \textbf{Barriere linguistiche}: l'uso inappropriato della lingua inglese nei form e nelle sezioni ha disorientato i partecipanti, impedendo loro di decifrare il significato di azioni cruciali (es. ``carica e nuovo'') e violando la coerenza linguistica dell'applicativo. Viene inoltre segnalato la poca intuitività nel pulsante ''applica'' posizionato a lato dei file.
+\end{itemize}
+
+Passando alla versione post-riprogettazione (B), le considerazioni degli utenti testimoniano un generale successo della fase di riprogettazione, seppur con margini di miglioramento:
+
+\begin{itemize}
+	\item \textbf{Aumento della semplicità percepita}: gli utenti hanno esplicitamente valutato l'interazione e il flusso come molto più semplici rispetto alla versione originale (A).
+
+	\item \textbf{Ottimizzazione della creazione cartelle}: nonostante i significativi miglioramenti riscontrati nelle metriche quantitative, l'operazione ha continuato a generare alcuni dubbi legati al posizionamento dei pulsanti e alla disposizione di determinati elementi dell'interfaccia. Alcuni utenti hanno segnalato come poco intuitiva la posizione iniziale della sidebar dedicata alla navigazione e alla gestione delle cartelle. È stato inoltre suggerito di rendere il pulsante per la creazione di una nuova cartella maggiormente visibile e accessibile, collocandolo in prossimità del pulsante di caricamento dei file. Un'ulteriore osservazione ha riguardato l'etichetta del pulsante utilizzato per il caricamento dei documenti: il termine ``Nuovo'' è stato ritenuto ambiguo poiché associato più facilmente alla creazione di un nuovo elemento (spesso interpretato come una cartella), mentre la dicitura ``Carica'' descriverebbe in modo più chiaro e immediato l'azione effettivamente eseguita.
+
+	\item \textbf{Suggerimenti sul flusso di lavoro}: è emersa in più istanze la preferenza per un flusso operativo ibrido che consenta di caricare il file e, contestualmente nel medesimo passaggio, creare la cartella di destinazione, piuttosto che agire in due momenti separati.
+\end{itemize}
+
+\paragraph{Valutazione dell'effetto di apprendimento}
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c2-2}), emergono pattern divergenti rispetto ad altri task. Per il gruppo sottoposto all'ordine A-B, si osserva un tempo mediano di completamento maggiore nella versione originale (2.48 minuti), che si riduce a 2.00 durante l'utilizzo della versione B. Nel gruppo associato all'ordine B-A, l'esperienza pregressa maturata sulla versione riprogettata (B) ha richiesto un tempo mediano di 1.56. Tuttavia, questo apprendimento ha permesso di abbattere drasticamente il tempo sulla versione A, portandolo a 1.38 minuti. Questo risultato evidenzia un forte trasferimento positivo della conoscenza delle operazioni: l'apprendimento delle dinamiche nella versione B, strutturalmente più guidata, ha fornito modelli mentali che hanno facilitato enormemente il superamento degli ostacoli nella meno intuitiva e più dispersiva versione A.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c2-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 2:48                                       & 2:00                                       & -28,57\%            \\ \hline
+		Ordine B--A                   & 1:38                                       & 1:56,5                                     & +18,88\%            \\ \hline
+	\end{tabular}
+\end{table}
