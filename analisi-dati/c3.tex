@@ -30,9 +30,9 @@ Come si può notare dai dati aggregati per il compito C3 (Tabella~\ref{tab:6-c3-
 				fill=blue!70,
 				draw=black
 			] coordinates {
-				(Versione A,2.73)
-				(Versione B,1.93)
-			};
+					(Versione A,2.73)
+					(Versione B,1.93)
+				};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C3.}
@@ -85,7 +85,7 @@ Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c3-2}), 
 
 Nel gruppo A--B, il tempo mediano di esecuzione passa da 1:53 (versione A) a 1:27 (versione B), con una riduzione del 23,01\%.
 
-Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B in 1:46, mentre nella successiva interazione con la versione A il tempo mediano aumenta fino a 2:02. Questo risultato suggerisce che l’esperienza maturata con la versione più ottimizzata non si trasferisce in modo efficace alla versione originale, le cui criticità strutturali continuano a incidere in maniera significativa sulle prestazioni, indipendentemente dalla familiarità con il task.
+Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B in 1:46,5, mentre nella successiva interazione con la versione A il tempo mediano aumenta fino a 2:02. Questo risultato suggerisce che l’esperienza maturata con la versione più ottimizzata non si trasferisce in modo efficace alla versione originale, le cui criticità strutturali continuano a incidere in maniera significativa sulle prestazioni, indipendentemente dalla familiarità con il task.
 
 \begin{figure}[H]
 	\centering
@@ -112,17 +112,17 @@ Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B 
 				fill=blue!70,
 				draw=black
 			] coordinates {
-				(Ordine A-B,2.22)
-				(Ordine B-A,3.50)
-			};
+					(Ordine A-B,2.22)
+					(Ordine B-A,3.50)
+				};
 			\addplot+[
 				ybar,
 				fill=blue!30,
 				draw=black
 			] coordinates {
-				(Ordine A-B,1.89)
-				(Ordine B-A,2.00)
-			};
+					(Ordine A-B,1.89)
+					(Ordine B-A,2.00)
+				};
 			\legend{Versione A, Versione B}
 		\end{axis}
 	\end{tikzpicture}
@@ -141,6 +141,6 @@ Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B 
 		\rowcolor{gray!30}
 		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
 		Ordine A--B                   & 1:53                                       & 1:27                                       & -23,01\%            \\ \hline
-		Ordine B--A                   & 2:02                                       & 1:46                                       & -12,70\%            \\ \hline
+		Ordine B--A                   & 2:02                                       & 1:46,5                                     & -12,70\%            \\ \hline
 	\end{tabular}
 \end{table}
