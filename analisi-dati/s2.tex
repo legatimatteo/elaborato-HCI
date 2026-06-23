@@ -6,6 +6,39 @@ Lo Scenario S2 ha richiesto agli utenti di simulare l'organizzazione del materia
 
 Come si può notare dai dati aggregati per lo Scenario S2 (Tabella~\ref{tab:6-s2-1}), il tasso di completamento (\textit{Success Rate}) si è attestato al 100,00\% per entrambe le versioni del sistema. L'analisi quantitativa dei dati aggregati evidenzia un chiaro miglioramento dell'usabilità nella versione post-riprogettazione (B). Il tasso di completamento (\textit{Success Rate}) rimane pari al 100,00\% in entrambe le varianti del sistema. Tuttavia, si osserva una forte riduzione della media degli errori, che passa da 2,80 nella versione originale (A) a 0,47 nella versione B, con un miglioramento dell'83,33\%.
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Versione A, Versione B},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.4,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Versione A,3.18)
+					(Versione B,2.08)
+				};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per S2.}
+	\label{fig:difficolta-s2-generale}
+\end{figure}
+
 \begin{table}[H]
 	\centering
 	\small
@@ -48,6 +81,49 @@ Nel gruppo che ha utilizzato prima la versione A e poi la versione B, il primo a
 Il risultato più interessante emerge però dal gruppo che ha utilizzato le interfacce nell'ordine B--A. Gli utenti hanno completato inizialmente lo scenario nella versione B in 2:20, acquisendo rapidamente familiarità con il flusso di lavoro. Successivamente, passando alla versione originale, hanno concluso il compito in 2:46.
 
 Questo risultato suggerisce un forte effetto di apprendimento. Gli utenti che hanno iniziato con la versione B hanno sviluppato un modello mentale più chiaro delle operazioni da svolgere e sono quindi riusciti a orientarsi meglio anche nella versione originale. Di conseguenza, hanno impiegato circa la metà del tempo rispetto agli utenti che hanno affrontato la versione A senza alcuna esperienza precedente (2:46 contro 5:38).
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=15pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Ordine A-B, Ordine B-A},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Ordine A-B,3.00)
+					(Ordine B-A,4.00)
+				};
+			\addplot+[
+				ybar,
+				fill=blue!30,
+				draw=black
+			] coordinates {
+					(Ordine A-B,2.00)
+					(Ordine B-A,2.33)
+				};
+			\legend{Versione A, Versione B}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per S2 in base all'ordine di esecuzione.}
+	\label{fig:difficolta-s2-ordine-confronto}
+\end{figure}
 
 \begin{table}[H]
 	\centering

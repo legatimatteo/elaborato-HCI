@@ -6,6 +6,39 @@ Il compito C1 prevedeva il completamento della procedura di registrazione alla p
 
 Come si può notare dai dati aggregati per il compito C1 (Tabella~\ref{tab:6-c1-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. Si osserva una riduzione dell’80,00\% nella media degli errori (da 1,00 a 0,20) e una diminuzione del 15,79\% nella mediana dei click (da 19 a 16) a favore della versione riprogettata. Al contrario, la mediana del tempo di esecuzione aumenta del 14,29\% (da 1:10 a 1:20), mentre la difficoltà percepita si riduce del 10,00\%.
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Versione A, Versione B},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.4,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Versione A,1.33)
+					(Versione B,1.20)
+				};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C1.}
+	\label{fig:difficolta-c1-generale}
+\end{figure}
+
 \begin{table}[H]
 	\centering
 	\small
@@ -53,6 +86,49 @@ Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c1-2}), 
 Nel gruppo A--B, il tempo mediano di esecuzione passa da 2:06 (versione A) a 1:18 (versione B), con una riduzione del 38,10\%. Tale risultato è coerente con il miglioramento dell’efficienza introdotto dalla struttura a step della versione B.
 
 Nel gruppo B--A, il tempo mediano iniziale sulla versione B è pari a 1:22, mentre nella successiva esecuzione sulla versione A si osserva un valore pari a 0:52,5. Questo andamento suggerisce la presenza di un effetto di familiarizzazione con i dati richiesti (e.g. informazioni anagrafiche e accademiche), che consente una compilazione più rapida del form non strutturato. Tuttavia, la struttura guidata della versione B introduce un vincolo sequenziale che può aumentare il tempo di interazione pur riducendo gli errori.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=15pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Ordine A-B, Ordine B-A},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Ordine A-B,1.56)
+					(Ordine B-A,1.00)
+				};
+			\addplot+[
+				ybar,
+				fill=blue!30,
+				draw=black
+			] coordinates {
+					(Ordine A-B,1.33)
+					(Ordine B-A,1.00)
+				};
+			\legend{Versione A, Versione B}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C1 in base all'ordine di esecuzione.}
+	\label{fig:difficolta-c1-ordine-confronto}
+\end{figure}
 
 \begin{table}[H]
 	\centering

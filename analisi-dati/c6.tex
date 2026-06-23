@@ -8,6 +8,39 @@ Come si può osservare dai dati aggregati per il compito C6 (Tabella~\ref{tab:6-
 
 Di contro, si osserva un incremento della mediana del tempo di esecuzione (+14,29\%, da 0:35 a 0:40) e della mediana dei click (+16,67\%, da 6 a 7).
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Versione A, Versione B},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.4,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+				(Versione A,1.47)
+				(Versione B,1.33)
+			};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C6.}
+	\label{fig:difficolta-c6-generale}
+\end{figure}
+
 \begin{table}[H]
 	\centering
 	\small
@@ -49,6 +82,49 @@ Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c6-2}), 
 Nel gruppo A--B, il tempo mediano passa da 0:40 nella versione A a 0:30 nella versione B, con una riduzione del 25,00\%. Contestualmente si osserva una diminuzione degli errori (da 0,67 a 0,22), indicando un miglioramento dell’efficienza e della precisione nell’interazione con l’interfaccia riprogettata.
 
 Nel gruppo B--A, l’esperienza iniziale sulla versione B sembra favorire una maggiore familiarità con le logiche generali della piattaforma, consentendo di ridurre l’impatto delle criticità della versione originale. In particolare, la conoscenza preventiva della struttura dei menu e della posizione dei controlli principali contribuisce a rendere l’esecuzione del task più rapida rispetto alla fase iniziale di esplorazione.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=15pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Ordine A-B, Ordine B-A},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+				(Ordine A-B,1.67)
+				(Ordine B-A,1.17)
+			};
+			\addplot+[
+				ybar,
+				fill=blue!30,
+				draw=black
+			] coordinates {
+				(Ordine A-B,1.33)
+				(Ordine B-A,1.33)
+			};
+			\legend{Versione A, Versione B}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C6 in base all'ordine di esecuzione.}
+	\label{fig:difficolta-c6-ordine-confronto}
+\end{figure}
 
 \begin{table}[H]
 	\centering

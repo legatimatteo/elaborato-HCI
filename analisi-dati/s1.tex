@@ -6,6 +6,39 @@ Lo Scenario S1 ha richiesto agli utenti di simulare un contesto realistico in cu
 
 Come si può notare dai dati aggregati per lo Scenario S1 (Tabella~\ref{tab:6-s1-1}), il tasso di completamento (\textit{Success Rate}) si è attestato al 100,00\% per entrambe le versioni del sistema. L'analisi dei dati globali aggregati per questo scenario complesso restituisce un quadro inequivocabile dell'impatto positivo della riprogettazione. Pur mantenendo un tasso di completamento (\textit{Success Rate}) invariato al 100,00\% in entrambe le varianti, la versione post-riprogettazione (B) ha generato un sensibile abbattimento del 54,84\% nella media degli errori, passata da 2,21 a 1,00. Contestualmente, si registra una decisa contrazione del 41,82\% nella mediana dei click (da 55 a 32) e una riduzione del 14,86\% nella mediana del tempo di esecuzione (da 4:36 a 3:55). Risulta particolarmente indicativa anche la diminuzione della difficoltà percepita, che cala del 36,36\%, passando da 3,67 a 2,33.
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Versione A, Versione B},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.4,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+				(Versione A,3.67)
+				(Versione B,2.33)
+			};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per S1.}
+	\label{fig:difficolta-s1-generale}
+\end{figure}
+
 \begin{table}[H]
 	\centering
 	\small
@@ -57,6 +90,49 @@ Nel gruppo che ha utilizzato prima la versione A e poi la versione B, il primo a
 Il risultato più interessante emerge però dal gruppo che ha utilizzato le interfacce nell'ordine B--A. Gli utenti hanno impiegato inizialmente 3:47 per completare lo scenario nella versione riprogettata, apprendendo così la sequenza corretta delle operazioni. Una volta acquisita questa conoscenza, sono riusciti a completare lo stesso compito nella versione originale in soli 2:35.
 
 Questo risultato suggerisce un forte effetto di \textit{transfer cognitivo}: la maggiore chiarezza della versione B ha aiutato gli utenti a costruire un modello mentale efficace del flusso di lavoro. Grazie a questa comprensione preliminare, sono stati in grado di orientarsi più facilmente anche nella versione originale, superandone le criticità e completando il compito in tempi molto inferiori rispetto agli utenti che avevano iniziato direttamente dalla versione A.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=15pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Ordine A-B, Ordine B-A},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+				(Ordine A-B,3.67)
+				(Ordine B-A,3.67)
+			};
+			\addplot+[
+				ybar,
+				fill=blue!30,
+				draw=black
+			] coordinates {
+				(Ordine A-B,2.11)
+				(Ordine B-A,2.67)
+			};
+			\legend{Versione A, Versione B}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per S1 in base all'ordine di esecuzione.}
+	\label{fig:difficolta-s1-ordine-confronto}
+\end{figure}
 
 \begin{table}[H]
 	\centering
