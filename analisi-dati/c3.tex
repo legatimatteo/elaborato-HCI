@@ -1,0 +1,70 @@
+\subsubsection{Compito C3: Pianificare un esame}
+
+Il compito C3 richiedeva all'utente di pianificare un nuovo esame denominato "Architettura" con data 22/09/2026, associando un'attività specifica ("Riassumere il primo capitolo") e collegando al piano di studio il documento "Appunti\_Lezione.pdf" caricato nel compito precedente. L'obiettivo era valutare l'usabilità del sistema di organizzazione dello studio, con particolare attenzione ai percorsi di navigazione verso la sezione dedicata agli esami e all'intuitività dell'interfaccia per la gestione dei task e dei materiali allegati.
+
+\paragraph{Analisi delle prestazioni generali}
+
+Come si può notare dai dati aggregati per il compito C3 (Tabella~\ref{tab:6-c3-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. La versione post-riprogettazione (B) evidenzia miglioramenti su tutte le metriche considerate: la media degli errori si riduce del 57,14\% (da 0,93 a 0,40) e la mediana dei click diminuisce del 34,78\% (da 23 a 15). Si osserva inoltre una riduzione del 21,05\% nel tempo mediano di esecuzione e un calo del 29,27\% nella difficoltà percepita dagli utenti.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Metriche prestazionali globali aggregate per il compito C3.}
+	\label{tab:6-c3-1}
+	\begin{tabular}{|l|c|c|c|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
+		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
+		Media Errori     & 0,93                            & 0,40                                       & -57,14\%            \\ \hline
+		Mediana Tempo    & 1:54                            & 1:30                                       & -21,05\%            \\ \hline
+		Mediana Click    & 23                              & 15                                         & -34,78\%            \\ \hline
+		Media Difficoltà & 2,73                            & 1,93                                       & -29,27\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+La riduzione dei tempi, dei click e del tasso di errore indica che il redesign ha migliorato la navigabilità del sistema e la visibilità della sezione dedicata agli esami. La riorganizzazione dell’interfaccia e la semplificazione dei percorsi di accesso hanno consentito una maggiore immediatezza nell’esecuzione del compito e una riduzione del carico cognitivo.
+
+\paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
+
+I risultati quantitativi trovano riscontro nelle osservazioni qualitative e nei commenti raccolti tramite il protocollo \textit{thinking aloud}. Per la versione originale (A), sono emerse criticità ricorrenti:
+
+\begin{itemize}
+	\item \textbf{Disorientamento e terminologia poco chiara}: la navigazione è risultata difficoltosa a causa dell’uso dell’etichetta "StudyFlow AI" per la sezione dedicata agli esami. Tale denominazione è stata frequentemente percepita come poco rappresentativa della funzionalità, generando incertezza nell’individuazione della sezione corretta.
+
+	\item \textbf{Architettura dell’informazione poco coerente}: l’interfaccia è stata descritta come poco lineare, con molteplici modi per eseguire le stesse operazioni. In particolare, la necessità di passare dalla dashboard principale per creare un nuovo esame è stata percepita come un passaggio non necessario, portando in alcuni casi all’utilizzo della dashboard come punto di accesso alternativo.
+
+	\item \textbf{Scarsa visibilità dei controlli}: anche la funzione di associazione dei materiali di studio ha presentato difficoltà di individuazione, risultando poco evidente e non immediatamente accessibile.
+\end{itemize}
+
+Per la versione post-riprogettazione (B), i risultati indicano un miglioramento generale dell’esperienza, pur con alcuni margini residui di ottimizzazione:
+
+\begin{itemize}
+	\item \textbf{Maggiore chiarezza della navigazione}: l’interfaccia è stata percepita come più semplice e coerente. L’accesso diretto alla sezione "Esami" ha ridotto le difficoltà di individuazione della funzionalità rispetto alla versione precedente.
+
+	\item \textbf{Affinamenti necessari nei micro-flussi}: nonostante il miglioramento complessivo, alcuni utenti hanno segnalato incertezze nella gestione delle attività secondarie. In particolare, l’uso di un’icona a freccia per la rimozione di un task è stato talvolta ritenuto poco intuitivo.
+\end{itemize}
+
+\paragraph{Valutazione dell'effetto di apprendimento}
+
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c3-2}), emergono dinamiche coerenti con l’influenza predominante della struttura dell’interfaccia rispetto all’esperienza dell’utente.
+
+Nel gruppo A--B, il tempo mediano di esecuzione passa da 1:53 (versione A) a 1:27 (versione B), con una riduzione del 23,01\%.
+
+Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B in 1:46, mentre nella successiva interazione con la versione A il tempo mediano aumenta fino a 2:02. Questo risultato suggerisce che l’esperienza maturata con la versione più ottimizzata non si trasferisce in modo efficace alla versione originale, le cui criticità strutturali continuano a incidere in maniera significativa sulle prestazioni, indipendentemente dalla familiarità con il task.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c3-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 1:53                                       & 1:27                                       & -23,01\%            \\ \hline
+		Ordine B--A                   & 2:02                                       & 1:46                                       & -12,70\%            \\ \hline
+	\end{tabular}
+\end{table}
