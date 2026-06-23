@@ -1,65 +1,7 @@
-\subsection{Analisi dei singoli compiti}
+\subsection{Analisi dei compiti e degli scenari}
 
 In questa sezione vengono analizzati nel dettaglio i singoli compiti e gli scenari dell'esperimento con gli utenti. Ciascun compito viene valutato sia a livello generale, sia dividendo i dati in base all'ordine di esecuzione (A-B e B-A) per osservare l'eventuale effetto di apprendimento.
 
 Nella valutazione dei risultati, è stata data maggiore importanza alla riduzione degli errori e all'accuratezza dell'interazione rispetto al puro tempo di completamento. Di conseguenza, un leggero aumento dei tempi nella versione riprogettata viene considerato un compromesso accettabile per garantire una procedura più fluida, chiara e priva di blocchi per l'utente.
 
-\subsubsection{Compito C1: Registrazione e inserimento dati accademici}
-Il compito C1 prevedeva il completamento della procedura di registrazione alla piattaforma, comprensiva dell'inserimento delle credenziali di accesso e dei dati accademici (Università, Dipartimento e Corso di studi). L'obiettivo di questo compito era valutare l'usabilità del form multi-step, verificando l'effettiva riduzione degli errori sistematici riscontrati nella versione originale, criticità considerata inaccettabile per una fase delicata come l'autenticazione iniziale.
-
-\paragraph{Analisi delle prestazioni generali}
-Come si evince dalla Tabella~\ref{tab:6-2}, il tasso di completamento (Success Rate) si è attestato al 100\% per entrambe le versioni del sistema. I dati rilevano un abbattimento dell'80,00\% nella media degli errori e una contrazione della mediana dei click (-15,79\%) a favore della versione riprogettata. Di contro, si osserva un incremento del 14,29\% nella mediana del tempo di esecuzione per la versione B.
-
-\begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Metriche prestazionali globali aggregate per il compito C1.}
-	\label{tab:6-2}
-	\begin{tabular}{|l|c|c|c|}
-		\hline
-		\rowcolor{gray!30}
-		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
-		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
-		Media Errori     & 1,00                            & 0,20                                       & -80,00\%            \\ \hline
-		Mediana Tempo    & 1:10.00                         & 1:20.00                                    & 14,29\%             \\ \hline
-		Mediana Click    & 19                              & 16                                         & -15,79\%            \\ \hline
-		Media Difficoltà & 1,33                            & 1,20                                       & -10,00\%            \\ \hline
-	\end{tabular}
-\end{table}
-
-La significativa riduzione del numero medio di errori e di click complessivi trova giustificazione nella riorganizzazione strutturale dell'interfaccia di input. L'introduzione della validazione e di indicatori chiari di avanzamento ha permesso di prevenire gli errori di inserimento tipici della versione originale. L'aumento del tempo mediano di completamento nella versione riprogettata è direttamente riconducibile alla struttura guidata a step e all'inserimento di una schermata di riepilogo finale. Tale scelta progettuale privilegia deliberatamente l'accuratezza dei dati inseriti rispetto alla rapidità di esecuzione, aumentando le probabilità di esiti positivi durante la compilazione del form e limitando la necessità di correzioni successive.
-
-\paragraph{Valutazione dell'effetto di apprendimento}
-Analizzando i dati in base all'ordine di esecuzione, emergono variazioni significative nei tempi di completamento (Figura~\ref{fig:6-8}). Per il gruppo sottoposto all'ordine A-B, si osserva un tempo mediano maggiore nella versione originale (126 secondi), che scende a 78 secondi durante l'utilizzo della versione B.
-
-Nel gruppo associato all'ordine B-A, l'esperienza pregressa maturata sulla versione riprogettata ha abbattuto il tempo necessario per completare il medesimo compito sulla versione originale (52 secondi). Questo risultato evidenzia un trasferimento positivo della conoscenza delle operazioni richieste, che ha parzialmente compensato i limiti strutturali e la mancanza di feedback della variante originale.
-
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-				ybar,
-				bar width=15pt,
-				width=0.9\textwidth,
-				height=7cm,
-				symbolic x coords={Ordine A-B, Ordine B-A},
-				xtick=data,
-				x tick label style={font=\small},
-				ylabel={Mediana Tempo (secondi)},
-				ymin=0, ymax=140,
-				ymajorgrids=true,
-				grid style={dashed, gray!30},
-				enlarge x limits=0.5,
-				legend style={at={(0.5,-0.15)}, anchor=north, legend columns=-1, font=\small},
-				nodes near coords,
-				every node near coord/.style={font=\small, color=black},
-			]
-			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Ordine A-B,126) (Ordine B-A,52)};
-			\addplot+[ybar, fill=blue!30, draw=black] coordinates {(Ordine A-B,78) (Ordine B-A,82)};
-			\legend{Versione A, Versione B}
-		\end{axis}
-	\end{tikzpicture}
-	\caption{Confronto dei tempi mediani (in secondi) per il compito C1 in base all'ordine.}
-	\label{fig:6-8}
-\end{figure}
+\input{analisi-dati/c1.tex}
