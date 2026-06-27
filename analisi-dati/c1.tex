@@ -87,6 +87,23 @@ Nel gruppo A--B, il tempo mediano di esecuzione passa da 2:06 (versione A) a 1:1
 
 Nel gruppo B--A, il tempo mediano iniziale sulla versione B è pari a 1:22, mentre nella successiva esecuzione sulla versione A si osserva un valore pari a 0:52,5. Questo andamento suggerisce la presenza di un effetto di familiarizzazione con i dati richiesti (e.g. informazioni anagrafiche e accademiche), che consente una compilazione più rapida del form non strutturato. Tuttavia, la struttura guidata della versione B introduce un vincolo sequenziale che può aumentare il tempo di interazione pur riducendo gli errori.
 
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c1-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 2:06                                       & 1:18                                       & -38,10\%            \\ \hline
+		Ordine B--A                   & 0:52,5                                     & 1:22                                       & +56,19\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+Questo effetto si riflette anche sulle valutazioni della difficoltà percepita (Figura~\ref{fig:6-c1-2}). Nel gruppo che ha seguito l'ordine A--B, l'impatto iniziale con i difetti della versione originale (A) si traduce nel punteggio di difficoltà più alto di tutto il test (1,56); la fatica poi cala quando gli utenti passano alla versione riprogettata (1,33). Nel gruppo B--A, invece, si nota un dato molto interessante: chi inizia con la versione guidata (B) trova il compito facilissimo, dando il punteggio minimo di difficoltà (1,00). La cosa sorprendente è che questo valore resta identico (1,00) anche quando questo gruppo passa alla vecchia versione A. Questo dimostra che aver usato prima la versione B ha aiutato gli utenti a capire al volo quali dati servivano, permettendo loro di completare il form senza risentire dei bug visivi e dei problemi di lingua della versione A.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -129,18 +146,3 @@ Nel gruppo B--A, il tempo mediano iniziale sulla versione B è pari a 1:22, ment
 	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C1 in base all'ordine di esecuzione.}
 	\label{fig:6-c1-2}
 \end{figure}
-
-\begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
-	\label{tab:6-c1-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
-		\hline
-		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 2:06                                       & 1:18                                       & -38,10\%            \\ \hline
-		Ordine B--A                   & 0:52,5                                     & 1:22                                       & +56,19\%            \\ \hline
-	\end{tabular}
-\end{table}

@@ -83,6 +83,23 @@ Nel gruppo A--B, il tempo mediano passa da 0:40 nella versione A a 0:30 nella ve
 
 Nel gruppo B--A, l’esperienza iniziale sulla versione B sembra favorire una maggiore familiarità con le logiche generali della piattaforma, consentendo di ridurre l’impatto delle criticità della versione originale. In particolare, la conoscenza preventiva della struttura dei menu e della posizione dei controlli principali contribuisce a rendere l’esecuzione del task più rapida rispetto alla fase iniziale di esplorazione.
 
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c6-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 0:40                                       & 0:30                                       & -25,00\%            \\ \hline
+		Ordine B--A                   & 0:32,5                                     & 0:41                                       & +26,15\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+I dati sulla difficoltà percepita (Figura~\ref{fig:6-c6-2}) rivelano un andamento particolare. Nel gruppo A--B c'è il solito miglioramento: si parte da un punteggio di 1,67 con la vecchia versione (A) e si scende a 1,33 con la versione B, confermando che la nuova interfaccia è più comoda. Nel gruppo B--A, invece, succede una cosa curiosa e al contrario rispetto agli altri compiti: chi usa prima la versione B dà un voto di 1,33, ma quando passa alla vecchia versione A la difficoltà cala addirittura a 1,17. Questo accade perché l'aver usato prima la versione B ha fatto memorizzare perfettamente agli utenti dove si trovava l'area dei commenti; una volta capita la posizione, completare il compito sulla versione A è stato così rapido che gli utenti lo hanno percepito come ancora più facile. Inoltre, il voto della versione B resta fisso a 1,33 in tutti e due i gruppi, segno che il giudizio sul nuovo sistema è solido e non cambia in base all'ordine del test.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -125,18 +142,3 @@ Nel gruppo B--A, l’esperienza iniziale sulla versione B sembra favorire una ma
 	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C6 in base all'ordine di esecuzione.}
 	\label{fig:6-c6-2}
 \end{figure}
-
-\begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
-	\label{tab:6-c6-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
-		\hline
-		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 0:40                                       & 0:30                                       & -25,00\%            \\ \hline
-		Ordine B--A                   & 0:32,5                                     & 0:41                                       & +26,15\%            \\ \hline
-	\end{tabular}
-\end{table}

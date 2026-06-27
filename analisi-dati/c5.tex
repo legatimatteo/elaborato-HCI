@@ -85,6 +85,23 @@ Nel gruppo A--B, il tempo mediano passa da 1:39 nella versione A a 0:41 nella ve
 
 Nel gruppo B--A, gli utenti completano inizialmente il task sulla versione B in 0:55, mentre nella successiva esecuzione sulla versione A il tempo mediano sale a 1:04. Questo andamento suggerisce che, sebbene l’esperienza pregressa sulla versione ottimizzata favorisca una maggiore comprensione del task, le limitazioni strutturali della versione originale (in particolare ambiguità dei comandi e bassa visibilità delle azioni principali) continuano a rappresentare un fattore di rallentamento significativo.
 
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c5-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 1:39                                       & 0:41                                       & -58,59\%            \\ \hline
+		Ordine B--A                   & 1:04                                       & 0:55                                       & -14,06\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+Il divario tra le due interfacce è evidente anche nel grafico sulla difficoltà (Figura~\ref{fig:6-c5-2}), dove la versione B si conferma la migliore per entrambi i gruppi. Nel gruppo B--A si vede lo stacco più evidente: chi inizia con la nuova versione dà un punteggio di 1,83, ma quando passa alla vecchia versione (A) la difficoltà sale a 2,67. Questo succede perché, anche se gli utenti sanno già cosa fare, l'ambiguità tra il salvataggio e il download e la scarsa visibilità della Community della versione A rimangono un ostacolo fastidioso. Nel gruppo A--B invece, la difficoltà cala da 2,22 a 1,78: aver affrontato prima la versione originale ha fatto capire agli utenti come funzionava la ricerca del file, rendendo poi l'uso della versione B ancora più leggero e immediato.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -127,18 +144,3 @@ Nel gruppo B--A, gli utenti completano inizialmente il task sulla versione B in 
 	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C5 in base all'ordine di esecuzione.}
 	\label{fig:6-c5-2}
 \end{figure}
-
-\begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
-	\label{tab:6-c5-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
-		\hline
-		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 1:39                                       & 0:41                                       & -58,59\%            \\ \hline
-		Ordine B--A                   & 1:04                                       & 0:55                                       & -14,06\%            \\ \hline
-	\end{tabular}
-\end{table}

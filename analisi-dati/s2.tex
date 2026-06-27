@@ -82,6 +82,23 @@ Il risultato più interessante emerge però dal gruppo che ha utilizzato le inte
 
 Questo risultato suggerisce un forte effetto di apprendimento. Gli utenti che hanno iniziato con la versione B hanno sviluppato un modello mentale più chiaro delle operazioni da svolgere e sono quindi riusciti a orientarsi meglio anche nella versione originale. Di conseguenza, hanno impiegato circa la metà del tempo rispetto agli utenti che hanno affrontato la versione A senza alcuna esperienza precedente (2:46 contro 5:38).
 
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-s2-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 5:38                                       & 2:42                                       & -52,07\%            \\ \hline
+		Ordine B--A                   & 2:46                                       & 2:20                                       & -15,66\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+L'effetto dell'apprendimento si nota chiaramente anche nelle valutazioni di difficoltà (Figura~\ref{fig:6-s2-2}). Come prima cosa, la versione B si conferma solida e prende lo stesso identico voto (2,00) in entrambi i gruppi, a dimostrazione che il nuovo flusso per gestire le cartelle e le funzioni IA è facile da capire per tutti. La vera differenza si vede sulla vecchia versione A, dove nel gruppo B--A la difficoltà schizza addirittura a 4,00. Questo voto dimostra che, dopo aver provato un sistema fluido e pulito, l'impatto con i comandi nascosti e i blocchi della versione originale diventa insopportabile, anche se si conosce già la sequenza dei passaggi. Nel gruppo A--B, invece, la versione originale ottiene un punteggio pari a 3,00. Sebbene il valore indichi una difficoltà percepita non trascurabile, risulta comunque inferiore a quello osservato nel gruppo B--A. Questo suggerisce che l'esperienza con la versione riprogettata abbia reso più evidenti le limitazioni dell'interfaccia originale, portando gli utenti a valutarla in modo più severo quando la utilizzano successivamente.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -124,18 +141,3 @@ Questo risultato suggerisce un forte effetto di apprendimento. Gli utenti che ha
 	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per S2 in base all'ordine di esecuzione.}
 	\label{fig:6-s2-2}
 \end{figure}
-
-\begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
-	\label{tab:6-s2-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
-		\hline
-		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 5:38                                       & 2:42                                       & -52,07\%            \\ \hline
-		Ordine B--A                   & 2:46                                       & 2:20                                       & -15,66\%            \\ \hline
-	\end{tabular}
-\end{table}

@@ -87,6 +87,23 @@ Nel gruppo A--B, il tempo mediano di esecuzione passa da 1:53 (versione A) a 1:2
 
 Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B in 1:46,5, mentre nella successiva interazione con la versione A il tempo mediano aumenta fino a 2:02. Questo risultato suggerisce che l’esperienza maturata con la versione più ottimizzata non si trasferisce in modo efficace alla versione originale, le cui criticità strutturali continuano a incidere in maniera significativa sulle prestazioni, indipendentemente dalla familiarità con il task.
 
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c3-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 1:53                                       & 1:27                                       & -23,01\%            \\ \hline
+		Ordine B--A                   & 2:02                                       & 1:46,5                                     & -12,70\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+Le stesse criticità si riflettono sulle valutazioni di difficoltà riassunte nella Figura~\ref{fig:6-c3-2}. Nel gruppo B--A si nota lo stacco più grande: gli utenti che iniziano con la versione B danno un punteggio di 2,00, ma quando passano alla vecchia versione (A) la difficoltà schizza a 3,50. Questo valore dimostra che, dopo aver utilizzato la versione chiara, l'impatto con l'etichetta "StudyFlow AI" e i passaggi forzati dalla dashboard della versione A diventa ancora più frustrante. Nel gruppo A--B, invece, la variazione è stata inferiore alle aspettative (da 2,22 a 1,89), simbolo che aver affrontato prima la versione complicata ha aiutato gli utenti a capire come funzionava la piattaforma, rendendo poi il passaggio alla versione B più morbido, anche se i piccoli difetti rimasti (come la freccia poco intuitiva per cancellare i task) hanno impedito al punteggio di scendere ancora di più.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -129,18 +146,3 @@ Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B 
 	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C3 in base all'ordine di esecuzione.}
 	\label{fig:6-c3-2}
 \end{figure}
-
-\begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
-	\label{tab:6-c3-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
-		\hline
-		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 1:53                                       & 1:27                                       & -23,01\%            \\ \hline
-		Ordine B--A                   & 2:02                                       & 1:46,5                                     & -12,70\%            \\ \hline
-	\end{tabular}
-\end{table}

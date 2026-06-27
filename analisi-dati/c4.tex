@@ -83,6 +83,23 @@ Nel gruppo A-B, il tempo mediano passa da 0:48 (versione A) a 0:45 (versione B),
 
 Nel gruppo B-A, gli utenti impiegano inizialmente 0:51,5 nella versione B, per poi completare la versione A in 0:41,5. Tale andamento suggerisce che, una volta acquisita familiarità con la posizione del file e con le contesto operativo, l’interazione nella versione originale diventa più rapida, sebbene meno guidata. Il fenomeno appare quindi più legato alla memoria spaziale e alla ripetizione del task che a un reale trasferimento di modello interattivo.
 
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c4-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 0:48                                       & 0:45                                       & -6,25\%             \\ \hline
+		Ordine B--A                   & 0:41,5                                     & 0:51,5                                     & +24,10\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+In linea con i tempi registrati, anche i punteggi di difficoltà in Figura~\ref{fig:6-c4-2} si mantengono stabili, dove i voti sono tutti molto vicini e, a differenza degli altri compiti, la versione B non risulta mai migliore della A. Nel gruppo A--B si osserva un leggero aumento della difficoltà percepita, che passa da 1,78 (versione A) a 1,89 (versione B). Questo suggerisce che alcune modifiche introdotte nella riprogettazione, come la necessità di reinserire manualmente il nome del file in un form inizialmente vuoto, possano aver reso il compito leggermente meno immediato. Nel gruppo B--A, invece, il punteggio rimane stabile a 1,83 per entrambe le versioni. Questo potrebbe indicare che il primo utilizzo della versione B ha influenzato la percezione del compito, mentre il successivo passaggio alla versione A non ha prodotto variazioni apprezzabili, probabilmente perché gli utenti avevano già acquisito familiarità con la procedura e con i passaggi necessari per completarla.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -125,18 +142,3 @@ Nel gruppo B-A, gli utenti impiegano inizialmente 0:51,5 nella versione B, per p
 	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C4 in base all'ordine di esecuzione.}
 	\label{fig:6-c4-2}
 \end{figure}
-
-\begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
-	\label{tab:6-c4-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
-		\hline
-		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 0:48                                       & 0:45                                       & -6,25\%             \\ \hline
-		Ordine B--A                   & 0:41,5                                     & 0:51,5                                     & +24,10\%            \\ \hline
-	\end{tabular}
-\end{table}

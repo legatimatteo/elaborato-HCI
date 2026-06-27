@@ -87,6 +87,23 @@ Nel gruppo A-B, il tempo mediano di esecuzione diminuisce da 2:48 (versione A) a
 
 Nel gruppo B-A, il tempo mediano iniziale sulla versione B è pari a 1:56,5, mentre nella successiva esecuzione sulla versione A si osserva un valore pari a 1:38. Questo andamento suggerisce la presenza di un possibile effetto di apprendimento, tuttavia non consente di identificare un transfer sistematico e unidirezionale tra le due interfacce. In particolare, l’esperienza sulla versione B sembra aver fornito alcuni schemi operativi utili, ma non sufficienti a neutralizzare completamente le inefficienze strutturali della versione originale.
 
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c2-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 2:48                                       & 2:00                                       & -28,57\%            \\ \hline
+		Ordine B--A                   & 1:38                                       & 1:56,5                                     & +18,88\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+I limiti dell'interfaccia originale emergono chiaramente anche nei dati sulla difficoltà percepita (Figura~\ref{fig:6-c2-2}). Nel gruppo B--A, infatti, si nota un balzo evidente: chi passa dalla nuova interfaccia a quella vecchia trova il compito molto più faticoso, e il punteggio sale fino a raggiungere una media di 3,00. Questo conferma che i difetti della versione originale diventano ancora più fastidiosi per chi si è già abituato alla seconda versione. Nel gruppo A--B, invece, i voti restano molto simili (1,44 contro 1,56). In questo caso, aver usato prima la versione difficile ha aiutato gli utenti a capire come muoversi, ma i piccoli difetti rimasti nella versione B (come il nome del pulsante "Nuovo" che creava confusione) hanno impedito al punteggio di difficoltà di scendere.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -129,18 +146,3 @@ Nel gruppo B-A, il tempo mediano iniziale sulla versione B è pari a 1:56,5, men
 	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C2 in base all'ordine di esecuzione.}
 	\label{fig:6-c2-2}
 \end{figure}
-
-\begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
-	\label{tab:6-c2-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
-		\hline
-		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 2:48                                       & 2:00                                       & -28,57\%            \\ \hline
-		Ordine B--A                   & 1:38                                       & 1:56,5                                     & +18,88\%            \\ \hline
-	\end{tabular}
-\end{table}
