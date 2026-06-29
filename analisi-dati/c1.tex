@@ -1,0 +1,146 @@
+\subsubsection{Compito C1: Registrazione alla piattaforma}
+
+Il compito C1 prevedeva il completamento della procedura di registrazione alla piattaforma, comprensiva dell’inserimento delle credenziali di accesso e dei dati accademici (Università, Dipartimento e Corso di studi). L’obiettivo era valutare l’usabilità del form di registrazione, verificando l’efficacia della riprogettazione nel ridurre gli errori sistematici riscontrati nella versione originale attraverso l’introduzione di un form multi-step guidato (wizard) nella versione B.
+
+\paragraph{Analisi delle prestazioni generali}
+
+Come si può notare dai dati aggregati per il compito C1 (Tabella~\ref{tab:6-c1-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. Si osserva una riduzione dell’80,00\% nella media degli errori (da 1,00 a 0,20) e una diminuzione del 15,79\% nella mediana dei click (da 19 a 16) a favore della versione riprogettata. Al contrario, la mediana del tempo di esecuzione aumenta del 14,29\% (da 1:10 a 1:20), mentre la difficoltà percepita si riduce del 10,00\%.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Versione A, Versione B},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.4,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Versione A,1.33)
+					(Versione B,1.20)
+				};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C1.}
+	\label{fig:6-c1-1}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Metriche prestazionali globali aggregate per il compito C1.}
+	\label{tab:6-c1-1}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
+		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
+		Media Errori     & 1,00                            & 0,20                                       & -80,00\%            \\ \hline
+		Mediana Tempo    & 1:10                            & 1:20                                       & +14,29\%            \\ \hline
+		Mediana Click    & 19                              & 16                                         & -15,79\%            \\ \hline
+		Media Difficoltà & 1,33                            & 1,20                                       & -10,00\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+L’aumento del tempo mediano nella versione B può essere interpretato come effetto della struttura wizard, che introduce una maggiore granularità nel processo di inserimento dei dati. Tale struttura, pur comportando una lieve estensione dei tempi di interazione, contribuisce a una maggiore accuratezza, come evidenziato dalla significativa riduzione del tasso di errore.
+
+\paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
+
+I risultati quantitativi trovano riscontro nelle osservazioni raccolte durante le sessioni di test e nei commenti espressi dagli utenti tramite protocollo \textit{thinking aloud}. Per la versione originale (A), sono emerse criticità ricorrenti:
+
+\begin{itemize}
+	\item \textbf{Bug visivi e perdita del contesto}: diversi utenti hanno segnalato un effetto di refresh della pagina durante la compilazione, che ha causato perdita del focus e omissione di alcuni campi obbligatori.
+
+	\item \textbf{Problemi di navigazione e accessibilità}: l’assenza di un collegamento esplicito alla registrazione nella schermata di login (es. "non ho un account") ha generato difficoltà nel distinguere i flussi di accesso e registrazione. Inoltre, è stata riportata la mancanza della possibilità di visualizzare la password in chiaro durante l’inserimento.
+
+	\item \textbf{Incoerenza linguistica}: la presenza di etichette in lingua inglese all’interno del form ha ridotto la coerenza complessiva dell’interfaccia, generando confusione in alcuni utenti.
+\end{itemize}
+
+Per la versione post-riprogettazione (B), le osservazioni indicano un miglioramento complessivo dell’esperienza:
+
+\begin{itemize}
+	\item \textbf{Maggiore linearità del flusso}: il form strutturato in step progressivi è stato percepito come più ordinato e guidato rispetto alla versione precedente.
+
+	\item \textbf{Riposizionamento delle aspettative di usabilità}: alcuni utenti hanno evidenziato come il miglioramento introdotto abbia aumentato le aspettative complessive sull’interfaccia, rendendo più evidenti le criticità della versione precedente in un confronto diretto.
+\end{itemize}
+
+\paragraph{Valutazione dell'effetto di apprendimento}
+
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c1-2}), emergono dinamiche differenti tra i gruppi.
+
+Nel gruppo A--B, il tempo mediano di esecuzione passa da 2:06 (versione A) a 1:18 (versione B), con una riduzione del 38,10\%.
+
+Nel gruppo B--A, il tempo mediano iniziale sulla versione B è pari a 1:22, mentre nella successiva esecuzione sulla versione A si osserva un valore pari a 0:52,5. Questo andamento suggerisce la presenza di un effetto di familiarizzazione con i dati richiesti (e.g. informazioni anagrafiche e accademiche), che consente una compilazione più rapida del form non strutturato. Tuttavia, la struttura guidata della versione B introduce un vincolo sequenziale che può aumentare il tempo di interazione pur riducendo gli errori.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c1-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 2:06                                       & 1:18                                       & -38,10\%            \\ \hline
+		Ordine B--A                   & 0:52,5                                     & 1:22                                       & -35,98\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+Questo effetto si riflette anche sulle valutazioni della difficoltà percepita (Figura~\ref{fig:6-c1-2}). Nel gruppo che ha seguito l'ordine A--B, l'impatto iniziale con i difetti della versione originale (A) si traduce nel punteggio di difficoltà più alto di tutto il test (1,56); la fatica poi cala quando gli utenti passano alla versione riprogettata (1,33). Nel gruppo B--A, invece, si nota un dato molto interessante: chi inizia con la versione guidata (B) trova il compito facilissimo, dando il punteggio minimo di difficoltà (1,00). La cosa sorprendente è che questo valore resta identico (1,00) anche quando questo gruppo passa alla vecchia versione A. Un'interpretazione più rigorosa di questo fenomeno suggerisce che l'aver appreso preventivamente quali informazioni inserire grazie alla Versione B abbia ridotto significativamente il carico cognitivo intrinseco del task. Di conseguenza, gli utenti hanno potuto dedicare maggiori risorse attentive alla gestione del carico cognitivo estraneo introdotto dalla Versione A (bug visivi, refresh della pagina e incoerenze linguistiche), mantenendo pressoché invariata la difficoltà percepita.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=15pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Ordine A-B, Ordine B-A},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
+				nodes near coords,
+				every node near coord/.append style={font=\scriptsize, color=black},
+			]
+			\addplot+[
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Ordine A-B,1.56)
+					(Ordine B-A,1.00)
+				};
+			\addplot+[
+				fill=blue!30,
+				draw=black
+			] coordinates {
+					(Ordine A-B,1.33)
+					(Ordine B-A,1.00)
+				};
+			\legend{Versione A, Versione B}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C1 in base all'ordine di esecuzione.}
+	\label{fig:6-c1-2}
+\end{figure}

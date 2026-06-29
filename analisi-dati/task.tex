@@ -1,0 +1,29 @@
+\subsection{Analisi dei compiti e degli scenari}
+
+In questa sezione vengono analizzati nel dettaglio i singoli compiti e gli scenari dell’esperimento condotto con gli utenti. Ciascun compito è valutato sia a livello aggregato sia in funzione dell’ordine di esecuzione (A-B e B-A), al fine di evidenziare eventuali effetti di apprendimento.
+
+Nell’interpretazione dei risultati, è stata attribuita priorità alla riduzione degli errori e all’accuratezza dell’interazione rispetto al tempo di completamento. In quest’ottica, un lieve incremento dei tempi nella versione riprogettata viene considerato un compromesso accettabile, a fronte di un’interazione più stabile, chiara e priva di blocchi.
+
+Ai fini dell’analisi quantitativa, la scelta dei descrittori statistici è stata guidata dalla natura delle metriche raccolte, nonché dalla variabilità intrinseca del campione. Poiché gli utenti possono presentare differenze significative in termini di esperienza digitale, modalità di interazione e velocità di esecuzione, le distribuzioni relative al \textbf{tempo di completamento} e al \textbf{numero di click} risultano tipicamente asimmetriche e soggette alla presenza di valori estremi (\textit{outliers}). Tali valori possono influenzare in modo significativo la media aritmetica, rendendola meno rappresentativa della tendenza centrale. Per questo motivo, per queste due metriche è stata adottata la \textbf{mediana}, in quanto misura robusta e meno sensibile alle code della distribuzione, più adatta a descrivere il comportamento tipico degli utenti.
+
+Al contrario, la \textbf{media aritmetica} è stata utilizzata per il \textbf{numero di errori} e per la \textbf{difficoltà percepita}. Nel caso degli errori, la media consente di sintetizzare l’incidenza complessiva delle criticità di interazione sull’intero campione, includendo anche eventuali pattern legati al design dell’interfaccia. Per quanto riguarda la difficoltà percepita, rilevata tramite scala Likert, la media dei punteggi fornisce un indicatore sintetico del carico complessivo sperimentato dagli utenti.
+
+Infine, l’utilizzo delle \textbf{variazioni percentuali} tra la versione originale (A) e la versione riprogettata (B) consente di normalizzare i risultati e di quantificare in modo diretto l’impatto della fase di riprogettazione. Tale indicatore permette di confrontare in maniera uniforme l’efficacia delle modifiche progettuali tra i diversi compiti, traducendo le differenze osservate in un indice immediatamente interpretabile di miglioramento o regressione delle prestazioni.
+
+% Compiti
+\input{analisi-dati/c1.tex}
+
+\input{analisi-dati/c2.tex}
+
+\input{analisi-dati/c3.tex}
+
+\input{analisi-dati/c4.tex}
+
+\input{analisi-dati/c5.tex}
+
+\input{analisi-dati/c6.tex}
+
+% Scenari
+\input{analisi-dati/s1.tex}
+
+\input{analisi-dati/s2.tex}

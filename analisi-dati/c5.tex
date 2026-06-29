@@ -1,0 +1,144 @@
+\subsubsection{Compito C5: Salvataggio di un file della community}
+
+Il compito C5 richiedeva all’utente di accedere alla sezione ``Community'', ricercare i documenti relativi al corso di ``CyberSecurity'', salvare uno dei file proposti all’interno della propria area personale e verificarne la corretta archiviazione. L’obiettivo era valutare l’usabilità dell’ecosistema di condivisione pubblica, con particolare attenzione all’efficacia dei filtri di ricerca, alla visibilità dei contenuti e alla chiarezza semantica dell'azione di salvataggio.
+
+\paragraph{Analisi delle prestazioni generali}
+
+Come si può notare dai dati aggregati per il compito C5 (Tabella~\ref{tab:6-c5-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. L’analisi dei dati evidenzia un miglioramento marcato a favore della versione post-riprogettazione (B), la quale mostra una riduzione del 54,44\% nella mediana del tempo di esecuzione (da 1:30 a 0:41), una diminuzione del 57,14\% nella media degli errori (da 1,40 a 0,60), una contrazione del 23,08\% nella mediana dei click e una riduzione del 25,00\% della difficoltà percepita.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Versione A, Versione B},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.4,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Versione A,2.40)
+					(Versione B,1.80)
+				};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C5.}
+	\label{fig:6-c5-1}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Metriche prestazionali globali aggregate per il compito C5.}
+	\label{tab:6-c5-1}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
+		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
+		Media Errori     & 1,40                            & 0,60                                       & -57,14\%            \\ \hline
+		Mediana Tempo    & 1:30                            & 0:41                                       & -54,44\%            \\ \hline
+		Mediana Click    & 13                              & 10                                         & -23,08\%            \\ \hline
+		Media Difficoltà & 2,40                            & 1,80                                       & -25,00\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+La riduzione significativa dei tempi di completamento e degli errori indica un miglioramento sostanziale dell’efficienza complessiva del flusso di interazione. Il redesign ha ridotto le ambiguità operative e semplificato la sequenza di azioni necessarie per il salvataggio dei contenuti.
+
+\paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
+
+Le evidenze quantitative sono supportate dalle osservazioni raccolte durante le sessioni di test e dai protocolli \textit{thinking aloud}. Nella versione originale (A), sono emerse criticità ricorrenti:
+
+\begin{itemize}
+	\item \textbf{Ambiguità tra salvataggio e download}: gli utenti hanno frequentemente confuso l’azione di download locale con il salvataggio nella propria area personale, a causa di una distinzione semantica non sufficientemente esplicita tra i due comandi.
+
+	\item \textbf{Scarsa visibilità dei comandi}: diversi partecipanti hanno evidenziato difficoltà nell’individuare sia l’accesso alla sezione ``Community'' sia il comando di salvataggio dei file, segnalando una bassa visibilità degli elementi interattivi principali.
+
+	\item \textbf{Informazioni insufficienti nei risultati di ricerca}: la lista dei documenti non riportava in modo chiaro il contesto del corso di appartenenza, generando incertezza nella selezione dei file.
+\end{itemize}
+
+Per la versione post-riprogettazione (B), le osservazioni indicano un’interazione più fluida e coerente, con margini residui di miglioramento:
+
+\begin{itemize}
+	\item \textbf{Richiesta di accesso diretto al salvataggio}: alcuni utenti hanno suggerito l’introduzione di un’azione di salvataggio direttamente dalla lista dei risultati, senza necessità di aprire la preview del documento. Pur non compromettendo il task, tale passaggio è stato percepito come potenzialmente ottimizzabile.
+\end{itemize}
+
+\paragraph{Valutazione dell’effetto di apprendimento}
+
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c5-2}), emerge un impatto significativo della familiarità con il contesto di ricerca e con la struttura della sezione.
+
+Nel gruppo A--B, il tempo mediano passa da 1:39 nella versione A a 0:41 nella versione B, con una riduzione del 58,59\%, coerente con il miglioramento osservato nelle metriche aggregate.
+
+Nel gruppo B--A, gli utenti completano inizialmente il task sulla versione B in 0:55, mentre nella successiva esecuzione sulla versione A il tempo mediano sale a 1:04. Questo andamento suggerisce che, sebbene l’esperienza pregressa sulla versione ottimizzata favorisca una maggiore comprensione del task, le limitazioni strutturali della versione originale (in particolare ambiguità dei comandi e bassa visibilità delle azioni principali) continuano a rappresentare un fattore di rallentamento significativo.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c5-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 1:39                                       & 0:41                                       & -58,59\%            \\ \hline
+		Ordine B--A                   & 1:04                                       & 0:55                                       & +16,36\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+Il divario tra le due interfacce è evidente anche nel grafico sulla difficoltà (Figura~\ref{fig:6-c5-2}), dove la versione B si conferma la migliore per entrambi i gruppi. Nel gruppo B--A si vede lo stacco più evidente: chi inizia con la nuova versione dà un punteggio di 1,83, ma quando passa alla vecchia versione (A) la difficoltà sale a 2,67. Questo succede perché, anche se gli utenti sanno già cosa fare, l'ambiguità tra il salvataggio e il download e la scarsa visibilità della Community della versione A rimangono un ostacolo fastidioso. Nel gruppo A--B invece, la difficoltà cala da 2,22 a 1,78: aver affrontato prima la versione originale ha fatto capire agli utenti come funzionava la ricerca del file, rendendo poi l'uso della versione B ancora più leggero e immediato.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=15pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Ordine A-B, Ordine B-A},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
+				nodes near coords,
+				every node near coord/.append style={font=\scriptsize, color=black},
+			]
+			\addplot+[
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Ordine A-B,2.22)
+					(Ordine B-A,2.67)
+				};
+			\addplot+[
+				fill=blue!30,
+				draw=black
+			] coordinates {
+					(Ordine A-B,1.78)
+					(Ordine B-A,1.83)
+				};
+			\legend{Versione A, Versione B}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C5 in base all'ordine di esecuzione.}
+	\label{fig:6-c5-2}
+\end{figure}

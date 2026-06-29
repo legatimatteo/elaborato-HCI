@@ -1,0 +1,142 @@
+\subsubsection{Compito C4: Rinomina di un file}
+
+Il compito C4 richiedeva all’utente di rinominare il documento ``Appunti\_Lezione.pdf'', precedentemente caricato all’interno della cartella principale, assegnandogli il nuovo nome ``Riassunto Primo Semestre''. L’obiettivo era valutare l’usabilità e la visibilità dei pulsanti dedicati alla gestione e modifica dei file personali, con particolare attenzione al flusso di rinomina.
+
+\paragraph{Analisi delle prestazioni generali}
+
+Come si può notare dai dati aggregati per il compito C4 (Tabella~\ref{tab:6-c4-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. L’analisi dei dati evidenzia un quadro prestazionale sostanzialmente stabile, con la versione post-riprogettazione (B) che mostra miglioramenti contenuti ma consistenti: si osserva una riduzione della mediana dei click del 30,00\% (da 10 a 7), accompagnata da una lieve diminuzione della media degli errori (-11,11\%) e della mediana del tempo di esecuzione (-6,25\%).
+
+Di contro, la difficoltà percepita registra un lieve incremento (+3,70\%), passando da 1,80 a 1,87.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=20pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Versione A, Versione B},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.4,
+				nodes near coords,
+				every node near coord/.style={font=\small, color=black},
+			]
+			\addplot+[
+				ybar,
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Versione A,1.80)
+					(Versione B,1.87)
+				};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C4.}
+	\label{fig:6-c4-1}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Metriche prestazionali globali aggregate per il compito C4.}
+	\label{tab:6-c4-1}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
+		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
+		Media Errori     & 0,60                            & 0,53                                       & -11,11\%            \\ \hline
+		Mediana Tempo    & 0:48                            & 0:45                                       & -6,25\%             \\ \hline
+		Mediana Click    & 10                              & 7                                          & -30,00\%            \\ \hline
+		Media Difficoltà & 1,80                            & 1,87                                       & +3,70\%             \\ \hline
+	\end{tabular}
+\end{table}
+
+La riduzione del numero di click suggerisce una maggiore efficienza nell’accesso ai comandi contestuali. Tuttavia, l’aumento della difficoltà percepita indica la persistenza di alcuni attriti nell’interazione, legati principalmente alla comprensibilità del flusso di modifica.
+
+\paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
+
+L’incremento della difficoltà percepita, nonostante il miglioramento delle metriche di efficienza, trova riscontro nelle osservazioni raccolte. Nella versione riprogettata (B), l’ottimizzazione del percorso non sempre è risultata coerente con il modello mentale degli utenti. In particolare, sono emerse le seguenti criticità:
+
+\begin{itemize}
+	\item \textbf{Assenza di un’azione esplicita di rinomina}: diversi utenti si aspettavano la presenza di un comando dedicato ``Rinomina''. L’utilizzo di un comando più generico (es. ``Modifica'') ha introdotto incertezza sull’esito dell’azione.
+
+	\item \textbf{Mancanza di pre-compilazione del campo}: il campo di input si presentava vuoto al momento dell’apertura del form, senza evidenziare il nome corrente del file pronto per la modifica. Questa scelta ha violato le aspettative degli utenti, generando un immediato attrito cognitivo (\textit{Gulf of Execution}). I dati mostrano come il vantaggio derivante dalla riduzione dei click (da 10 a 7) venga compensato dallo sforzo necessario per reinserire manualmente il testo, determinando un lieve incremento della difficoltà percepita.
+
+	\item \textbf{Comportamento non immediato}: alcuni utenti hanno inizialmente tentato di modificare il nome direttamente dalla vista di anteprima del file, interpretando tale area come editabile. L’assenza di questa funzionalità ha generato passaggi a vuoto e ritorni alla schermata precedente.
+\end{itemize}
+
+Per la versione originale (A), le criticità risultano meno strutturali e principalmente legate alla visiblità dei menu contestuali. In particolare, alcuni utenti hanno avuto difficoltà nell’individuare le opzioni di gestione del file, con conseguente incremento del numero di interazioni necessarie.
+
+\paragraph{Valutazione dell’effetto di apprendimento}
+
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c4-2}), data la natura del task, caratterizzato da tempi di esecuzione generalmente inferiori al minuto, le differenze osservate tra gli ordini di esecuzione risultano principalmente riconducibili a fenomeni di familiarizzazione con la struttura delle cartelle e con la posizione del file.
+
+Nel gruppo A-B, il tempo mediano passa da 0:48 (versione A) a 0:45 (versione B), confermando il lieve miglioramento già osservato a livello aggregato (-6,25\%).
+
+Nel gruppo B-A, gli utenti impiegano inizialmente 0:51,5 nella versione B, per poi completare la versione A in 0:41,5. Tale andamento suggerisce che, una volta acquisita familiarità con la posizione del file e con le contesto operativo, l’interazione nella versione originale diventa più rapida, sebbene meno guidata. Il fenomeno appare quindi più legato alla memoria spaziale e alla ripetizione del task che a un reale trasferimento di modello interattivo.
+
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\label{tab:6-c4-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
+		Ordine A--B                   & 0:48                                       & 0:45                                       & -6,25\%             \\ \hline
+		Ordine B--A                   & 0:41,5                                     & 0:51,5                                     & -19,42\%            \\ \hline
+	\end{tabular}
+\end{table}
+
+In linea con i tempi registrati, anche i punteggi di difficoltà in Figura~\ref{fig:6-c4-2} si mantengono stabili, dove i voti sono tutti molto vicini e, a differenza degli altri compiti, la versione B non risulta mai migliore della A. Nel gruppo A--B si osserva un leggero aumento della difficoltà percepita, che passa da 1,78 (versione A) a 1,89 (versione B). Questo suggerisce che alcune modifiche introdotte nella riprogettazione, come la necessità di reinserire manualmente il nome del file in un form inizialmente vuoto, possano aver reso il compito leggermente meno immediato. Nel gruppo B--A, invece, il punteggio rimane stabile a 1,83 per entrambe le versioni. Questo potrebbe indicare che il primo utilizzo della versione B ha influenzato la percezione del compito, mentre il successivo passaggio alla versione A non ha prodotto variazioni apprezzabili, probabilmente perché gli utenti avevano già acquisito familiarità con la procedura e con i passaggi necessari per completarla.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				bar width=15pt,
+				width=0.85\textwidth,
+				height=5cm,
+				symbolic x coords={Ordine A-B, Ordine B-A},
+				xtick=data,
+				x tick label style={font=\small},
+				ylabel={Difficoltà percepita},
+				ymin=0, ymax=5,
+				ymajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge x limits=0.6,
+				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
+				nodes near coords,
+				every node near coord/.append style={font=\scriptsize, color=black},
+			]
+			\addplot+[
+				fill=blue!70,
+				draw=black
+			] coordinates {
+					(Ordine A-B,1.78)
+					(Ordine B-A,1.83)
+				};
+			\addplot+[
+				fill=blue!30,
+				draw=black
+			] coordinates {
+					(Ordine A-B,1.89)
+					(Ordine B-A,1.83)
+				};
+			\legend{Versione A, Versione B}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Confronto della difficoltà percepita tra Versione A e Versione B per C4 in base all'ordine di esecuzione.}
+	\label{fig:6-c4-2}
+\end{figure}
