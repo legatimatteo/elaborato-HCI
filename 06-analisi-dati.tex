@@ -232,10 +232,10 @@ Per quanto concerne le conoscenze informatiche, la Figura~\ref{fig:6-7} mostra l
 				enlarge x limits=0.25,
 				legend style={at={(0.5,-0.15)}, anchor=north, legend columns=-1, font=\small},
 				nodes near coords,
-				every node near coord/.style={font=\small, color=black},
+				every node near coord/.append style={font=\scriptsize, color=black},
 			]
-			\addplot+[ybar, fill=blue!70, draw=black] coordinates {(Base,1) (Intermedio,4) (Avanzato,2) (Esperto,2)};
-			\addplot+[ybar, fill=blue!30, draw=black] coordinates {(Base,1) (Intermedio,2) (Avanzato,1) (Esperto,2)};
+			\addplot+[fill=blue!70, draw=black] coordinates {(Base,1) (Intermedio,4) (Avanzato,2) (Esperto,2)};
+			\addplot+[fill=blue!30, draw=black] coordinates {(Base,1) (Intermedio,2) (Avanzato,1) (Esperto,2)};
 			\legend{Gruppo A-B, Gruppo B-A}
 		\end{axis}
 	\end{tikzpicture}

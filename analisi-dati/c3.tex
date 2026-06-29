@@ -122,23 +122,21 @@ Le stesse criticità si riflettono sulle valutazioni di difficoltà riassunte ne
 				enlarge x limits=0.6,
 				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
 				nodes near coords,
-				every node near coord/.style={font=\small, color=black},
+				every node near coord/.append style={font=\scriptsize, color=black},
 			]
 			\addplot+[
-				ybar,
 				fill=blue!70,
 				draw=black
 			] coordinates {
-					(Ordine A-B,2.22)
-					(Ordine B-A,3.50)
+					(Ordine A-B,2.89)
+					(Ordine B-A,2.50)
 				};
 			\addplot+[
-				ybar,
 				fill=blue!30,
 				draw=black
 			] coordinates {
-					(Ordine A-B,1.89)
-					(Ordine B-A,2.00)
+					(Ordine A-B,1.94)
+					(Ordine B-A,1.92)
 				};
 			\legend{Versione A, Versione B}
 		\end{axis}

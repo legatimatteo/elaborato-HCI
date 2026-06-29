@@ -126,10 +126,9 @@ Il risparmio di tempo non si accompagna però a una riduzione della difficoltà 
 				enlarge x limits=0.6,
 				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
 				nodes near coords,
-				every node near coord/.style={font=\small, color=black},
+				every node near coord/.append style={font=\scriptsize, color=black},
 			]
 			\addplot+[
-				ybar,
 				fill=blue!70,
 				draw=black
 			] coordinates {
@@ -137,7 +136,6 @@ Il risparmio di tempo non si accompagna però a una riduzione della difficoltà 
 					(Ordine B-A,3.67)
 				};
 			\addplot+[
-				ybar,
 				fill=blue!30,
 				draw=black
 			] coordinates {

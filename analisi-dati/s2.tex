@@ -117,10 +117,9 @@ L'effetto dell'apprendimento si nota chiaramente anche nelle valutazioni di diff
 				enlarge x limits=0.6,
 				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
 				nodes near coords,
-				every node near coord/.style={font=\small, color=black},
+				every node near coord/.append style={font=\scriptsize, color=black},
 			]
 			\addplot+[
-				ybar,
 				fill=blue!70,
 				draw=black
 			] coordinates {
@@ -128,7 +127,6 @@ L'effetto dell'apprendimento si nota chiaramente anche nelle valutazioni di diff
 					(Ordine B-A,4.00)
 				};
 			\addplot+[
-				ybar,
 				fill=blue!30,
 				draw=black
 			] coordinates {

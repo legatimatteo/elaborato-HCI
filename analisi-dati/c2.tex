@@ -122,10 +122,9 @@ I limiti dell'interfaccia originale emergono chiaramente anche nei dati sulla di
 				enlarge x limits=0.6,
 				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
 				nodes near coords,
-				every node near coord/.style={font=\small, color=black},
+				every node near coord/.append style={font=\scriptsize, color=black},
 			]
 			\addplot+[
-				ybar,
 				fill=blue!70,
 				draw=black
 			] coordinates {
@@ -133,7 +132,6 @@ I limiti dell'interfaccia originale emergono chiaramente anche nei dati sulla di
 					(Ordine B-A,3.00)
 				};
 			\addplot+[
-				ybar,
 				fill=blue!30,
 				draw=black
 			] coordinates {

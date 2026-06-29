@@ -118,10 +118,9 @@ I dati sulla difficoltà percepita (Figura~\ref{fig:6-c6-2}) rivelano un andamen
 				enlarge x limits=0.6,
 				legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1, font=\small},
 				nodes near coords,
-				every node near coord/.style={font=\small, color=black},
+				every node near coord/.append style={font=\scriptsize, color=black},
 			]
 			\addplot+[
-				ybar,
 				fill=blue!70,
 				draw=black
 			] coordinates {
@@ -129,7 +128,6 @@ I dati sulla difficoltà percepita (Figura~\ref{fig:6-c6-2}) rivelano un andamen
 					(Ordine B-A,1.17)
 				};
 			\addplot+[
-				ybar,
 				fill=blue!30,
 				draw=black
 			] coordinates {
