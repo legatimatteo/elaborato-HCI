@@ -1,4 +1,3 @@
-% Questo file può essere importato con \input{nome_file} o \include{nome_file}
 
 \section{Sviluppi futuri}
 
@@ -30,6 +29,45 @@ attesi in termini di usabilità complessiva.
   Entrambi gli interventi mirano a snellire i percorsi di interazione più
   ricorrenti e a fornire un supporto personalizzato, riducendo il numero di
   click necessari e il carico cognitivo legato all'uso dell'interfaccia.
+
+  \item \textbf{Caricamento ibrido di file e cartelle.} Nell'attuale flusso di
+  caricamento la creazione di una cartella e l'inserimento di un file
+  costituiscono due passaggi distinti e sequenziali: per collocare un documento
+  in una nuova cartella l'utente deve prima crearla e solo successivamente
+  caricarvi il file, un vincolo percepito come rigido. L'esigenza di unificare le
+  due operazioni è emersa in modo indipendente in due diverse attività
+  dell'esperimento, configurandosi come la richiesta di miglioramento più
+  ricorrente. Si propone pertanto un flusso di caricamento ibrido: all'interno
+  della finestra di caricamento, un campo «Destinazione» con un'opzione
+  «+ Nuova cartella» consentirebbe di creare la cartella e di caricarvi
+  contestualmente il file, senza interrompere il flusso. Analogamente alle azioni
+  contestuali descritte in precedenza, un intervento di questo tipo eliminerebbe
+  un passaggio superfluo e renderebbe più fluida un'operazione frequente,
+  riducendo la rigidità segnalata dagli utenti e il carico cognitivo a essa
+  associato.
+
+  \item \textbf{Ridisegno del flusso di rinomina.} L'analisi dei dati ha
+  evidenziato un'unica regressione rispetto alla versione originale, relativa
+  alla rinomina degli elementi. Dai commenti degli utenti emergono tre cause
+  precise: l'assenza di un'azione esplicita di rinomina, nascosta all'interno di
+  un generico comando «Modifica»; l'apertura del campo già vuoto anziché
+  precompilato, un evidente \textit{gulf of execution} in cui l'utente è
+  costretto a ricostruire da sé un'informazione che il sistema già possiede; e
+  l'impossibilità di rinominare direttamente dall'anteprima del documento. Si
+  propone pertanto un ridisegno del flusso, articolato in tre interventi
+  corrispondenti:
+  \begin{itemize}
+    \item \textbf{Azione di rinomina dedicata}: una voce «Rinomina» esplicita nel
+    menu contestuale, distinta dal generico comando «Modifica».
+    \item \textbf{Campo precompilato}: il campo di rinomina si apre con il nome
+    corrente già inserito e selezionato, pronto per essere modificato o
+    sostituito.
+    \item \textbf{Rinomina dall'anteprima}: la possibilità di rinominare in linea
+    direttamente dall'anteprima del documento, con un doppio click sul titolo.
+  \end{itemize}
+  In questo modo la riduzione del numero di click ottenuta con la
+  riprogettazione, oggi vanificata dal costo della riscrittura manuale del nome,
+  verrebbe finalmente sfruttata appieno.
 
   \item \textbf{Introduzione di funzionalità social.} Allo stato attuale
   l'interazione tra gli utenti è limitata ai soli commenti sui documenti
@@ -105,4 +143,24 @@ attesi in termini di usabilità complessiva.
   materiali a strumento di apprendimento, favorendo una comprensione più rapida
   e approfondita dei contenuti e adattando il supporto alle effettive esigenze
   di studio dell'utente.
+
+  \item \textbf{Sviluppo di un'app mobile dedicata.} Allo stato attuale la
+  piattaforma è fruibile esclusivamente da web, una modalità adatta allo studio
+  da postazione fissa ma che non sfrutta le potenzialità dei dispositivi mobili
+  né accompagna lo studente nei contesti di mobilità. Si propone pertanto lo
+  sviluppo di un'app mobile dedicata, che renda la piattaforma accessibile
+  ovunque e ne arricchisca le funzionalità su due fronti:
+  \begin{itemize}
+    \item \textbf{Funzioni native in mobilità}: accesso immediato ai propri
+    materiali, notifiche push relative a scadenze, piani di studio e avanzamento
+    descritti in precedenza, e conversione automatica di registrazioni audio (ad
+    esempio delle lezioni) in appunti testuali.
+    \item \textbf{Condivisione e socialità}: caricamento e condivisione di
+    documenti direttamente dal dispositivo e un'interazione più diretta e
+    naturale con gli altri utenti, a complemento delle funzionalità social
+    proposte in precedenza.
+  \end{itemize}
+  Un'app di questo tipo estenderebbe l'uso della piattaforma oltre la postazione
+  fissa, integrando lo studio nella quotidianità dello studente e favorendo un
+  utilizzo più continuativo e coinvolgente del servizio.
 \end{itemize}
