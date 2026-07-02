@@ -1,4 +1,33 @@
-\begin{figure}[h]
+Per stimare la percentuale di problemi individuati da tre valutatori è stato fatto riferimento alla \textit{curva di Nielsen} (Figura \ref{curva_nielsen}), che modella la probabilità cumulativa di rilevazione dei problemi in funzione del numero di valutatori coinvolti. 
+
+Assumendo che la probabilità che un singolo valutatore identifichi un problema sia pari a $L = 0.31$, la probabilità che almeno uno dei tre valutatori rilevi un determinato problema è:
+\[
+  1 - (1 - L)^3 = 1 - (1 - 0.31)^3 \approx 0.672
+\]
+
+ossia circa il 67.2\% dei problemi effettivamente presenti. Secondo il modello di Nielsen, ci si aspetta quindi che tre valutatori siano in grado di individuare complessivamente il 67.2\% dei problemi dell'interfaccia.
+
+A partire da questa stima, si può ricavare il numero totale di problemi presenti. Indicando con $P$ il numero di problemi rilevati e con $N$ il numero totale di problemi esistenti, si ha:
+\[
+  P : N = 67.2 : 100
+\]
+
+\noindent
+Poiché i tre valutatori hanno identificato $P = 93$ problemi unici, si ottiene:
+\[
+  93 : N = 67.2 : 100
+\]
+
+\noindent
+Da cui segue:
+\[
+  N = \frac{93 \times 100}{67.2} \approx 138
+\]
+
+\noindent
+Pertanto, il \textit{numero totale di problemi stimati} nell'interfaccia risulta essere circa 138.
+
+\begin{figure}[H]
   \centering
   \begin{tikzpicture}
     \begin{axis}[
@@ -31,31 +60,5 @@
     \end{axis}
   \end{tikzpicture}
   \caption{Curva di Nielsen.}
+  \label{curva_nielsen}
 \end{figure}
-
-Per stimare la percentuale di problemi individuati da tre valutatori facciamo riferimento alla \textit{curva di Nielsen}, che modella la probabilità cumulativa di rilevazione dei problemi in funzione del numero di valutatori coinvolti. Assumendo che la probabilità che un singolo valutatore identifichi un problema sia pari a $L = 0.31$, la probabilità che almeno uno dei tre valutatori rilevi un determinato problema è:
-\[
-  1 - (1 - L)^3 = 1 - (1 - 0.31)^3 \approx 0.672
-\]
-
-ossia circa il 67.2\% dei problemi effettivamente presenti. Secondo il modello di Nielsen, ci aspettiamo quindi che tre valutatori siano in grado di individuare complessivamente il 67.2\% dei problemi dell’interfaccia.
-
-A partire da questa stima, possiamo ricavare il numero totale di problemi presenti. Indicando con $P$ il numero di problemi rilevati e con $N$ il numero totale di problemi esistenti, si ha:
-\[
-  P : N = 67.2 : 100
-\]
-
-\noindent
-Poiché i tre valutatori hanno identificato $P = 93$ problemi unici, otteniamo:
-\[
-  93 : N = 67.2 : 100
-\]
-
-\noindent
-Da cui segue:
-\[
-  N = \frac{93 \times 100}{67.2} \approx 138
-\]
-
-\noindent
-Pertanto, il numero totale di problemi stimati nell’interfaccia risulta essere di circa 138.
