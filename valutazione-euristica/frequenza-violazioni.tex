@@ -1,4 +1,8 @@
-In questa sezione viene presentata l'analisi quantitativa dei problemi riscontrati durante la valutazione euristica. I dati sono stati classificati secondo i 10 principi euristici di Nielsen utilizzati per identificare le principali criticità dell'interfaccia.
+In questa sezione viene presentata l'analisi quantitativa dei problemi riscontrati durante la valutazione euristica. Al fine di fornire una panoramica chiara e strutturata delle principali criticità dell'interfaccia, i dati raccolti sono stati esaminati seguendo un approccio articolato su tre livelli. 
+
+In primo luogo, i problemi sono stati classificati in base ai 10 principi euristici di Nielsen, permettendo così di identificare le regole specifiche di usabilità maggiormente violate (Figura \ref{fig:violazioni-nielsen}). Successivamente, per comprendere più a fondo la natura delle problematiche riscontrate, le medesime violazioni sono state aggregate in tre macro-categorie: \textit{percezione}, \textit{cognizione} ed \textit{errori} (Figura \ref{fig:categorie-principi-nielsen}). Infine, l'analisi si è concentrata sulla localizzazione delle criticità, mappandone la distribuzione all'interno delle diverse sezioni del sito (Figura \ref{fig:violazioni-sezioni-sito}).
+
+Di seguito, si riporta la classificazione relativa ai singoli principi euristici di Nielsen.
 
 \begin{figure}[H]
   \centering
@@ -64,7 +68,7 @@ Dall'analisi del grafico emerge uno scenario chiaro sulle problematiche di \text
     testi in lingua inglese non tradotti, icone poco intuitive e titoli fuorvianti che ostacolano la comprensione immediata delle funzionalità da parte degli utenti.
 \end{itemize}
 
-Per una visione d'insieme più sintetica, le violazioni sono state raggruppate nelle tre principali categorie in cui si suddivisono i principi di Nielsen: \textit{percezione}, \textit{cognizione} ed \textit{errori}. La distribuzione percentuale è mostrata nel grafico sottostante.
+Per una visione d'insieme più sintetica, nel grafico sottostante è mostrata la distribuzione percentuale delle tre principali categorie in cui si suddividono i principi di Nielsen.
 
 \begin{figure}[H]
   \centering
@@ -103,6 +107,7 @@ Per una visione d'insieme più sintetica, le violazioni sono state raggruppate n
 
   \end{tikzpicture}
   \caption{Classificazione dei problemi riscontrati per categoria di appartenenza.}
+  \label{fig:categorie-principi-nielsen}
 \end{figure}
 
 Dal grafico emerge chiaramente che la maggior parte dei problemi riguarda la categoria \textbf{Cognizione}, che comprende le violazioni sui principi 4,5,6,7.
@@ -111,6 +116,8 @@ Questo indica che le difficoltà principali non sono di natura tecnica, ma cogni
 La categoria \textbf{Percezione} include i problemi che violano i principi 1,2,3. Questi problemi rendono difficile individuare le informazioni necessarie a causa di un'interfaccia disordinata o della mancanza di feedback visivi.
 
 La categoria \textbf{Errori} è la meno frequente e comprende le violazioni sui principi 8,9,10. Nonostante il numero ridotto, questi problemi possono bloccare completamente l'utilizzo del sistema quando si verificano.
+
+
 
 \begin{figure}[H]
   \centering
@@ -195,3 +202,69 @@ I problemi di natura generale, che interessano trasversalmente l'intera piattafo
 La sezione \textit{Esplora appunti} registra 13 violazioni, posizionandosi come la terza area più problematica, seguita dalle funzionalità AI: \textit{Sbobinatore AI} con 7 violazioni, \textit{AudioNote AI} con 6 e \textit{StudyFlow AI} con 5.
 La sezione \textit{Profilo} risulta essere la meno problematica tra le pagine specifiche, con sole 2 violazioni rilevate.
 La marcata concentrazione di problematiche nella sezione \textit{I miei appunti} e nei problemi generali suggerisce che queste aree, caratterizzate da una maggiore complessità funzionale e da un impatto trasversale sull'esperienza utente, richiedono un'attenzione particolare per garantire un'esperienza fruibile e usabile da tutti gli utenti.
+
+
+--------------------------------------------------------------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        xbar,
+        bar width=14pt,
+        width=0.85\textwidth,
+        height=10cm,
+        symbolic y coords={
+          Globale,
+          Profilo,
+          Dashboard, % <-- Da aggiornare con il valore reale
+          StudyFlow AI,
+          AudioNote AI,
+          Registrazione/Login,
+          Sbobinatore AI,
+          Homepage,
+          Esplora appunti,
+          I miei appunti,
+          Area Utente
+        },
+        ytick=data,
+        y tick label style={font=\small},
+        xlabel={Numero di Violazioni},
+        xmin=0,
+        xmax=28,
+        xmajorgrids=true,
+        grid style={dashed, gray!30},
+        enlarge y limits=0.08,
+        nodes near coords,
+        nodes near coords align={horizontal},
+        every node near coord/.style={font=\small, color=black},
+      ]
+      % I dati sono inseriti dal più piccolo al più grande per far apparire 
+      % la barra più lunga in alto nel grafico
+      \addplot+[xbar, fill=blue!70, draw=black] coordinates {
+        (2,Globale)
+        (2,Profilo)
+        (0,Dashboard) % <--- INSERISCI QUI IL NUMERO DI PROBLEMI DELLA VERA DASHBOARD
+        (5,StudyFlow AI)
+        (6,AudioNote AI)
+        (6,Registrazione/Login)
+        (7,Sbobinatore AI)
+        (9,Homepage)
+        (13,Esplora appunti)
+        (22,I miei appunti)
+        (26,Area Utente)
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Distribuzione completa dei problemi di usabilità per sezione del sistema.}
+  \label{fig:violazioni-complete}
+\end{figure}
+
+L'analisi della distribuzione fisica delle criticità è stata consolidata in un'unica vista complessiva (Figura \ref{fig:violazioni-complete}), permettendo di mappare l'incidenza dei problemi sull'intera architettura informativa del sistema, dall'area pubblica fino alle specifiche funzionalità dell'area personale.
+
+Come si evince chiaramente dal grafico, le violazioni non si concentrano prevalentemente su singole pagine isolate, bensì su elementi condivisi. La categoria \textit{Trasversale (Area Utente)} risulta essere la più critica con 26 problematiche: si tratta di difetti di usabilità (es. incongruenze nei menù di navigazione o mancate indicazioni di stato) che l'utente sperimenta costantemente muovendosi tra le varie sezioni del proprio spazio di lavoro. A questi si sommano 2 problemi di natura puramente \textit{Trasversale (Intero sito)}, presenti sia nell'area pubblica che in quella privata.
+
+Passando all'analisi delle pagine specifiche, la sezione \textit{I miei appunti} emerge in assoluto come l'area funzionale più problematica, registrando ben 22 violazioni. Essendo il cuore operativo della piattaforma, questa concentrazione di errori rappresenta un grave ostacolo alla fluidità dell'esperienza utente. A seguire si posiziona la sezione \textit{Esplora appunti} (13 violazioni), legata alle dinamiche di esplorazione e interazione con la community. 
+
+Risulta interessante notare come l'area pubblica pre-login (\textit{Homepage} con 9 violazioni e \textit{Registrazione/Login} con 6) e le funzionalità avanzate basate sull'Intelligenza Artificiale (\textit{Sbobinatore AI}, \textit{AudioNote AI} e \textit{StudyFlow AI}) si assestino su valori medi, compresi tra 5 e 9 problematiche ciascuna. Infine, la pagina \textit{Profilo} e la \textit{Dashboard} riassuntiva [modifica questa frase in base al numero di problemi della dashboard] si confermano come gli ambienti più stabili e privi di frizioni del sistema.
+
+Questa marcata polarizzazione suggerisce che gli interventi di riprogettazione dovranno concentrarsi prioritariamente sull'armonizzazione dei pattern visivi e navigazionali dell'intera area privata e, nello specifico, sul flusso di gestione dei propri documenti.
