@@ -29,7 +29,7 @@ nell'applicazione.
 
 \paragraph{Design pattern applicati}
 \begin{itemize}
-\item \textbf{Input Hints} (Tidwell): Il pattern suggerisce di fornire spiegazioni, vincoli o suggerimenti contestuali vicino ai campi di input per prevenire errori prima che accadano. Questo è fondamentale per gestire le aspettative dell'utente riguardo a limiti tecnologici o formati supportati.  
+\item \textbf{Input Hints} (Tidwell): Il pattern suggerisce di fornire spiegazioni, vincoli o suggerimenti contestuali vicino ai campi di input per prevenire errori prima che accadano. Questo è fondamentale per gestire le aspettative dell'utente riguardo a limiti tecnologici o formati supportati. Nella versione precedente lo strumento non indicava i formati audio accettati né gli eventuali limiti di dimensione, costringendo l'utente a procedere per tentativi; nella versione riprogettata questi vincoli sono resi espliciti direttamente nel primo step di caricamento.
 
 Problemi di usabilità risolti:
 \begin{itemize}
@@ -39,7 +39,7 @@ Problemi di usabilità risolti:
 \item \textbf{Spinners and Loading Indicators} (Tidwell): Il pattern prevede di mostrare un'animazione o un indicatore dopo che l'utente ha avviato un'operazione e prima che ci sia una risposta, per comunicare che il sistema sta elaborando e prevenire che l'utente abbandoni il task o pensi che qualcosa sia andato storto. 
 È considerato obbligatorio quando un'operazione richiede più di un secondo, poiché oltre questa soglia l'utente tende a ritenere che l'interfaccia non stia funzionando. 
 Nella versione precedente lo strumento non forniva alcuna indicazione visiva 
-sull'avanzamento della generazione, lasciando l'utente in attesa senza sapere se il sistema stesse effettivamente elaborando. Nella versione riprogettata, la lista file mostra in modo persistente lo stato della generazione tramite etichette dinamiche, \textit{In coda}, \textit{In elaborazione}, \textit{Pronto} o \textit{Errore}, permettendo all'utente di monitorare l'avanzamento senza interrompere il proprio flusso di lavoro.
+sull'avanzamento della generazione, lasciando l'utente in attesa senza sapere se il sistema stesse effettivamente elaborando. Nella versione riprogettata, invece di un indicatore bloccante mostrato durante l'attesa, la lista file espone in modo persistente lo stato della generazione tramite etichette dinamiche, \textit{In coda}, \textit{In elaborazione}, \textit{Pronto} o \textit{Errore}, permettendo all'utente di monitorare l'avanzamento senza interrompere il proprio flusso di lavoro.
 
 Problemi di usabilità risolti:
 \begin{itemize}
