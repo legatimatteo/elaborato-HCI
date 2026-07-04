@@ -139,3 +139,22 @@
   urlcolor=blue, 
   linkcolor=black
 }
+
+% Macro per la colorazione automatica del p-value (usata nelle tabelle)
+\ExplSyntaxOn
+\newcommand{\pvalue}[1]{%
+  \regex_match:nnTF { ^[-+]?[0-9]*[.,]?[0-9]+$ } { #1 }
+    {
+      \str_set:Nn \l_tmpa_str { #1 }%
+      \str_replace_all:Nnn \l_tmpa_str { , } { . }% Sostituisce la virgola con il punto per il calcolo
+      \fp_compare:nTF { \l_tmpa_str > 0.05 }
+        { \cellcolor{red!20} }% p > 0.05: rosso
+        { \cellcolor{green!20} }% p <= 0.05: verde
+      #1%
+    }
+    {
+      #1% Se non è un numero (es. vuoto, #N/A, Varianza nulla), stampa così com'è senza colore
+    }
+}
+\ExplSyntaxOff
+

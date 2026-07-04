@@ -1,0 +1,92 @@
+% ==============================================================================
+% TEMPLATE TABELLE LATEX - GUIDA E RIFERIMENTO PER LE SOSTITUZIONI
+% ==============================================================================
+% Questo file contiene i due schemi grafici da replicare quando si sostituiscono
+% le tabelle nei file .tex in "analisi-dati/".
+%
+% ------------------------------------------------------------------------------
+% REGOLA GENERALE DI CORRISPONDENZA:
+% ------------------------------------------------------------------------------
+% - File sorgente dei dati: "tabelle_analisi.md"
+% - File di destinazione in "analisi-dati/":
+%     * Compiti C1, C2, C3, C4, C5, C6 -> c1.tex, c2.tex, c3.tex, ...
+%     * Scenari S1, S2                  -> s1.tex, s2.tex
+%
+% ------------------------------------------------------------------------------
+% SCELTA DEL TEMPLATE ADATTO:
+% ------------------------------------------------------------------------------
+%
+% SCHEMA 1: TABELLA PRESTAZIONALE GENERALE
+%   - Quando usarlo: Per la PRIMA tabella di ogni file .tex (solitamente sotto
+%     il paragrafo "\paragraph{Analisi delle prestazioni generali}").
+%   - Identificatori nel file .tex: label come "tab:6-cX-1" o "tab:6-sX-1".
+%   - Fonte dei dati in markdown: Sezione "# Generale" -> "## Tabella CX/SX".
+%   - Caratteristiche: Tabella completa a 7 colonne (Media/DEV.ST separate per A e B,
+%     Rilevanza con macro \pvalue{...}).
+%
+% SCHEMA 2: TABELLA EFFETTO DI APPRENDIMENTO (RIASSUNTIVA ORDINI)
+%   - Quando usarlo: Per la SECONDA tabella di ogni file .tex (solitamente sotto
+%     il paragrafo "\paragraph{Valutazione dell'effetto di apprendimento}").
+%   - Identificatori nel file .tex: label come "tab:6-cX-2" o "tab:6-sX-2".
+%   - Fonte dei dati in markdown: Unisce i dati di due sezioni:
+%       * "# Ordine AB" -> "## Tabella CX/SX" (per la parte Ordine A-B)
+%       * "# Ordine BA" -> "## Tabella CX/SX" (per la parte Ordine B-A)
+%   - Caratteristiche: Tabella compatta a 9 colonne che confronta affiancati i due
+%     ordini per le metriche chiave (Tempo, Errori, Click, Difficoltà) indicando
+%     Media/Mediana, Variazione (Var %) e Rilevanza (con macro \pvalue{...}).
+%   - NOTA SULL'ORDINE DELLE COLONNE:
+%       * Sotto "Ordine A--B", le colonne sono ordinate come [A] | [B] | [Var %] | [Rilevanza]
+%       * Sotto "Ordine B--A", le colonne sono invertite come [B] | [A] | [Var %] | [Rilevanza]
+%         per rispecchiare l'ordine reale di esecuzione del test.
+%         ATTENZIONE: Quando si inseriscono i dati per l'ordine B-A, mettere il valore
+%         della Versione B sotto la colonna "B" e il valore della Versione A sotto la colonna "A".
+%
+% ==============================================================================
+
+% ==============================================================================
+% SCHEMA 1: TABELLA PRESTAZIONALE GENERALE (Esempio basato su C1)
+% ==============================================================================
+\begin{table}[H]
+	\centering
+	\footnotesize
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Metriche prestazionali globali aggregate per il compito C1.}
+	\label{tab:tabella_c1_generale}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{C1}           & \multicolumn{2}{c|}{\textbf{Versione A}} & \multicolumn{2}{c|}{\textbf{Versione B}} & \textbf{Variazione \%} & \textbf{Rilevanza}                                            \\ \hline
+		\textit{Success Rate} & \multicolumn{2}{c|}{100,00\%}            & \multicolumn{2}{c|}{100,00\%}            & \textbf{0,00\%}        &                                                               \\ \hline
+		\rowcolor{gray!30}
+		                      & \textbf{Media}                           & \textbf{DEV.ST}                          & \textbf{Media}         & \textbf{DEV.ST}    & \multicolumn{2}{c|}{}                    \\ \hline
+		\textit{Errori}       & 1,00                                     & 1,30931                                  & 0,200                  & 0,56061            & \textbf{-80,00\%}     & \pvalue{0,02807} \\ \hline
+		\textit{Tempo}        & 1.33.40                                  & 0,03276                                  & 1.20.00                & 0,02016            & \textbf{-14,59\%}     & \pvalue{0,36349} \\ \hline
+		\textit{Click}        & 18,20                                    & 7,21308                                  & 17,67                  & 5,35413            & \textbf{-2,93\%}      & \pvalue{0,77475} \\ \hline
+		\rowcolor{gray!30}
+		                      & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{}                                                                  \\ \hline
+		\textit{Difficoltà}   & \multicolumn{2}{c|}{1}                   & \multicolumn{2}{c|}{1}                   & \multicolumn{2}{c|}{}                                                                  \\ \hline
+	\end{tabular}
+\end{table}
+
+
+% ==============================================================================
+% SCHEMA 2: TABELLA EFFETTO DI APPRENDIMENTO (Esempio basato su C1)
+% ==============================================================================
+\begin{table}[H]
+	\centering
+	\footnotesize
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Confronto delle metriche prestazionali in funzione dell'ordine di esecuzione per il compito C1.}
+	\label{tab:tabella_c1_ordine}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}} & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                                                                                            \\ \cline{2-9}
+		\rowcolor{gray!30}
+		                              & \textbf{A}                                & \textbf{B}                                & \textbf{Variazione \%} & \textbf{Rilevanza} & \textbf{B} & \textbf{A} & \textbf{Variazione \%} & \textbf{Rilevanza}      \\ \hline
+		\textit{Tempo (Media)}        & 1.54.27                                   & 1.17.20                                   & \textbf{-32,43\%}      & \pvalue{0,13120}   & 1.24.00    & 1.02.30    & \textbf{-25,60\%}      & \pvalue{0,04936}        \\ \hline
+		\textit{Errori (Media)}       & 1,67                                      & 0,33                                      & \textbf{-80,00\%}      & \pvalue{0,04237}   & 0,00       & 0,00       & \textbf{Invariato}     & \pvalue{Varianza nulla} \\ \hline
+		\textit{Click (Media)}        & 21,78                                     & 19,11                                     & \textbf{-12,24\%}      & \pvalue{0,32224}   & 15,50      & 12,83      & \textbf{-17,20\%}      & \pvalue{0,09704}        \\ \hline
+		\textit{Difficoltà (Mediana)} & 1                                         & 1                                         &                        & \pvalue{}          & 1          & 1          &                        & \pvalue{}               \\ \hline
+	\end{tabular}
+\end{table}
