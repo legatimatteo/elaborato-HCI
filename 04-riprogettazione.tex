@@ -2,7 +2,7 @@
 Partendo dai problemi di usabilità identificati nella fase di valutazione euristica, si è proceduto alla riprogettazione dell'interfaccia di BrainBox. In primo luogo, sono stati redatti degli scenari d'uso che hanno permesso di mettere a fuoco le criticità più impattanti dal punto di vista dell'utente: simulando situazioni concrete di utilizzo, è stato più semplice individuare i punti in cui l'interfaccia originale risultava carente o confusionaria e definire le scelte progettuali più rilevanti. Questi scenari vengono riportati nei sottocapitoli dedicati alle 
 rispettive sezioni. Per quanto riguarda le scelte di layout, struttura visiva e interazione, ci si è invece appoggiati ai design pattern di Jennifer Tidwell, \textit{"Designing Interfaces — Patterns for Effective Interaction Design"} terza edizione e alle leggi della Gestalt, che hanno fornito un riferimento solido su cui basare e giustificare le decisioni progettuali in modo strutturato.
 
-Prima di entrare nel dettaglio delle singole sezioni, vengono presentati i prototipi realizzati in Figma, le scelte di layout adottate per l'intera interfaccia e la palette colori, elementi trasversali che hanno guidato la coerenza visiva dell'intero progetto.
+Prima di entrare nel dettaglio delle singole sezioni, vengono presentati gli elementi trasversali che hanno guidato la coerenza dell'intero progetto: i prototipi realizzati in Figma, le scelte di layout adottate per l'intera interfaccia, la palette colori e la traduzione integrale dell'interfaccia in italiano.
 
 L'attenzione si è concentrata in particolare sulle sezioni principali 
 dell'applicazione, \textit{Appunti}, \textit{Esami}, \textit{Community} e gli strumenti AI, che presentavano le criticità più significative e su cui è stato necessario intervenire in modo più profondo, ripensando non solo aspetti di dettaglio ma in alcuni casi la struttura stessa delle sezioni. Sono state comunque riviste anche \textit{Homepage}, \textit{Registrazione e Login} e \textit{Dashboard}, con interventi più mirati sui problemi riscontrati. Per ciascuna sezione vengono descritti i pattern applicati, le modifiche apportate e i problemi di usabilità 
@@ -94,6 +94,9 @@ La palette adottata per l'interfaccia di BrainBox è composta da quattro colori 
     \caption{Il colore azzurro è stato declinato in una scala di varianti tonali, ciascuna con un ruolo specifico nell'interfaccia: la variante chiara (\texttt{\#5AC8FA}) è usata per elementi secondari come lo stato di elaborazione dei file generati dalle funzioni AI e i passaggi del cursore, il valore base (\texttt{\#007AFF}) è riservato ai bottoni principali, ai link e alle azioni primarie, mentre la variante scura (\texttt{\#0040DD}) viene applicata agli stati di pressione e selezione per dare un feedback visivo immediato all'utente.}
     \label{fig:palettes}
 \end{figure}
+
+\subsubsection*{Lingua dell'interfaccia}
+Uno degli interventi trasversali più estesi ha riguardato la lingua dell'interfaccia. Nella versione originale molte sezioni presentavano un'alternanza incoerente tra italiano e inglese: titoli di pagina, etichette dei pulsanti, voci di menu e messaggi di errore comparivano in inglese all'interno di un'interfaccia altrimenti in italiano, generando confusione e disorientamento nell'utente. Si è quindi scelto di uniformare globalmente l'intera applicazione all'italiano, traducendo tutti i testi visibili e i messaggi di sistema ed eliminando i termini inglesi residui.
 
 \subsubsection*{Componenti comuni}
 Durante la riprogettazione sono stati sviluppati alcuni componenti trasversali, riutilizzati in più sezioni dell'applicazione per garantire coerenza visiva e comportamentale. Di seguito vengono presentati i più significativi.
