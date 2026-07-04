@@ -41,19 +41,23 @@ Come si può notare dai dati aggregati per il compito C2 (Tabella~\ref{tab:6-c2-
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Metriche prestazionali globali aggregate per il compito C2.}
 	\label{tab:6-c2-1}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
-		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
-		Media Errori     & 1,07                            & 0,27                                       & -75,00\%            \\ \hline
-		Mediana Tempo    & 2:01                            & 2:00                                       & -0,83\%             \\ \hline
-		Mediana Click    & 27                              & 12                                         & -55,56\%            \\ \hline
-		Media Difficoltà & 2,07                            & 1,67                                       & -19,35\%            \\ \hline
+		\textbf{C2}           & \multicolumn{2}{c|}{\textbf{Versione A}} & \multicolumn{2}{c|}{\textbf{Versione B}} & \textbf{Variazione \%} & \textbf{Rilevanza}                                            \\ \hline
+		\textit{Success Rate} & \multicolumn{2}{c|}{100,00\%}            & \multicolumn{2}{c|}{100,00\%}            & \textbf{Invariato}     &                                                               \\ \hline
+		\rowcolor{gray!30}
+		                      & \textbf{Media}                           & \textbf{DEV.ST}                          & \textbf{Media}         & \textbf{DEV.ST}    & \multicolumn{2}{c|}{}                    \\ \hline
+		\textit{Errori}       & 1,07                                     & 1,03280                                  & 0,267                  & 0,45774            & \textbf{-75,00\%}     & \pvalue{0,00856} \\ \hline
+		\textit{Tempo}        & 2.13.44                                  & 0,03596                                  & 2.00.08                & 0,01931            & \textbf{-10,17\%}     & \pvalue{0,20212} \\ \hline
+		\textit{Click}        & 25,93                                    & 8,85169                                  & 13,33                  & 2,52605            & \textbf{-48,59\%}     & \pvalue{0,00007} \\ \hline
+		\rowcolor{gray!30}
+		                      & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{}                                                                  \\ \hline
+		\textit{Difficoltà}   & \multicolumn{2}{c|}{2}                   & \multicolumn{2}{c|}{2}                   & \multicolumn{2}{c|}{}                                                                  \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -89,16 +93,20 @@ Nel gruppo B-A, il tempo mediano iniziale sulla versione B è pari a 1:56,5, men
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\caption{Confronto delle metriche prestazionali in funzione dell'ordine di esecuzione per il compito C2.}
 	\label{tab:6-c2-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 2:48                                       & 2:00                                       & -28,57\%            \\ \hline
-		Ordine B--A                   & 1:38                                       & 1:56,5                                     & -15,88\%            \\ \hline
+		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}}                                                 & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                 \\ \cline{2-9} 
+		\rowcolor{gray!30}
+		                              & \textbf{A}          & \textbf{B}          & \textbf{Variazione \%} & \textbf{Rilevanza}        & \textbf{B}          & \textbf{A}          & \textbf{Variazione \%} & \textbf{Rilevanza}        \\ \hline
+		\textit{Tempo (Media)}        & 2.40.20             & 2.00.13             & \textbf{-25,02\%}      & \pvalue{0,01312}          & 2.00.00             & 1.33.50             & \textbf{-21,81\%}      & \pvalue{0,09526}          \\ \hline
+		\textit{Errori (Media)}       & 1,22                & 0,222               & \textbf{-81,82\%}      & \pvalue{0,00852}          & 0,333               & 0,83                & \textbf{150,00\%}      & \pvalue{0,29556}          \\ \hline
+		\textit{Click (Media)}        & 27,00               & 13,89               & \textbf{-48,56\%}      & \pvalue{0,00030}          & 12,50               & 24,33               & \textbf{94,67\%}       & \pvalue{0,05806}          \\ \hline
+		\textit{Difficoltà (Mediana)} & 1                   & 1                   &                        & \pvalue{}                 & 2                   & 3,5                 &                        & \pvalue{}                 \\ \hline
 	\end{tabular}
 \end{table}
 
