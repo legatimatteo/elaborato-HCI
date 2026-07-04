@@ -8,6 +8,8 @@ L'attenzione si è concentrata in particolare sulle sezioni principali
 dell'applicazione, \textit{Appunti}, \textit{Esami}, \textit{Community} e gli strumenti AI, che presentavano le criticità più significative e su cui è stato necessario intervenire in modo più profondo, ripensando non solo aspetti di dettaglio ma in alcuni casi la struttura stessa delle sezioni. Sono state comunque riviste anche \textit{Homepage}, \textit{Registrazione e Login} e \textit{Dashboard}, con interventi più mirati sui problemi riscontrati. Per ciascuna sezione vengono descritti i pattern applicati, le modifiche apportate e i problemi di usabilità 
 risolti; nei casi in cui un problema non sia stato affrontato o sia stato rivalutato, viene fornita una spiegazione esplicita della scelta.
 
+Infine, per facilitare la comprensione, la presentazione di ogni sezione sarà accompagnata dagli screenshot della nuova interfaccia al fine di mostrare visivamente l'effettivo risultato delle modifiche progettuali adottate.
+
 \subsubsection*{Prototipi}
 Prima di procedere con l'implementazione, le principali scelte progettuali sono 
 state tradotte in prototipi realizzati con Figma. L'obiettivo non era definire 
@@ -145,3 +147,50 @@ Il quarto è l'\textbf{area di drop dei file} (Figura \ref{fig:dropzone}), utili
   \input{riprogettazione/generatore-trascrizioni-audio}
 \input{riprogettazione/esami}
 \input{riprogettazione/community}
+
+\subsection*{Conclusione riprogettazione}
+A conclusione della fase di riprogettazione, è possibile tracciare un bilancio quantitativo e qualitativo degli interventi effettuati a partire dalle criticità emerse durante la valutazione euristica. Come si evince dalla Tabella \ref{tab:bilancio_riprogettazione}, su un totale di 93 problemi di usabilità individuati, ne sono stati risolti con successo 76. Di questi, 62 sono stati affrontati in modo mirato all'interno delle singole sezioni, mentre ulteriori 14 problemi (P3, P13, P15, P16, P19, P22, P23, P29, P35, P40, P43, P53, P56, P58) sono stati risolti in via indiretta grazie all'adozione di scelte progettuali trasversali, alla riorganizzazione generale del layout e all'ottimizzazione dei flussi d'interazione.
+
+Un singolo problema (P72) della sezione \textit{Community} è stato rivalutato in corso d'opera, mentre i restanti 16 problemi (P14, P31, P33, P63, P65, P68, P71, P73, P75, P76, P77, P78, P80, P82, P83, P89) non sono stati risolti. Come evidenziato nella Tabella \ref{tab:riepilogo_severita}, all'interno di questo gruppo figurano anche 5 problemi classificati come grado di severità "Catastrofe di usabilità". Pur trattandosi di criticità di massimo livello, la loro natura è prettamente architetturale e funzionale, riguardando logiche di \textit{back-end} piuttosto che l'interfaccia utente o i flussi di navigazione. Tali problemi includono, ad esempio, la mancanza di controlli di sicurezza sugli accessi tramite URL diretto (P80), la mancata gestione dei file duplicati all'interno del database (P78), e malfunzionamenti legati alle logiche di autenticazione e salvataggio delle password (P82, P83).
+
+Inoltre, trattandosi di limiti puramente implementativi, la loro presenza non ha inficiato la validità dei test di usabilità. Nonostante ciò, tali criticità restano debitamente segnalate, poiché la loro risoluzione tecnica costituirà un prerequisito essenziale per rendere la piattaforma concretamente operativa e pronta all'uso.
+
+\begin{table}[H]
+	\centering
+	\footnotesize
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Bilancio complessivo della riprogettazione.}
+	\label{tab:bilancio_riprogettazione}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{6.5cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{3cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Stato del Problema}        & \textbf{Quantità} & \textbf{Percentuale sul Totale} \\ \hline
+		Risolti                            & 76                & \textbf{81,72\%}                \\ \hline
+		Non Risolti                        & 16                & \textbf{17,20\%}                \\ \hline
+		Rivalutati                         & 1                 & \textbf{1,08\%}                 \\ \hline
+		\rowcolor{gray!30}
+		\textbf{Totale Problemi Individuati} & \textbf{93}       & \textbf{100,00\%}               \\ \hline
+	\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+\begin{table}[H]
+	\centering
+	\footnotesize
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Riepilogo dello stato di risoluzione dei problemi per grado di severità.}
+	\label{tab:riepilogo_severita}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{4.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{2cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Grado di Severità} & \textbf{Totale} & \textbf{Risolti} & \textbf{Non Risolti} & \textbf{Rivalutati} & \textbf{\% Risolti} \\ \hline
+		0 - Non è un problema       & 1               & 1                & 0                    & 0                   & \textbf{100,00\%}   \\ \hline
+		1 - Problema accessorio     & 26              & 24               & 2                    & 0                   & \textbf{92,31\%}    \\ \hline
+		2 - Problema secondario     & 37              & 30               & 7                    & 0                   & \textbf{81,08\%}    \\ \hline
+		3 - Problema rilevante      & 22              & 19               & 2                    & 1                   & \textbf{86,36\%}    \\ \hline
+		4 - Catastrofe di usabilità & 7               & 2                & 5                    & 0                   & \textbf{28,57\%}    \\ \hline
+		\rowcolor{gray!30}
+		\textbf{Totale Complessivo} & \textbf{93}     & \textbf{76}      & \textbf{16}          & \textbf{1}          & \textbf{81,72\%}    \\ \hline
+	\end{tabular}
+\end{table}
