@@ -36,15 +36,41 @@ Problemi di usabilità risolti:
   \item P70 (Mancanza di spiegazione sui limiti tecnologici): Nel primo step del caricamento sono stati esplicitati i formati audio supportati e, tramite un'avvertenza dedicata, è stato chiarito che gli strumenti AI possono commettere errori di precisione.
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/strumenti-ai/ai_1.png}
+        \caption{}
+        \label{fig:ai_1}
+    \end{subfigure}
+    \qquad
+    \begin{subfigure}[b]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/strumenti-ai/ai_2.png}
+        \caption{}
+        \label{fig:ai_2}
+    \end{subfigure}
+
+    \caption{}
+    \label{fig:steps1_ai}
+\end{figure}
+
 \item \textbf{Spinners and Loading Indicators} (Tidwell): Il pattern prevede di mostrare un'animazione o un indicatore dopo che l'utente ha avviato un'operazione e prima che ci sia una risposta, per comunicare che il sistema sta elaborando e prevenire che l'utente abbandoni il task o pensi che qualcosa sia andato storto. 
-È considerato obbligatorio quando un'operazione richiede più di un secondo, poiché oltre questa soglia l'utente tende a ritenere che l'interfaccia non stia funzionando. 
-Nella versione precedente lo strumento non forniva alcuna indicazione visiva 
-sull'avanzamento della generazione, lasciando l'utente in attesa senza sapere se il sistema stesse effettivamente elaborando. Nella versione riprogettata, invece di un indicatore bloccante mostrato durante l'attesa, la lista file espone in modo persistente lo stato della generazione tramite etichette dinamiche, \textit{In coda}, \textit{In elaborazione}, \textit{Pronto} o \textit{Errore}, permettendo all'utente di monitorare l'avanzamento senza interrompere il proprio flusso di lavoro.
+  È considerato obbligatorio quando un'operazione richiede più di un secondo, poiché oltre questa soglia l'utente tende a ritenere che l'interfaccia non stia funzionando. 
+  Nella versione precedente lo strumento non forniva alcuna indicazione visiva sull'avanzamento della generazione, lasciando l'utente in attesa senza sapere se il sistema stesse effettivamente elaborando. Nella versione riprogettata, invece di un indicatore bloccante mostrato durante l'attesa, la lista file espone in modo persistente lo stato della generazione tramite etichette dinamiche, \textit{In coda}, \textit{In elaborazione}, \textit{Pronto} o \textit{Errore}, permettendo all'utente di monitorare l'avanzamento senza interrompere il proprio flusso di lavoro.
 
 Problemi di usabilità risolti:
 \begin{itemize}
   \item P50 (Feedback non chiaro sullo stato di avanzamento durante la generazione): Lo stato di elaborazione è ora sempre visibile nella lista file tramite etichette dinamiche che si aggiornano in tempo reale.
 \end{itemize}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/strumenti-ai/ai_4.png}
+    \caption{}
+    \label{fig:ai_4}
+  \end{figure}
 
 \end{itemize}
 
@@ -53,14 +79,22 @@ La struttura delle funzionalità AI è stata radicalmente semplificata eliminand
 
 Problemi di usabilità risolti:
 \begin{itemize}
-\item P41 e P44 (Icone microfono/cassa non funzionanti): Essendo ora le funzioni incorporate in un form di caricamento, le icone "falso bottone" nei titoli sono state rimosse.
-\item P42 (Posizionamento del bottone ”NUOVA TRASCRIZIONE”): Il comando è stato razionalizzato all'interno del flusso di creazione file in \textit{Appunti}. Stessa soluzione per il bottone "NUOVA AUDIO NOTE".
-\item P66 (Impossibilità di salvare o allegare): Entrambe le tipologie di file generati (audio e testo) possono ora essere salvate come nuovi appunti e allegate direttamente agli esami.
-\end{itemize}
+  \item P41 e P44 (Icone microfono/cassa non funzionanti): Essendo ora le funzioni incorporate in un form di caricamento, le icone "falso bottone" nei titoli sono state rimosse.
+  \item P42 (Posizionamento del bottone ”NUOVA TRASCRIZIONE”): Il comando è stato razionalizzato all'interno del flusso di creazione file in \textit{Appunti}. Stessa soluzione per il bottone "NUOVA AUDIO NOTE".
 
-Generatore trascrizioni:
-\begin{itemize}
-\item P74 (Mancanza di struttura semantica): Il blocco di testo generato non è più uniforme, ma include ora i \textit{timestamp} per facilitare la consultazione e il riferimento all'audio originale.
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/strumenti-ai/ai_3.png}
+      \caption{}
+      \label{fig:ai_3}
+    \end{figure}
+
+  \item P66 (Impossibilità di salvare o allegare): Entrambe le tipologie di file generati (audio e testo) possono ora essere salvate come nuovi appunti e allegate direttamente agli esami.
+  \end{itemize}
+
+  Generatore trascrizioni:
+  \begin{itemize}
+  \item P74 (Mancanza di struttura semantica): Il blocco di testo generato non è più uniforme, ma include ora i \textit{timestamp} per facilitare la consultazione e il riferimento all'audio originale.
 \end{itemize}
 
 Generatore audio:
@@ -70,6 +104,20 @@ Generatore audio:
 \end{itemize}
 
 \paragraph{Implementazioni aggiuntive}
-La pagina di visualizzazione di una trascrizione è stata completamente riprogettata rispetto alla versione originale, che presentava il testo generato come un unico blocco non strutturato e privo di qualsiasi funzionalità aggiuntiva. Nella versione riprogettata la trascrizione è organizzata in segmenti, ciascuno accompagnato dal relativo intervallo temporale: cliccando su un segmento, il player audio posizionato in fondo alla pagina si sincronizza automaticamente al punto corrispondente dell'audio, permettendo all'utente di navigare rapidamente tra le parti della registrazione. Il contenuto è inoltre suddiviso in due tab, \textit{Trascrizione} e \textit{Riassunto}, così da offrire sia il testo completo sia una versione sintetica del contenuto senza dover scorrere l'intera pagina. In alto è presente un pulsante per scaricare la trascrizione in formato \texttt{.txt}, mentre il pannello laterale destro raccoglie i metadati del file (nome, durata, numero di segmenti, corso e data di caricamento) e un suggerimento contestuale nella parte inferiore.
+La pagina di visualizzazione di una trascrizione è stata completamente riprogettata rispetto alla versione originale, che presentava il testo generato come un unico blocco non strutturato e privo di qualsiasi funzionalità aggiuntiva. Nella versione riprogettata la trascrizione è organizzata in segmenti, ciascuno accompagnato dal relativo intervallo temporale: cliccando su un segmento, il player audio posizionato in fondo alla pagina si sincronizza automaticamente al punto corrispondente dell'audio, permettendo all'utente di navigare rapidamente tra le parti della registrazione. Il contenuto è inoltre suddiviso in due tab, \textit{Trascrizione} e \textit{Riassunto}, così da offrire sia il testo completo sia una versione sintetica del contenuto senza dover scorrere l'intera pagina. In alto è presente un pulsante per scaricare la trascrizione in formato \texttt{.txt}, mentre il pannello laterale destro raccoglie i metadati del file (nome, durata, numero di segmenti, corso e data di caricamento) e un suggerimento contestuale nella parte inferiore. (Figura \ref{fig:ai_5})
 
-Per mantenere coerenza con la pagina di visualizzazione delle trascrizioni, anche la pagina di visualizzazione delle audio note è stata riprogettata adottando la stessa struttura: pulsante per scaricare il file MP3, player audio integrato per riprodurre direttamente il contenuto generato e pannello laterale destro con i metadati del file (nome, data di creazione, durata, tipo, dimensione, formato e voce utilizzata per la sintesi).
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/strumenti-ai/ai_5.png}
+    \caption{}
+    \label{fig:ai_5}
+  \end{figure}
+
+Per mantenere coerenza con la pagina di visualizzazione delle trascrizioni, anche la pagina di visualizzazione delle audio note è stata riprogettata adottando la stessa struttura: pulsante per scaricare il file MP3, player audio integrato per riprodurre direttamente il contenuto generato e pannello laterale destro con i metadati del file (nome, data di creazione, durata, tipo, dimensione, formato e voce utilizzata per la sintesi). (Figura \ref{fig:ai_6})
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/strumenti-ai/ai_6.png}
+    \caption{}
+    \label{fig:ai_6}
+  \end{figure}

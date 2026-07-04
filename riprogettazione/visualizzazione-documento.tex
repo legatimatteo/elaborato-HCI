@@ -3,19 +3,33 @@ La pagina di visualizzazione di un documento presenta il contenuto del file affi
 
 \paragraph{Design pattern applicati}
 \begin{itemize}
-\item \textbf{Titled Sections} (Tidwell): Questo pattern suggerisce di organizzare gli elementi della pagina in sezioni chiaramente etichettate per aiutare l'utente a scansionare visivamente i contenuti e comprenderne la gerarchia. Nella sezione dei documenti di BrainBox, questo principio è stato applicato nel pannello di destra per separare i dati tecnici del file dalla parte sociale, rendendo l'interfaccia più ordinata e leggibile.  
+  \item \textbf{Titled Sections} (Tidwell): Questo pattern suggerisce di organizzare gli elementi della pagina in sezioni chiaramente etichettate per aiutare l'utente a scansionare visivamente i contenuti e comprenderne la gerarchia. Nella sezione dei documenti di BrainBox, questo principio è stato applicato nel pannello di destra per separare i dati tecnici del file dalla parte sociale, rendendo l'interfaccia più ordinata e leggibile.  
 
-Problemi di usabilità risolti:
-\begin{itemize}
-  \item P60 (Nessuna separazione gerarchica tra metadati e commenti): Il pannello è stato diviso nelle sezioni \textit{DETTAGLI}, \textit{CONDIVISO DA} e \textit{DISCUSSIONE}, creando una distinzione netta tra le diverse tipologie di informazione.
-\end{itemize}
+  Problemi di usabilità risolti:
+  \begin{itemize}
+    \item P60 (Nessuna separazione gerarchica tra metadati e commenti): Il pannello è stato diviso nelle sezioni \textit{DETTAGLI}, \textit{CONDIVISO DA} e \textit{DISCUSSIONE}, creando una distinzione netta tra le diverse tipologie di informazione.
+  \end{itemize}
 
-\item \textbf{Infinite List} (Tidwell): Il pattern descrive la gestione di elenchi di dati tramite uno scorrimento che mantiene l'utente all'interno dello stesso contesto visivo, spesso preferito alla paginazione tradizionale per non interrompere il flusso dell'attività. È stato associato questo approccio alla \textit{Progressive Disclosure}, che consiste nel mostrare inizialmente solo le informazioni essenziali (come i primi commenti) e svelare il resto solo su richiesta dell'utente per evitare il "sovraccarico cognitivo".  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/fig-riprogettazione-fisica/visualizzazione-documento/visualizzazione_documento_1.png}
+    \caption{}
+    \label{fig:visualizzazione-documento-1}
+  \end{figure}
 
-Problemi di usabilità risolti:
-\begin{itemize}
-  \item P79 (I commenti non sono paginati e rallentano la pagina): È stata implementata una visualizzazione progressiva (mostrando ad esempio "5 commenti di 6") con un tasto "Mostra altro". Al superamento dei 10 commenti, l'area diventa scorrevole internamente tramite uno scroll dedicato, evitando che la pagina si allunghi eccessivamente e diventi lenta nel caricamento.
-\end{itemize}
+  \item \textbf{Infinite List} (Tidwell): Il pattern descrive la gestione di elenchi di dati tramite uno scorrimento che mantiene l'utente all'interno dello stesso contesto visivo, spesso preferito alla paginazione tradizionale per non interrompere il flusso dell'attività. È stato associato questo approccio alla \textit{Progressive Disclosure}, che consiste nel mostrare inizialmente solo le informazioni essenziali (come i primi commenti) e svelare il resto solo su richiesta dell'utente per evitare il "sovraccarico cognitivo".  
+
+  Problemi di usabilità risolti:
+  \begin{itemize}
+    \item P79 (I commenti non sono paginati e rallentano la pagina): È stata implementata una visualizzazione progressiva (mostrando ad esempio "5 commenti di 6") con un tasto "Mostra altro". Al superamento dei 10 commenti, l'area diventa scorrevole internamente tramite uno scroll dedicato, evitando che la pagina si allunghi eccessivamente e diventi lenta nel caricamento.
+  \end{itemize}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/fig-riprogettazione-fisica/visualizzazione-documento/commenti.png}
+    \caption{}
+    \label{fig:commenti}
+  \end{figure}
 
 \end{itemize}
 
@@ -29,3 +43,10 @@ Problemi di usabilità risolti:
 \item P62 (Impossibile segnalare un commento o documento inappropriato): È stata implementata una blacklist di parole non adeguate che impedisce l'invio di commenti offensivi alla radice, proteggendo la community; si tratta di una misura di primo livello, non esaustiva, che intercetta i casi più evidenti.
 \item P64 (Il file scaricato ha un nome casuale): Ora il file viene salvato utilizzando il titolo inserito dall'utente durante il caricamento, rendendo il materiale facilmente riconoscibile sul dispositivo dopo il download.
 \end{itemize}  
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/visualizzazione-documento/visualizzazione_documento_2.png}
+  \caption{}
+  \label{fig:visualizzazione-documento-2}
+\end{figure}
