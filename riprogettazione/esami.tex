@@ -17,7 +17,7 @@
 Lo scenario mette in luce una serie di criticità che frammentano l'esperienza dell'utente in più punti: dalla difficoltà iniziale nel trovare la sezione, al flusso di creazione incompleto, fino all'assenza di opzioni di modifica e a un calendario non operativo. Il risultato è un percorso discontinuo, in cui l'utente è costretto a tornare più volte sugli stessi passi per completare un'operazione che dovrebbe essere lineare. Per rispondere a questi problemi,
 la riprogettazione ha puntato a consolidare l'intero flusso in un'unica esperienza coerente.
 
-Nella versione riprogettata, la sezione Esami, ex \textit{StudyFlow AI}, permette all'utente di gestire i propri esami universitari in un unico spazio: è possibile creare un esame, collegare ad esso i propri file di studio già caricati in \textit{Appunti} e definire un elenco di attività da completare per prepararsi al meglio. Le scadenze degli esami inseriti 
+Nella versione riprogettata, la sezione Esami, ex \textit{StudyFlow AI}, permette all'utente di gestire i propri esami universitari in un unico spazio: è possibile creare un esame, collegare a esso i propri file di studio già caricati in \textit{Appunti} e definire un elenco di attività da completare per prepararsi al meglio. Le scadenze degli esami inseriti 
 vengono inoltre riportate automaticamente nel calendario della navbar, così l'utente può verificare in qualsiasi momento quanto manca a ciascun appello senza dover accedere alla sezione dedicata.
 
 \paragraph{Design pattern applicati}
@@ -31,6 +31,13 @@ vengono inoltre riportate automaticamente nel calendario della navbar, così l'u
     \item P91 (Impossibile eliminare un esame, solo crearne di nuovi): È stata aggiunta la possibilità di eliminare un esame tramite un'azione dedicata, con relativo Modal Panel di conferma.
   \end{itemize}
 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/esami/esami_7.png}
+    \caption{}
+    \label{fig:esami_7}
+  \end{figure}
+
 \item \textbf{Error Messages} (Tidwell): Il pattern prevede di mostrare messaggi di errore direttamente accanto al campo che li ha generati, in modo che l'utente capisca immediatamente cosa non va e come correggerlo. Nel form di inserimento di un nuovo esame mancava qualsiasi controllo sulla data: era possibile inserire una 
 data antecedente a quella corrente, generando un esame che non veniva poi visualizzato nella pagina principale senza alcuna spiegazione. Nella versione riprogettata, il tentativo di inserire una data passata genera un messaggio di errore direttamente sotto al campo, impedendo il salvataggio e informando l'utente del vincolo violato.
 
@@ -39,6 +46,13 @@ data antecedente a quella corrente, generando un esame che non veniva poi visual
     \item P84 (Possibile inserire un esame con data antecedente a quella corrente, che poi non viene visualizzato): Il form ora valida la data e genera un messaggio di errore esplicito sotto al campo se si tenta di inserire una data passata.
   \end{itemize}
 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/esami/esami_2.png}
+    \caption{}
+    \label{fig:esami_2}
+  \end{figure}
+
 \end{itemize}
 
 \paragraph{Altre modifiche}
@@ -46,7 +60,14 @@ data antecedente a quella corrente, generando un esame che non veniva poi visual
 
 Nella visualizzazione dei dettagli di un esame, la gestione del collegamento dei materiali è stata corretta: in precedenza il pulsante \textit{"Aggiungi materiale esistente"} mostrava il messaggio \textit{"Tutti i tuoi documenti sono già stati 
 collegati!"} anche quando non era ancora stato caricato nessun file, e il pulsante \textit{"Collega materiali"} compariva privo di funzione attiva. Nella versione riprogettata, quando non sono presenti materiali collegati, compare il messaggio \textit{"Nessun materiale collegato. Usa il pulsante «Aggiungi file» per associare 
-appunti esistenti."} e il pulsante risulta correttamente attivo e funzionante. \\
+appunti esistenti."} e il pulsante risulta correttamente attivo e funzionante. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/esami/esami_6.png}
+    \caption{}
+    \label{fig:esami_6}
+\end{figure}
 
 Problemi di usabilità risolti:
 \begin{itemize}
@@ -63,3 +84,39 @@ Una delle principali funzionalità aggiunte in questa sezione è quella dei filt
 
 Il primo è un filtro per stato, che permette di visualizzare tutti gli esami oppure solo quelli preferiti, in corso, completati o scaduti. 
 Il secondo è un ordinamento, che consente di riorganizzare la lista per scadenza, nome, progresso o tempo rimanente, in ordine crescente o decrescente.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/esami/esami_1.png}
+  \caption{Pagina iniziale vuota della sezione Esami}
+  \label{fig:esami_1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/fig-riprogettazione-fisica/esami/esami_5.png}
+  \caption{Pagina iniziale della sezione Esami}
+  \label{fig:esami_5}
+\end{figure}
+
+Un'ulteriore e fondamentale implementazione ha riguardato l'ottimizzazione del flusso di creazione di un esame. La modale iniziale è stata ampliata introducendo due step aggiuntivi: la definizione delle attività di studio (task) (Figura \ref{fig:esami_3}) e il collegamento dei materiali precedentemente caricati nella sezione \textit{Appunti} (Figura \ref{fig:esami_4}). Questa modifica consente all'utente di configurare un esame completo in un'unica operazione lineare. Al contrario, la versione originale imponeva un processo fortemente frammentato: l'utente era costretto a inserire prima nome e scadenza, per poi doversi spostare in un'area esterna per la creazione dei task e, solo in un secondo momento, accedere al dettaglio dell'esame per collegare i materiali di studio.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/esami/esami_4}
+        \caption{Step 2}
+        \label{fig:esami_4}
+    \end{subfigure}
+    \qquad
+    \begin{subfigure}[b]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/esami/esami_3}
+        \caption{Step 3}
+        \label{fig:esami_3}
+    \end{subfigure}
+
+    \caption{}
+    \label{fig:esami_steps}
+\end{figure}
