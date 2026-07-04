@@ -44,6 +44,20 @@ La seconda riguarda la sezione \textit{Esplora Appunti}, oggi rinominata \textit
       \item P28 (Il titolo "Fatto" è generico e non consente di rivedere i dati inseriti prima del salvataggio): È stato tradotto lo step "Fatto" in "Riepilogo".
     \end{itemize} 
 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/appunti/step1_inserimento_file.png}
+    \caption{Step 1 Inserimento file}
+    \label{fig:appunti_1}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/appunti/step2_inserimento_file.png}
+    \caption{Step 2 Inserimento file}
+    \label{fig:appunti_2}
+  \end{figure}
+
   \item \textbf{Two-Panel Selector} (Tidwell): Il pattern prevede di dividere l'interfaccia in due pannelli: uno a sinistra dedicato alla navigazione e selezione della struttura, e uno a destra per visualizzare il contenuto dell'elemento selezionato. È stato scelto questo pattern in sostituzione del solo breadcrumb presente nella versione precedente, in quanto più adatto alla gestione di gerarchie profonde: con molte cartelle annidate, un breadcrumb avrebbe occupato spazio orizzontale crescente e reso difficile la navigazione, mentre il pannello laterale espone sempre l'intera struttura delle cartelle in modo compatto e navigabile. Inoltre, separando fisicamente le cartelle dai documenti, il pannello destro risulta dedicato esclusivamente ai file, senza che le cartelle occupino spazio nell'area di contenuto e rendano più difficile la consultazione degli appunti.  
 
   Problemi di usabilità risolti:
@@ -51,9 +65,23 @@ La seconda riguarda la sezione \textit{Esplora Appunti}, oggi rinominata \textit
     \item P21 (I pulsanti "CARICA FILE" e "Nuova cartella" sono posizionati nella navbar invece che dentro la pagina): Sono stati ricollocati i bottoni. Un bottone "+ Nuovo" per caricare i file o creare nuove trascrizioni o audio note nell'area principale di gestione dei file e un bottoncino "+" nel pannello sinistro dedicato alle cartelle.
   \end{itemize} 
 
-  \item \textbf{Pagination} (Tidwell): Il pattern prevede di suddividere una lista molto lunga in pagine di dimensione fissa, caricate una alla volta, fornendo controlli di navigazione per spostarsi tra di esse. È particolarmente utile quando la lista potrebbe crescere indefinitamente, come nel caso di una collezione personale di appunti o dei documenti condivisi in Community, poiché evita che l'utente si trovi davanti a una pagina interminabile e difficile da scorrere. La paginazione restituisce inoltre all'utente il controllo sulla navigazione, permettendogli di sapere quanti elementi sono presenti in totale e a che punto si trova nella lista, come indicato dal contatore \textit{"Risultati da X a Y di Z"} e dai controlli numerici in fondo alla pagina. Pur non essendo direttamente collegata a un problema emerso dalla valutazione euristica, la paginazione è stata introdotta come miglioramento strutturale della navigazione delle liste.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/fig-riprogettazione-fisica/appunti/appunti_3.png}
+    \caption{Interfaccia Sezione Appunti}
+    \label{fig:appunti_3}
+  \end{figure}
 
-\item \textbf{Input Hints} (Tidwell): Il pattern prevede di affiancare ai campi di input suggerimenti testuali che chiariscono cosa è richiesto e in quale formato, evitando che l'utente debba procedere per tentativi. Nel wizard di caricamento file mancavano indicazioni chiare sui limiti di dimensione e sui formati supportati, e nel secondo step i campi obbligatori non erano distinguibili da quelli facoltativi. Sono stati quindi aggiunti suggerimenti testuali nel primo step di upload e i campi obbligatori sono stati contrassegnati con un asterisco.
+  \item \textbf{Pagination} (Tidwell): Il pattern prevede di suddividere una lista molto lunga in pagine di dimensione fissa, caricate una alla volta, fornendo controlli di navigazione per spostarsi tra di esse. È particolarmente utile quando la lista potrebbe crescere indefinitamente, come nel caso di una collezione personale di appunti o dei documenti condivisi in Community, poiché evita che l'utente si trovi davanti a una pagina interminabile e difficile da scorrere. La paginazione restituisce inoltre all'utente il controllo sulla navigazione, permettendogli di sapere quanti elementi sono presenti in totale e a che punto si trova nella lista, come indicato dal contatore \textit{"Risultati da X a Y di Z"} e dai controlli numerici in fondo alla pagina. Pur non essendo direttamente collegata a un problema emerso dalla valutazione euristica, la paginazione è stata introdotta come miglioramento strutturale della navigazione delle liste.
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/fig-riprogettazione-fisica/appunti/appunti_7.png}
+    \caption{}
+    \label{fig:appunti_7}
+  \end{figure}
+
+\item \textbf{Input Hints} (Tidwell): Il pattern prevede di affiancare ai campi di input suggerimenti testuali che chiariscono cosa è richiesto e in quale formato, evitando che l'utente debba procedere per tentativi. Nel wizard di caricamento file mancavano indicazioni chiare sui limiti di dimensione e sui formati supportati, e nel secondo step i campi obbligatori non erano distinguibili da quelli facoltativi. Sono stati quindi aggiunti suggerimenti testuali nel primo step di upload e i campi obbligatori sono stati contrassegnati con un asterisco. (Figura \ref{fig:appunti_1})
 
   Problemi di usabilità risolti:
     \begin{itemize}
@@ -76,12 +104,26 @@ La seconda riguarda la sezione \textit{Esplora Appunti}, oggi rinominata \textit
     \item P51 (Le pagine vuote mostrano solo "Nessun documento" senza invitare l'utente ad agire): Quando un utente visualizza la sezione "Appunti" vuota, trova un messaggio con due bottoni che lo indirizzano verso le azioni principali disponibili ("Carica il tuo primo file", "Sfoglia la community").
   \end{itemize}
 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/fig-riprogettazione-fisica/appunti/appunti_6.png}
+    \caption{Entry point}
+    \label{fig:appunti_6}
+  \end{figure}
+
   \item \textbf{Input Prompt} (Tidwell): Il pattern prevede di inserire in un campo di input un testo istruttivo che guida l'utente su cosa fare, senza che tale testo costituisca un'opzione valida. Nella versione precedente, i menu a tendina per università e dipartimento presentavano già una voce segnaposto \textit{«Seleziona...»} visibile prima dell'apertura del menu, ma questa voce rimaneva selezionabile anche all'interno della lista delle opzioni, come se fosse una scelta valida. Nella versione riprogettata il placeholder è stato mantenuto come etichetta istruttiva visibile sul campo chiuso, ma una volta aperto il menu non compare più come opzione selezionabile, rendendo immediatamente chiaro all'utente quali siano le sole scelte effettive.
 
   Problemi di usabilità risolti:
   \begin{itemize}
     \item P92 (Durante il caricamento di un file, nei menu a tendina per università e dipartimento, la voce segnaposto "Seleziona..." risulta selezionabile come se fosse un'opzione valida): Il placeholder è ora esclusivamente un testo istruttivo e non compare tra le opzioni selezionabili del menu.
   \end{itemize}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/fig-riprogettazione-fisica/appunti/appunti_4.png}
+    \caption{Placeholder "Seleziona l'università" non selezionabile}
+    \label{fig:appunti_4}
+  \end{figure}
 
   \item \textbf{Module Tabs} (Tidwell): Il pattern prevede di organizzare contenuti omogenei in aree tabulate, mostrando un solo modulo alla volta e permettendo all'utente di spostarsi tra i gruppi tramite click sul tab corrispondente. Nella versione precedente i tre tab erano già presenti, ma selezionandone uno la barra dei tab scompariva, impedendo all'utente di navigare liberamente tra le sezioni senza dover tornare alla pagina precedente. Inoltre i tab non avevano etichette chiare e i layout delle rispettive schermate erano incoerenti tra loro. Nella versione riprogettata i tab sono sempre visibili e navigabili, sono stati rinominati in "I Miei Appunti", "Salvati" e "Appunti condivisi" con etichette immediatamente comprensibili, e fungono da filtro sull'intera collezione di file: "I Miei Appunti" mostra tutti i file caricati dall'utente, "Salvati" quelli salvati dalla community, e "Appunti condivisi" quelli che l'utente ha reso pubblici, permettendo di individuare rapidamente un sottoinsieme specifico di contenuti.
 
@@ -93,6 +135,13 @@ La seconda riguarda la sezione \textit{Esplora Appunti}, oggi rinominata \textit
   \end{itemize}
 \end{itemize}
 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/fig-riprogettazione-fisica/appunti/appunti_5.png}
+    \caption{Area appunti Salvati}
+    \label{fig:appunti_5}
+  \end{figure}
+
 \paragraph{Altre modifiche}
 Le colonne di visualizzazione dei file sono state ridefinite con le voci "NOME", "CORSO", "DURATA", "DIM.", "STATO" e "DATA", pensate per essere compatibili con tutti i tipi di contenuto gestiti dalla piattaforma. Questa modifica si è resa necessaria in seguito all'accorpamento in un'unica sezione di file caricati manualmente e trascrizioni e audio note generati dagli strumenti AI: avendo tipologie di file eterogenee, le colonne dovevano rappresentare attributi comuni e significativi per ciascuna di esse, permettendo all'utente di consultare e confrontare i propri contenuti in modo uniforme. \\
 
@@ -101,3 +150,10 @@ Problemi di usabilità risolti:
   \item P20 (Titolo della pagina "I Miei Appunti" scritto in inglese:     "Resource Repository"): È stato tradotto il titolo in italiano e lo si è mantenuto coerente con il nome nella sidebar "Appunti".
   \item P32 (Messaggio "no folder trovato" è un mix italiano/inglese): È stato tradotto il messaggio di avviso.
 \end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/fig-riprogettazione-fisica/appunti/appunti_8.png}
+  \caption{}
+  \label{fig:appunti_8}
+\end{figure}
