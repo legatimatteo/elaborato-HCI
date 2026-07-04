@@ -12,29 +12,29 @@
 \usepackage{setspace}
 \usepackage{csquotes}
 \usepackage[
-  backend=biber,
-  style=numeric,
-  sorting=ynt
+	backend=biber,
+	style=numeric,
+	sorting=ynt
 ]{biblatex}
 \addbibresource{bibliography.bib}
 
 \hypersetup{
-  bookmarksopen=true,
-  pdfauthor=Riccardo Valtorta
+	bookmarksopen=true,
+	pdfauthor=Riccardo Valtorta
 }
 
 \lstdefinestyle{myStyle}{
-  language=SQL,
-  basicstyle=\small\ttfamily,
-  keepspaces=true
+	language=SQL,
+	basicstyle=\small\ttfamily,
+	keepspaces=true
 }
 
 \lstdefinestyle{myStyle2}{
-  language=SQL,
-  basicstyle=\small\ttfamily,
-  keepspaces=true,
-  numbers = left,
-  numbersep=1pt
+	language=SQL,
+	basicstyle=\small\ttfamily,
+	keepspaces=true,
+	numbers = left,
+	numbersep=1pt
 }
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -43,52 +43,52 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{myStyle3}{
-  language=SQL,
-  backgroundcolor=\color{backcolour},
-  commentstyle=\color{codegreen},
-  keywordstyle=\color{magenta},
-  numberstyle=\tiny\color{codegray},
-  stringstyle=\color{codepurple},
-  basicstyle=\ttfamily\footnotesize,
-  breakatwhitespace=false,
-  breaklines=true,
-  captionpos=b,
-  keepspaces=true,
-  numbers=left,
-  numbersep=5pt,
-  showspaces=false,
-  showstringspaces=false,
-  showtabs=false,
-  tabsize=2
+	language=SQL,
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
 }
 
 \lstdefinestyle{py}{
-  language=Python,
-  backgroundcolor=\color{backcolour},
-  commentstyle=\color{codegreen},
-  keywordstyle=\color{magenta},
-  numberstyle=\tiny\color{codegray},
-  stringstyle=\color{codepurple},
-  basicstyle=\ttfamily\footnotesize,
-  breakatwhitespace=false,
-  breaklines=true,
-  captionpos=b,
-  keepspaces=true,
-  numbers=left,
-  numbersep=5pt,
-  showspaces=false,
-  showstringspaces=false,
-  showtabs=false,
-  tabsize=2
+	language=Python,
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
 }
 
 \let\oldincludegraphics\includegraphics
 \renewcommand{\includegraphics}[2][]{%
-  \fbox{\oldincludegraphics[#1]{#2}}%
+	\fbox{\oldincludegraphics[#1]{#2}}%
 }
 
 \newcommand{\getNumeroProblema}{%
-  \refstepcounter{table}\thetable%
+	\refstepcounter{table}\thetable%
 }
 
 \pgfplotsset{compat=1.18}
@@ -115,46 +115,45 @@
 \tcbuselibrary{skins}
 
 \newtcolorbox{scenario}[2][]{
-  enhanced,
-  arc=3pt,
-  outer arc=3pt,
-  boxrule=0.5pt,
-  colback=gray!4,
-  colframe=gray!50,
-  fontupper=\small\sffamily,
-  top=6pt, bottom=6pt, left=8pt, right=8pt,
-  title={\small\sffamily\textbf{#2}},
-  colbacktitle=gray!18,
-  coltitle=black!80,
-  titlerule=0.3pt,
-  toptitle=3pt,
-  bottomtitle=3pt,
-  #1
+	enhanced,
+	arc=3pt,
+	outer arc=3pt,
+	boxrule=0.5pt,
+	colback=gray!4,
+	colframe=gray!50,
+	fontupper=\small\sffamily,
+	top=6pt, bottom=6pt, left=8pt, right=8pt,
+	title={\small\sffamily\textbf{#2}},
+	colbacktitle=gray!18,
+	coltitle=black!80,
+	titlerule=0.3pt,
+	toptitle=3pt,
+	bottomtitle=3pt,
+	#1
 }
 
 % ------------------------------------------------------------------------------------
 % Per colorare i links
 \hypersetup{
-  colorlinks=true, 
-  urlcolor=blue, 
-  linkcolor=black
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=black
 }
 
 % Macro per la colorazione automatica del p-value (usata nelle tabelle)
 \ExplSyntaxOn
 \newcommand{\pvalue}[1]{%
-  \regex_match:nnTF { ^[-+]?[0-9]*[.,]?[0-9]+$ } { #1 }
-    {
-      \str_set:Nn \l_tmpa_str { #1 }%
-      \str_replace_all:Nnn \l_tmpa_str { , } { . }% Sostituisce la virgola con il punto per il calcolo
-      \fp_compare:nTF { \l_tmpa_str > 0.05 }
-        { \cellcolor{red!20} }% p > 0.05: rosso
-        { \cellcolor{green!20} }% p <= 0.05: verde
-      #1%
-    }
-    {
-      #1% Se non è un numero (es. vuoto, #N/A, Varianza nulla), stampa così com'è senza colore
-    }
+\regex_match:nnTF { ^[-+]?[0-9]*[.,]?[0-9]+$ } { #1 }
+{
+\str_set:Nn \l_tmpa_str { #1 }%
+\str_replace_all:Nnn \l_tmpa_str { , } { . }% Sostituisce la virgola con il punto per il calcolo
+\fp_compare:nTF { \l_tmpa_str >= 0.05 }
+{ \cellcolor{red!20} }% p >= 0.05: rosso
+{ \cellcolor{green!20} }% p < 0.05: verde
+#1%
+}
+{
+#1% Se non è un numero (es. vuoto, #N/A, Varianza nulla), stampa così com'è senza colore
+}
 }
 \ExplSyntaxOff
-
