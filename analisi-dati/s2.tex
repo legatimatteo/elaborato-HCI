@@ -4,7 +4,7 @@ Lo Scenario S2 ha richiesto agli utenti di simulare l'organizzazione del materia
 
 \paragraph{Analisi delle prestazioni generali}
 
-Come si può notare dai dati aggregati per lo Scenario S2 (Tabella~\ref{tab:6-s2-1}), il tasso di completamento (\textit{Success Rate}) si è attestato al 100,00\% per entrambe le versioni del sistema. L'analisi quantitativa dei dati aggregati evidenzia un chiaro miglioramento dell'usabilità nella versione post-riprogettazione (B). Il tasso di completamento (\textit{Success Rate}) rimane pari al 100,00\% in entrambe le varianti del sistema. Tuttavia, si osserva una forte riduzione della media degli errori, che passa da 2,80 nella versione originale (A) a 0,47 nella versione B, con un miglioramento dell'83,33\%.
+La totalità dei partecipanti ha completato con successo lo Scenario S2 in entrambe le configurazioni del sistema (Tabella~\ref{tab:6-s2-1}). L'efficacia della riprogettazione si manifesta in modo marcato attraverso un abbattimento drastico dei tre indicatori prestazionali principali, tutti confermati da forti riscontri sul piano statistico. In primo luogo, la media degli errori registra una contrazione del 83,33\%, scendendo da 2,80 nella versione originale ad appena 0,47 nella versione B. Parallelamente, si assiste a un progresso netto e confermato sul piano statistico per il tempo medio di esecuzione, ridotto del 39,72\% (da 4.37.16 a 2.47.08), e per il numero medio di click richiesti per portare a termine il flusso di lavoro, calati del 59,55\% (da 50,60 a 20,47). A riprova di questi risultati, la difficoltà percepita espressa tramite la mediana evidenzia un decremento, scendendo da un valore pari a 3 (neutro) a 2 (facile). Questa tendenza positiva è supportata anche dalle medie riportate in Figura~\ref{fig:6-s2-1}, in cui il punteggio medio cala qualitativamente da 3,40 a 2,00.
 
 \begin{figure}[H]
 	\centering
@@ -41,23 +41,27 @@ Come si può notare dai dati aggregati per lo Scenario S2 (Tabella~\ref{tab:6-s2
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Metriche prestazionali globali aggregate per lo Scenario S2.}
 	\label{tab:6-s2-1}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
-		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
-		Media Errori     & 2,80                            & 0,47                                       & -83,33\%            \\ \hline
-		Mediana Tempo    & 4:29                            & 2:33                                       & -43,12\%            \\ \hline
-		Mediana Click    & 42                              & 19                                         & -54,76\%            \\ \hline
-		Media Difficoltà & 3,40                            & 2,00                                       & -41,18\%            \\ \hline
+		\textbf{S2}           & \multicolumn{2}{c|}{\textbf{Versione A}} & \multicolumn{2}{c|}{\textbf{Versione B}} & \textbf{Variazione \%} & \textbf{Rilevanza}                                            \\ \hline
+		\textit{Success Rate} & \multicolumn{2}{c|}{100,00\%}            & \multicolumn{2}{c|}{100,00\%}            & \textbf{Invariato}     &                                                               \\ \hline
+		\rowcolor{gray!30}
+		                      & \textbf{Media}                           & \textbf{DEV.ST}                          & \textbf{Media}         & \textbf{DEV.ST}    & \multicolumn{2}{c|}{}                    \\ \hline
+		\textit{Errori}       & 2,80                                     & 2,33605                                  & 0,467                  & 0,63994            & \textbf{-83,33\%}     & \pvalue{0,00104} \\ \hline
+		\textit{Tempo}        & 4.37.16                                  & 0,10212                                  & 2.47.08                & 0,05400            & \textbf{-39,72\%}     & \pvalue{0,00382} \\ \hline
+		\textit{Click}        & 50,60                                    & 18,34510                                 & 20,47                  & 6,06944            & \textbf{-59,55\%}     & \pvalue{0,00002} \\ \hline
+		\rowcolor{gray!30}
+		                      & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{}                                                                  \\ \hline
+		\textit{Difficoltà}   & \multicolumn{2}{c|}{3}                   & \multicolumn{2}{c|}{2}                   & \multicolumn{2}{c|}{}                                                                  \\ \hline
 	\end{tabular}
 \end{table}
 
-La riduzione degli errori e il dimezzamento dei click necessari mostrano l'efficacia della riprogettazione. Il nuovo flusso risulta più semplice e immediato, permettendo agli utenti di organizzare e caricare i materiali con meno passaggi e minori difficoltà.
+Il drastico calo degli errori e la considerevole riduzione dei click medi confermano l'efficacia della riprogettazione, evidenziando un flusso di lavoro semplificato che permette agli utenti di organizzare e caricare i materiali in modo assai più diretto.
 
 \paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
 
@@ -76,28 +80,32 @@ Per la versione post-riprogettazione (B), i commenti raccolti confermano invece 
 
 Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-s2-2}), emerge come una struttura più chiara dell'interfaccia favorisca l'apprendimento delle attività richieste.
 
-Nel gruppo che ha utilizzato prima la versione A e poi la versione B, il primo approccio all'interfaccia originale ha comportato tempi elevati, con una mediana pari a 5:38. Il passaggio alla versione riprogettata ha portato a una riduzione del 52,07\%, facendo scendere il tempo mediano a 2:42.
+Nel gruppo che ha affrontato il test nella sequenza A--B, l'interazione iniziale con la versione originale ha fatto registrare un tempo medio di esecuzione pari a 5.44.07. Il successivo passaggio alla versione B ha prodotto un miglioramento solido ed empiricamente fondato, con il tempo medio che scende del 49,05\% per attestarsi a 2.55.20. Questo progresso trova piena conferma in diminuzioni altrettanto sistematiche e non attribuibili al caso per quanto riguarda sia la media degli errori (-81,82\%, da 3,67 a 0,67) sia quella dei click (-59,27\%, da 54,56 a 22,22).
 
-Il risultato più interessante emerge però dal gruppo che ha utilizzato le interfacce nell'ordine B--A. Gli utenti hanno completato inizialmente lo scenario nella versione B in 2:20, acquisendo rapidamente familiarità con il flusso di lavoro. Successivamente, passando alla versione originale, hanno concluso il compito in 2:46.
+Nel gruppo caratterizzato dall'ordine B--A, il tempo medio di esecuzione mostra un incremento nel passaggio dalla versione riprogettata a quella originale (da 2.34.50 a 2.57.00): questa variazione è tuttavia da interpretare come semplice trend descrittivo, non risultando statisticamente discriminante. Al contrario, si registrano decisi peggioramenti per le altre metriche operative nel passaggio alla versione A, confermati da forti riscontri nei test inferenziali. In particolare, la media degli errori aumenta significativamente dell'800,00\% (passando da 0,17 a 1,50) e il numero medio di click cresce del 150,47\% (da 17,83 a 44,67).
 
-Questo risultato suggerisce un forte effetto di apprendimento. Gli utenti che hanno iniziato con la versione B hanno sviluppato un modello mentale più chiaro delle operazioni da svolgere e sono quindi riusciti a orientarsi meglio anche nella versione originale. Di conseguenza, hanno impiegato circa la metà del tempo rispetto agli utenti che hanno affrontato la versione A senza alcuna esperienza precedente (2:46 contro 5:38).
+Tale quadro evidenzia come l'apprendimento non riesca a compensare i limiti strutturali della versione originale: pur avendo acquisito familiarità con il flusso di lavoro grazie all'esperienza positiva con la versione B, gli utenti hanno comunque riscontrato un incremento sistematico di errori e azioni necessarie per concludere il compito nell'interfaccia A.
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\caption{Confronto delle metriche prestazionali in funzione dell'ordine di esecuzione per lo Scenario S2.}
 	\label{tab:6-s2-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 5:38                                       & 2:42                                       & -52,07\%            \\ \hline
-		Ordine B--A                   & 2:46                                       & 2:20                                       & +18,57\%            \\ \hline
+		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}}                                                 & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                 \\ \cline{2-9} 
+		\rowcolor{gray!30}
+		                              & \textbf{A}          & \textbf{B}          & \textbf{Variazione \%} & \textbf{Rilevanza}        & \textbf{B}          & \textbf{A}          & \textbf{Variazione \%} & \textbf{Rilevanza}        \\ \hline
+		\textit{Tempo (Media)}        & 5.44.07             & 2.55.20             & \textbf{-49,05\%}      & \pvalue{0,01267}          & 2.34.50             & 2.57.00             & \textbf{14,32\%}       & \pvalue{0,32504}          \\ \hline
+		\textit{Errori (Media)}       & 3,67                & 0,667               & \textbf{-81,82\%}      & \pvalue{0,01200}          & 0,167               & 1,50                & \textbf{800,00\%}      & \pvalue{0,00146}          \\ \hline
+		\textit{Click (Media)}        & 54,56               & 22,22               & \textbf{-59,27\%}      & \pvalue{0,00432}          & 17,83               & 44,67               & \textbf{150,47\%}      & \pvalue{0,00113}          \\ \hline
+		\textit{Difficoltà (Mediana)} & 3                   & 2                   &                        & \pvalue{}                 & 2                   & 4                   &                        & \pvalue{}                 \\ \hline
 	\end{tabular}
 \end{table}
 
-L'effetto dell'apprendimento si nota chiaramente anche nelle valutazioni di difficoltà (Figura~\ref{fig:6-s2-2}). Come prima cosa, la versione B si conferma solida e prende lo stesso identico voto (2,00) in entrambi i gruppi, a dimostrazione che il nuovo flusso per gestire le cartelle e le funzioni IA è facile da capire per tutti. La vera differenza si vede sulla vecchia versione A, dove nel gruppo B--A la difficoltà schizza addirittura a 4,00. Questo voto dimostra che, dopo aver provato un sistema fluido e pulito, l'impatto con i comandi nascosti e i blocchi della versione originale diventa insopportabile, anche se si conosce già la sequenza dei passaggi. Nel gruppo A--B, invece, la versione originale ottiene un punteggio pari a 3,00. Sebbene il valore indichi una difficoltà percepita non trascurabile, risulta comunque inferiore a quello osservato nel gruppo B--A. Questo suggerisce che l'esperienza con la versione riprogettata abbia reso più evidenti le limitazioni dell'interfaccia originale, portando gli utenti a valutarla in modo più severo quando la utilizzano successivamente.
+Le valutazioni di difficoltà percepita confermano questo andamento. Esaminando le risposte tramite la mediana, la versione B dimostra una stabilità eccellente con un valore pari a 2 in entrambi i gruppi, indicando come il nuovo flusso per la gestione di cartelle e funzionalità IA sia compreso agevolmente da tutti. Al contrario, la valutazione mediana della versione originale (A) si attesta a 3 per il gruppo A--B e sale a 4 per il gruppo B--A. Questa differenza trova perfetto riscontro qualitativo nei punteggi medi illustrati in Figura~\ref{fig:6-s2-2} (3,00 per A--B e 4,00 per B--A). L'aumento della difficoltà percepita per la versione A nel gruppo B--A suggerisce che l'esperienza diretta con un'interfaccia fluida e pulita renda gli utenti molto più critici verso le carenze del sistema originale, rendendo i blocchi e la scarsa intuitività della versione A ancora meno tollerabili anche a fronte di una conoscenza pregressa del compito.
 
 \begin{figure}[H]
 	\centering

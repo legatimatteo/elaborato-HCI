@@ -4,7 +4,7 @@ Il compito C1 prevedeva il completamento della procedura di registrazione alla p
 
 \paragraph{Analisi delle prestazioni generali}
 
-Come si può notare dai dati aggregati per il compito C1 (Tabella~\ref{tab:6-c1-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. Si osserva una riduzione dell’80,00\% nella media degli errori (da 1,00 a 0,20) e una diminuzione del 15,79\% nella mediana dei click (da 19 a 16) a favore della versione riprogettata. Al contrario, la mediana del tempo di esecuzione aumenta del 14,29\% (da 1:10 a 1:20), mentre la difficoltà percepita si riduce del 10,00\%.
+La riprogettazione del form in un wizard multi-step ha introdotto migliorie nell'efficacia del compito C1 (Tabella~\ref{tab:6-c1-1}) confermate anche sul piano statistico, determinando un abbattimento dell'80,00\% nel numero medio di errori (da 1,00 a 0,20), ferma restando la perfetta riuscita dell'esecuzione del compito per tutti i partecipanti (con un Success Rate pari al 100,00\% per entrambe le versioni). Sul fronte dell'efficienza, le lievi riduzioni riscontrate nel tempo medio di esecuzione e nel numero medio di click si configurano come semplici tendenze descrittive, non supportate da rilevanza statistica. Questa facilità d'uso trova riscontro nella stabilità della difficoltà percepita, la cui mediana si attesta al valore minimo (1) in entrambe le versioni; anche l'andamento delle medie riportate nel grafico (1,33 per la versione A e 1,20 per la versione B) suggerisce un lieve trend qualitativo di miglioramento.
 
 \begin{figure}[H]
 	\centering
@@ -41,23 +41,27 @@ Come si può notare dai dati aggregati per il compito C1 (Tabella~\ref{tab:6-c1-
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Metriche prestazionali globali aggregate per il compito C1.}
 	\label{tab:6-c1-1}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
-		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
-		Media Errori     & 1,00                            & 0,20                                       & -80,00\%            \\ \hline
-		Mediana Tempo    & 1:10                            & 1:20                                       & +14,29\%            \\ \hline
-		Mediana Click    & 19                              & 16                                         & -15,79\%            \\ \hline
-		Media Difficoltà & 1,33                            & 1,20                                       & -10,00\%            \\ \hline
+		\textbf{C1}           & \multicolumn{2}{c|}{\textbf{Versione A}} & \multicolumn{2}{c|}{\textbf{Versione B}} & \textbf{Variazione \%} & \textbf{Rilevanza}                                            \\ \hline
+		\textit{Success Rate} & \multicolumn{2}{c|}{100,00\%}            & \multicolumn{2}{c|}{100,00\%}            & \textbf{Invariato}     &                                                               \\ \hline
+		\rowcolor{gray!30}
+		                      & \textbf{Media}                           & \textbf{DEV.ST}                          & \textbf{Media}         & \textbf{DEV.ST}    & \multicolumn{2}{c|}{}                    \\ \hline
+		\textit{Errori}       & 1,00                                     & 1,30931                                  & 0,200                  & 0,56061            & \textbf{-80,00\%}     & \pvalue{0,02807} \\ \hline
+		\textit{Tempo}        & 1.33.40                                  & 0,03276                                  & 1.20.00                & 0,02016            & \textbf{-14,59\%}     & \pvalue{0,36349} \\ \hline
+		\textit{Click}        & 18,20                                    & 7,21308                                  & 17,67                  & 5,35413            & \textbf{-2,93\%}      & \pvalue{0,77475} \\ \hline
+		\rowcolor{gray!30}
+		                      & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{}                                                                  \\ \hline
+		\textit{Difficoltà}   & \multicolumn{2}{c|}{1}                   & \multicolumn{2}{c|}{1}                   & \multicolumn{2}{c|}{}                                                                  \\ \hline
 	\end{tabular}
 \end{table}
 
-L’aumento del tempo mediano nella versione B può essere interpretato come effetto della struttura wizard, che introduce una maggiore granularità nel processo di inserimento dei dati. Tale struttura, pur comportando una lieve estensione dei tempi di interazione, contribuisce a una maggiore accuratezza, come evidenziato dalla significativa riduzione del tasso di errore.
+La significativa contrazione degli errori suggerisce l'efficacia del form guidato multi-step (wizard) introdotto nella versione B, il quale ha semplificato la compilazione limitando le sviste degli utenti. La tendenza alla riduzione del tempo medio, pur non essendo statisticamente significativa, suggerisce che la suddivisione del form in più passaggi non ha rallentato il processo complessivo né ha introdotto un sovraccarico nell'interazione.
 
 \paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
 
@@ -81,28 +85,32 @@ Per la versione post-riprogettazione (B), le osservazioni indicano un migliorame
 
 \paragraph{Valutazione dell'effetto di apprendimento}
 
-Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c1-2}), emergono dinamiche differenti tra i gruppi.
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c1-2}), emergono chiare differenze riconducibili a effetti di apprendimento e familiarizzazione con il compito.
 
-Nel gruppo A--B, il tempo mediano di esecuzione passa da 2:06 (versione A) a 1:18 (versione B), con una riduzione del 38,10\%.
+Nel gruppo con ordine A--B, si osserva una tendenza alla riduzione del tempo medio di completamento nel passaggio alla versione B, posizionandosi come una fluttuazione che non assume rilevanza statistica. Si registra tuttavia un progresso netto e confermato sul piano statistico nel numero medio di errori, che scende dell'80,00\% (da 1,67 a 0,33) nel passaggio alla versione riprogettata.
 
-Nel gruppo B--A, il tempo mediano iniziale sulla versione B è pari a 1:22, mentre nella successiva esecuzione sulla versione A si osserva un valore pari a 0:52,5. Questo andamento suggerisce la presenza di un effetto di familiarizzazione con i dati richiesti (e.g. informazioni anagrafiche e accademiche), che consente una compilazione più rapida del form non strutturato. Tuttavia, la struttura guidata della versione B introduce un vincolo sequenziale che può aumentare il tempo di interazione pur riducendo gli errori.
+Nel gruppo con ordine B--A, si rileva una contrazione solida e statisticamente rilevante del tempo medio di esecuzione nel passaggio dalla versione B (1:24.00) alla versione A (1:02.30), pari al -25,60\%. Questo andamento evidenzia un forte effetto di familiarizzazione con le informazioni richieste (es. dati accademici e personali), che consente una compilazione molto più rapida del form non strutturato una volta appreso il contesto. Tale apprendimento trova riscontro anche nell'assenza totale di errori (media pari a 0,00) in entrambe le sessioni di questo gruppo: l'interazione iniziale con il wizard (Versione B) ha guidato l'utente nell'acquisizione delle informazioni necessarie, prevenendo l'insorgenza di errori anche nella successiva compilazione del form originale (Versione A).
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\caption{Confronto delle metriche prestazionali in funzione dell'ordine di esecuzione per il compito C1.}
 	\label{tab:6-c1-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 2:06                                       & 1:18                                       & -38,10\%            \\ \hline
-		Ordine B--A                   & 0:52,5                                     & 1:22                                       & -35,98\%            \\ \hline
+		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}} & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                                                                                            \\ \cline{2-9}
+		\rowcolor{gray!30}
+		                              & \textbf{A}                                & \textbf{B}                                & \textbf{Variazione \%} & \textbf{Rilevanza} & \textbf{B} & \textbf{A} & \textbf{Variazione \%} & \textbf{Rilevanza}      \\ \hline
+		\textit{Tempo (Media)}        & 1.54.27                                   & 1.17.20                                   & \textbf{-32,43\%}      & \pvalue{0,13120}   & 1.24.00    & 1.02.30    & \textbf{-25,60\%}      & \pvalue{0,04936}        \\ \hline
+		\textit{Errori (Media)}       & 1,67                                      & 0,33                                      & \textbf{-80,00\%}      & \pvalue{0,04237}   & 0,00       & 0,00       & \textbf{Invariato}     & \pvalue{Varianza nulla} \\ \hline
+		\textit{Click (Media)}        & 21,78                                     & 19,11                                     & \textbf{-12,24\%}      & \pvalue{0,32224}   & 15,50      & 12,83      & \textbf{-17,20\%}      & \pvalue{0,09704}        \\ \hline
+		\textit{Difficoltà (Mediana)} & 1                                         & 1                                         &                        & \pvalue{}          & 1          & 1          &                        & \pvalue{}               \\ \hline
 	\end{tabular}
 \end{table}
 
-Questo effetto si riflette anche sulle valutazioni della difficoltà percepita (Figura~\ref{fig:6-c1-2}). Nel gruppo che ha seguito l'ordine A--B, l'impatto iniziale con i difetti della versione originale (A) si traduce nel punteggio di difficoltà più alto di tutto il test (1,56); la fatica poi cala quando gli utenti passano alla versione riprogettata (1,33). Nel gruppo B--A, invece, si nota un dato molto interessante: chi inizia con la versione guidata (B) trova il compito facilissimo, dando il punteggio minimo di difficoltà (1,00). La cosa sorprendente è che questo valore resta identico (1,00) anche quando questo gruppo passa alla vecchia versione A. Un'interpretazione più rigorosa di questo fenomeno suggerisce che l'aver appreso preventivamente quali informazioni inserire grazie alla Versione B abbia ridotto significativamente il carico cognitivo intrinseco del task. Di conseguenza, gli utenti hanno potuto dedicare maggiori risorse attentive alla gestione del carico cognitivo estraneo introdotto dalla Versione A (bug visivi, refresh della pagina e incoerenze linguistiche), mantenendo pressoché invariata la difficoltà percepita.
+Questo andamento si riflette coerentemente nella valutazione della difficoltà percepita (Figura~\ref{fig:6-c1-2}). Sebbene il valore mediano si attesti al minimo (1) per tutte le condizioni (Tabella~\ref{tab:6-c1-2}), il punteggio medio offre ulteriori spunti analitici. Nel gruppo che segue l'ordine A--B, il primo impatto con la versione originale (A) comporta una difficoltà media percepita pari a 1,56, che si riduce a 1,33 nel passaggio alla versione B. Nel gruppo B--A, invece, la difficoltà media percepita si attesta al valore minimo di 1,00 in entrambe le prove. Questo suggerisce che l'aver familiarizzato preventivamente con i campi del form attraverso il wizard della versione B abbia ridotto notevolmente il carico cognitivo intrinseco del compito. Di conseguenza, nel successivo inserimento sulla versione A, gli utenti sono stati in grado di gestire i difetti dell'interfaccia originale (come i refresh improvvisi o le ambiguità linguistiche) senza risentirne in termini di sforzo percepito.
 
 \begin{figure}[H]
 	\centering

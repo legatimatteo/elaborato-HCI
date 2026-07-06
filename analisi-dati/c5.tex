@@ -4,7 +4,9 @@ Il compito C5 richiedeva all’utente di accedere alla sezione ``Community'', ri
 
 \paragraph{Analisi delle prestazioni generali}
 
-Come si può notare dai dati aggregati per il compito C5 (Tabella~\ref{tab:6-c5-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. L’analisi dei dati evidenzia un miglioramento marcato a favore della versione post-riprogettazione (B), la quale mostra una riduzione del 54,44\% nella mediana del tempo di esecuzione (da 1:30 a 0:41), una diminuzione del 57,14\% nella media degli errori (da 1,40 a 0,60), una contrazione del 23,08\% nella mediana dei click e una riduzione del 25,00\% della difficoltà percepita.
+La riprogettazione introdotta nella versione B ha generato un progresso netto e confermato sul piano statistico in tutte le metriche prestazionali del compito (Tabella~\ref{tab:6-c5-1}), ferma restando l'efficacia impeccabile registrata per tutti i partecipanti con entrambe le interfacce. L'aspetto di maggior rilievo risiede nella decisa contrazione degli errori medi commessi dagli utenti, crollati del 57,14\% (da 1,40 a 0,60) grazie a una più chiara distinzione semantica delle opzioni. A questo miglioramento si affianca un abbattimento drastico dei tempi medi di esecuzione, ridottisi del 35,48\% (da 1.26.48 a 0.56.00), e una riduzione sistematica e non attribuibile al caso del 31,84\% nel numero medio di click necessari (che scendono da 14,87 a 10,13).
+
+Tali benefici operativi si riflettono in una diminuzione della difficoltà percepita, la cui mediana scende da 2 a 1. A supporto di questa tendenza, i punteggi medi rappresentati nella Figura~\ref{fig:6-c5-1} evidenziano una fluttuazione discendente da 2,40 a 1,80, confermando come la nuova soluzione abbia mitigato i punti di attrito cognitivo riscontrati nella prima versione.
 
 \begin{figure}[H]
 	\centering
@@ -41,19 +43,23 @@ Come si può notare dai dati aggregati per il compito C5 (Tabella~\ref{tab:6-c5-
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Metriche prestazionali globali aggregate per il compito C5.}
 	\label{tab:6-c5-1}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Metrica} & \textbf{Versione originale (A)} & \textbf{Versione post-riprogettazione (B)} & \textbf{Variazione} \\ \hline
-		Success Rate     & 100,00\%                        & 100,00\%                                   & 0,00\%              \\ \hline
-		Media Errori     & 1,40                            & 0,60                                       & -57,14\%            \\ \hline
-		Mediana Tempo    & 1:30                            & 0:41                                       & -54,44\%            \\ \hline
-		Mediana Click    & 13                              & 10                                         & -23,08\%            \\ \hline
-		Media Difficoltà & 2,40                            & 1,80                                       & -25,00\%            \\ \hline
+		\textbf{C5}           & \multicolumn{2}{c|}{\textbf{Versione A}} & \multicolumn{2}{c|}{\textbf{Versione B}} & \textbf{Variazione \%} & \textbf{Rilevanza}                                            \\ \hline
+		\textit{Success Rate} & \multicolumn{2}{c|}{100,00\%}            & \multicolumn{2}{c|}{100,00\%}            & \textbf{Invariato}     &                                                               \\ \hline
+		\rowcolor{gray!30}
+		                      & \textbf{Media}                           & \textbf{DEV.ST}                          & \textbf{Media}         & \textbf{DEV.ST}    & \multicolumn{2}{c|}{}                    \\ \hline
+		\textit{Errori}       & 1,40                                     & 1,00000                                  & 0,600                  & 1,12122            & \textbf{-57,14\%}     & \pvalue{0,01717} \\ \hline
+		\textit{Tempo}        & 1.26.48                                  & 0,02323                                  & 0.56.00                & 0,02892            & \textbf{-35,48\%}     & \pvalue{0,03876} \\ \hline
+		\textit{Click}        & 14,87                                    & 6,15127                                  & 10,13                  & 4,59606            & \textbf{-31,84\%}     & \pvalue{0,03767} \\ \hline
+		\rowcolor{gray!30}
+		                      & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{\textbf{Mediana}}    & \multicolumn{2}{c|}{}                                                                  \\ \hline
+		\textit{Difficoltà}   & \multicolumn{2}{c|}{2}                   & \multicolumn{2}{c|}{1}                   & \multicolumn{2}{c|}{}                                                                  \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -81,26 +87,28 @@ Per la versione post-riprogettazione (B), le osservazioni indicano un’interazi
 
 Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c5-2}), emerge un impatto significativo della familiarità con il contesto di ricerca e con la struttura della sezione.
 
-Nel gruppo A--B, il tempo mediano passa da 1:39 nella versione A a 0:41 nella versione B, con una riduzione del 58,59\%, coerente con il miglioramento osservato nelle metriche aggregate.
-
-Nel gruppo B--A, gli utenti completano inizialmente il task sulla versione B in 0:55, mentre nella successiva esecuzione sulla versione A il tempo mediano sale a 1:04. Questo andamento suggerisce che, sebbene l’esperienza pregressa sulla versione ottimizzata favorisca una maggiore comprensione del task, le limitazioni strutturali della versione originale (in particolare ambiguità dei comandi e bassa visibilità delle azioni principali) continuano a rappresentare un fattore di rallentamento significativo.
+Nel gruppo A--B, la media dei tempi di esecuzione si contrae in modo statisticamente rilevante del 58,36\% (da 1.37.40 a 0.40.40), la media degli errori si riduce del 66,67\% (da 2,00 a 0,667), e il numero medio di click diminuisce del 42,75\% (da 15,33 a 8,78). Di contro, per il gruppo B--A non si registrano variazioni sistematiche e non attribuibili al caso: i tempi medi, la media degli errori (stabile a 0,50) e la media dei click presentano fluttuazioni che non assumono rilevanza statistica. Questo comportamento suggerisce che le barriere all'usabilità poste dalla versione A rimangono elevate anche quando gli utenti hanno già familiarità con il task, limitando i benefici dell'apprendimento nel passaggio inverso.
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Confronto dei tempi mediani in funzione dell'ordine di esecuzione del test.}
+	\caption{Confronto delle metriche prestazionali in funzione dell'ordine di esecuzione per il compito C5.}
 	\label{tab:6-c5-2}
-	\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{3.8cm}|>{\centering\arraybackslash}p{2.2cm}|}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Ordine di Esecuzione} & \textbf{Mediana Tempo Versione A (minuti)} & \textbf{Mediana Tempo Versione B (minuti)} & \textbf{Variazione} \\ \hline
-		Ordine A--B                   & 1:39                                       & 0:41                                       & -58,59\%            \\ \hline
-		Ordine B--A                   & 1:04                                       & 0:55                                       & +16,36\%            \\ \hline
+		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}}                                                 & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                 \\ \cline{2-9} 
+		\rowcolor{gray!30}
+		                              & \textbf{A}          & \textbf{B}          & \textbf{Variazione \%} & \textbf{Rilevanza}        & \textbf{B}          & \textbf{A}          & \textbf{Variazione \%} & \textbf{Rilevanza}        \\ \hline
+		\textit{Tempo (Media)}        & 1.37.40             & 0.40.40             & \textbf{-58,36\%}      & \pvalue{0,00019}          & 1.19.00             & 1.10.30             & \textbf{-10,76\%}      & \pvalue{0,70331}          \\ \hline
+		\textit{Errori (Media)}       & 2,00                & 0,667               & \textbf{-66,67\%}      & \pvalue{0,02220}          & 0,500               & 0,50                & \textbf{Invariato}     & \pvalue{1,00000}          \\ \hline
+		\textit{Click (Media)}        & 15,33               & 8,78                & \textbf{-42,75\%}      & \pvalue{0,04728}          & 12,17               & 14,17               & \textbf{16,44\%}       & \pvalue{0,63483}          \\ \hline
+		\textit{Difficoltà (Mediana)} & 2                   & 1                   &                        & \pvalue{}                 & 1,5                 & 3                   &                        & \pvalue{}                 \\ \hline
 	\end{tabular}
 \end{table}
 
-Il divario tra le due interfacce è evidente anche nel grafico sulla difficoltà (Figura~\ref{fig:6-c5-2}), dove la versione B si conferma la migliore per entrambi i gruppi. Nel gruppo B--A si vede lo stacco più evidente: chi inizia con la nuova versione dà un punteggio di 1,83, ma quando passa alla vecchia versione (A) la difficoltà sale a 2,67. Questo succede perché, anche se gli utenti sanno già cosa fare, l'ambiguità tra il salvataggio e il download e la scarsa visibilità della Community della versione A rimangono un ostacolo fastidioso. Nel gruppo A--B invece, la difficoltà cala da 2,22 a 1,78: aver affrontato prima la versione originale ha fatto capire agli utenti come funzionava la ricerca del file, rendendo poi l'uso della versione B ancora più leggero e immediato.
+La valutazione soggettiva rispecchia coerentemente questa asimmetria tra i due gruppi. Nel gruppo A--B, la mediana della difficoltà scende da 2 a 1 nel passaggio alla versione riprogettata, in linea con l'andamento delle medie raffigurate nella Figura~\ref{fig:6-c5-2} (da 2,22 a 1,78). Nel gruppo B--A, l'effetto di trascinamento negativo della versione originale è marcato: la mediana della difficoltà raddoppia passando da 1,5 a 3. Sul piano grafico, questo peggioramento si traduce nel passaggio della media da 1,83 a 2,67. Tale tendenza qualitativa conferma come l'ambiguità strutturale della versione originale continui a generare un carico cognitivo fastidioso, nonostante la competenza precedentemente acquisita con la versione B.
 
 \begin{figure}[H]
 	\centering
