@@ -4,9 +4,9 @@ Il compito C4 richiedeva all’utente di rinominare il documento ``Appunti\_Lezi
 
 \paragraph{Analisi delle prestazioni generali}
 
-Come si può notare dai dati aggregati per il compito C4 (Tabella~\ref{tab:6-c4-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. L’analisi dei dati evidenzia un quadro prestazionale sostanzialmente stabile, con la versione post-riprogettazione (B) che mostra miglioramenti contenuti ma consistenti: si osserva una riduzione della mediana dei click del 30,00\% (da 10 a 7), accompagnata da una lieve diminuzione della media degli errori (-11,11\%) e della mediana del tempo di esecuzione (-6,25\%).
+L'introduzione della versione post-riprogettazione (B) ha generato un progresso netto e confermato sul piano statistico nell'efficienza (Tabella~\ref{tab:6-c4-1}), ferma restando la riuscita dell'operazione per tutti i partecipanti in entrambe le modalità di test. In particolare, si osserva una contrazione solida e statisticamente rilevante del 40,33\% delle interazioni fisiche necessarie, con la media dei click che scende da 12,07 della versione originale a 7,20 della nuova interfaccia. Le restanti metriche prestazionali si configurano come semplici tendenze descrittive di miglioramento: sia il tempo medio di completamento sia la media degli errori registrano cali marginali e statisticamente non discriminanti, indicando andamenti favorevoli ma stabili sotto il profilo inferenziale.
 
-Di contro, la difficoltà percepita registra un lieve incremento (+3,70\%), passando da 1,80 a 1,87.
+Per quanto concerne la difficoltà percepita, la mediana registra una parziale oscillazione passando dal valore 1 al valore 2. Questo lieve incremento trova riscontro qualitativo nel trend descritto dai punteggi medi raffigurati nella Figura~\ref{fig:6-c4-1}, dove si osserva un aumento marginale da 1,80 a 1,87. La discrepanza tra il guadagno nel numero di click e la percezione soggettiva evidenzia la persistenza di piccoli attriti nell'interazione, riconducibili principalmente alla comprensibilità cognitiva del flusso.
 
 \begin{figure}[H]
 	\centering
@@ -63,7 +63,7 @@ Di contro, la difficoltà percepita registra un lieve incremento (+3,70\%), pass
 	\end{tabular}
 \end{table}
 
-La riduzione del numero di click suggerisce una maggiore efficienza nell’accesso ai comandi contestuali. Tuttavia, l’aumento della difficoltà percepita indica la persistenza di alcuni attriti nell’interazione, legati principalmente alla comprensibilità del flusso di modifica.
+La marcata diminuzione del numero di click riflette una maggiore efficacia del percorso d'azione riprogettato. Tuttavia, la percezione di una difficoltà lievemente maggiore evidenzia come la semplificazione delle operazioni sia stata in parte controbilanciata da incertezze qualitative nell'interazione.
 
 \paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
 
@@ -81,11 +81,7 @@ Per la versione originale (A), le criticità risultano meno strutturali e princi
 
 \paragraph{Valutazione dell’effetto di apprendimento}
 
-Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c4-2}), data la natura del task, caratterizzato da tempi di esecuzione generalmente inferiori al minuto, le differenze osservate tra gli ordini di esecuzione risultano principalmente riconducibili a fenomeni di familiarizzazione con la struttura delle cartelle e con la posizione del file.
-
-Nel gruppo A-B, il tempo mediano passa da 0:48 (versione A) a 0:45 (versione B), confermando il lieve miglioramento già osservato a livello aggregato (-6,25\%).
-
-Nel gruppo B-A, gli utenti impiegano inizialmente 0:51,5 nella versione B, per poi completare la versione A in 0:41,5. Tale andamento suggerisce che, una volta acquisita familiarità con la posizione del file e con le contesto operativo, l’interazione nella versione originale diventa più rapida, sebbene meno guidata. Il fenomeno appare quindi più legato alla memoria spaziale e alla ripetizione del task che a un reale trasferimento di modello interattivo.
+La scomposizione dei risultati in base all'ordine di presentazione dei sistemi (Tabella~\ref{tab:6-c4-2}) evidenzia l'impatto positivo dell'apprendimento soprattutto nel gruppo A--B. Per questa sequenza di test, la metrica sui click medi registra un miglioramento solido del 44,23\%, scendendo da 11,56 a 6,44. I restanti indicatori prestazionali per lo stesso gruppo, comprese la media dei tempi di esecuzione e la media degli errori, evidenziano semplici tendenze descrittive di contrazione che non assumono rilevanza statistica. Nel gruppo B--A, gli andamenti positivi registrati per tutte le metriche prestazionali — comprese le riduzioni medie nei tempi e negli errori a favore della seconda prova, a fronte di un aumento medio dei click — non assumono rilevanza statistica e sono da interpretare come semplici trend descrittivi legati alla familiarizzazione con il task.
 
 \begin{table}[H]
 	\centering
@@ -96,17 +92,17 @@ Nel gruppo B-A, gli utenti impiegano inizialmente 0:51,5 nella versione B, per p
 	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}}                                                 & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                 \\ \cline{2-9} 
+		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}} & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                                                                                       \\ \cline{2-9}
 		\rowcolor{gray!30}
-		                              & \textbf{A}          & \textbf{B}          & \textbf{Variazione \%} & \textbf{Rilevanza}        & \textbf{B}          & \textbf{A}          & \textbf{Variazione \%} & \textbf{Rilevanza}        \\ \hline
-		\textit{Tempo (Media)}        & 1.01.07             & 0.48.13             & \textbf{-21,09\%}      & \pvalue{0,22931}          & 0.55.20             & 0.50.00             & \textbf{-9,64\%}       & \pvalue{0,59421}          \\ \hline
-		\textit{Errori (Media)}       & 0,89                & 0,556               & \textbf{-37,50\%}      & \pvalue{0,52374}          & 0,500               & 0,17                & \textbf{-66,67\%}      & \pvalue{0,36322}          \\ \hline
-		\textit{Click (Media)}        & 11,56               & 6,44                & \textbf{-44,23\%}      & \pvalue{0,03409}          & 8,33                & 12,83               & \textbf{54,00\%}       & \pvalue{0,06165}          \\ \hline
-		\textit{Difficoltà (Mediana)} & 1                   & 1                   &                        & \pvalue{}                 & 2                   & 1,5                 &                        & \pvalue{}                 \\ \hline
+		                              & \textbf{A}                                & \textbf{B}                                & \textbf{Variazione \%} & \textbf{Rilevanza} & \textbf{B} & \textbf{A} & \textbf{Variazione \%} & \textbf{Rilevanza} \\ \hline
+		\textit{Tempo (Media)}        & 1.01.07                                   & 0.48.13                                   & \textbf{-21,09\%}      & \pvalue{0,22931}   & 0.55.20    & 0.50.00    & \textbf{-9,64\%}       & \pvalue{0,59421}   \\ \hline
+		\textit{Errori (Media)}       & 0,89                                      & 0,556                                     & \textbf{-37,50\%}      & \pvalue{0,52374}   & 0,500      & 0,17       & \textbf{-66,67\%}      & \pvalue{0,36322}   \\ \hline
+		\textit{Click (Media)}        & 11,56                                     & 6,44                                      & \textbf{-44,23\%}      & \pvalue{0,03409}   & 8,33       & 12,83      & \textbf{54,00\%}       & \pvalue{0,06165}   \\ \hline
+		\textit{Difficoltà (Mediana)} & 1                                         & 1                                         &                        & \pvalue{}          & 2          & 1,5        &                        & \pvalue{}          \\ \hline
 	\end{tabular}
 \end{table}
 
-In linea con i tempi registrati, anche i punteggi di difficoltà in Figura~\ref{fig:6-c4-2} si mantengono stabili, dove i voti sono tutti molto vicini e, a differenza degli altri compiti, la versione B non risulta mai migliore della A. Nel gruppo A--B si osserva un leggero aumento della difficoltà percepita, che passa da 1,78 (versione A) a 1,89 (versione B). Questo suggerisce che alcune modifiche introdotte nella riprogettazione, come la necessità di reinserire manualmente il nome del file in un form inizialmente vuoto, possano aver reso il compito leggermente meno immediato. Nel gruppo B--A, invece, il punteggio rimane stabile a 1,83 per entrambe le versioni. Questo potrebbe indicare che il primo utilizzo della versione B ha influenzato la percezione del compito, mentre il successivo passaggio alla versione A non ha prodotto variazioni apprezzabili, probabilmente perché gli utenti avevano già acquisito familiarità con la procedura e con i passaggi necessari per completarla.
+Coerentemente con questo scenario, la valutazione soggettiva della difficoltà mostra una notevole stabilità. Sotto il profilo della mediana, il punteggio si attesta saldamente a 1 per entrambe le sessioni nel gruppo A--B. Le medie grafiche (Figura~\ref{fig:6-c4-2}) mostrano una lieve fluttuazione (da 1,78 della versione A a 1,89 della versione B), da interpretare come semplice trend descrittivo legato a un piccolo attrito transitorio nell'inserimento manuale del nome nel form vuoto della versione B. Nel gruppo B--A, la mediana sperimenta una parziale fluttuazione non determinante passando da 2 per la versione B a 1,5 per la versione A, supportata sul piano grafico da una media rimasta perfettamente invariata a 1,83 in entrambe le prove. Questo conferma che l'esperienza pregressa attenua le differenze percepite tra le due soluzioni.
 
 \begin{figure}[H]
 	\centering

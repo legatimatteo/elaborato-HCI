@@ -4,7 +4,7 @@ Il compito C2 richiedeva all'utente di creare una nuova cartella denominata "Arc
 
 \paragraph{Analisi delle prestazioni generali}
 
-Come si può notare dai dati aggregati per il compito C2 (Tabella~\ref{tab:6-c2-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. Si osserva una riduzione del 75,00\% nella media degli errori (da 1,07 a 0,27) e una diminuzione del 55,56\% nella mediana dei click (da 27 a 12) a favore della versione riprogettata. Il tempo mediano di esecuzione rimane pressoché stabile (-0,83\%), mentre la difficoltà percepita si riduce del 19,35\%.
+La riprogettazione introdotta nella versione B ha generato un progresso notevole nell'efficacia del compito C2 (Tabella~\ref{tab:6-c2-1}), ferma restando la riuscita del compito per tutti i partecipanti (Success Rate del 100,00\% in entrambe le condizioni). L'aspetto più evidente è la riduzione statisticamente rilevante degli errori medi, ridotti del 75,00\% (da 1,07 a 0,27). Parallelamente, si registra un calo del 48,59\% nel numero medio di click (da 25,93 a 13,33), una variazione sistematica e non attribuibile al caso. Il tempo medio di esecuzione mostra invece una riduzione contenuta che si classifica come una semplice tendenza descrittiva. Sul piano dell'esperienza d'uso, la mediana della difficoltà percepita si attesta stabilmente al valore 2 per entrambe le configurazioni, a indicare che l'attività è stata ritenuta in ogni caso semplice; a livello descrittivo, tuttavia, le medie dei punteggi riportate in figura (2,07 per la versione A e 1,67 per la versione B) delineano una tendenza qualitativa di miglioramento nel livello di sforzo percepito.
 
 \begin{figure}[H]
 	\centering
@@ -61,7 +61,7 @@ Come si può notare dai dati aggregati per il compito C2 (Tabella~\ref{tab:6-c2-
 	\end{tabular}
 \end{table}
 
-La riduzione del numero medio di errori e dei click complessivi suggerisce un miglioramento dell’efficienza del flusso di interazione nella versione B. La riorganizzazione dell’interfaccia ha contribuito a rendere più lineare la fase di caricamento e gestione del documento.
+La drastica diminuzione del numero medio di errori e dei click complessivi testimonia la maggiore linearità introdotta nella versione B. La riorganizzazione dell'interfaccia ha semplificato il processo di caricamento dei file e creazione delle cartelle, riducendo i passaggi superflui senza compromettere la rapidità dell'interazione.
 
 \paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
 
@@ -85,11 +85,9 @@ Per la versione post-riprogettazione (B), i feedback indicano un miglioramento g
 
 \paragraph{Valutazione dell'effetto di apprendimento}
 
-Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c2-2}), emergono pattern differenti rispetto ad altri compiti.
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c2-2}), emergono dinamiche estremamente interessanti relative all'apprendimento e all'usabilità delle due interfacce. Nel gruppo che ha affrontato la sequenza A--B, il passaggio alla versione riprogettata si traduce in un miglioramento sistematico e robusto in tutte le metriche. Il tempo medio di completamento scende del 25,02\% (da 2:40.20 a 2:00.13), una contrazione solida e statisticamente rilevante. Registriamo inoltre variazioni sistematiche e non attribuibili al caso sia nella media degli errori, che cala dell'81,82\% (da 1,22 a 0,222), sia nel numero medio di click, ridotto del 48,56\% (da 27,00 a 13,89). Questi risultati indicano che l'esperienza maturata sulla prima interfaccia, unita ai miglioramenti strutturali della seconda, ha ottimizzato notevolmente l'interazione.
 
-Nel gruppo A-B, il tempo mediano di esecuzione diminuisce da 2:48 (versione A) a 2:00 (versione B), con una riduzione del 28,57\%.
-
-Nel gruppo B-A, il tempo mediano iniziale sulla versione B è pari a 1:56,5, mentre nella successiva esecuzione sulla versione A si osserva un valore pari a 1:38. Questo andamento suggerisce la presenza di un possibile effetto di apprendimento, tuttavia non consente di identificare un \textit{transfer} sistematico e unidirezionale tra le due interfacce. In particolare, l’esperienza sulla versione B sembra aver fornito alcuni schemi operativi utili, ma non sufficienti a neutralizzare completamente le inefficienze strutturali della versione originale.
+Nel gruppo B--A, il quadro si presenta differente. Si osserva un decremento del tempo medio di esecuzione, che tuttavia si qualifica come semplice andamento positivo ma non determinante sotto il profilo inferenziale. Di contro, gli utenti che passano dalla versione B alla versione originale (A) mostrano tendenze di peggioramento nelle altre prestazioni, caratterizzate da un incremento della media degli errori e da un aumento del numero medio di click. Sebbene queste variazioni rappresentino semplici tendenze descrittive (con il numero di click che si avvicina alla soglia di significatività), questo andamento suggerisce che la familiarizzazione con il compito non è bastata a compensare le inefficienze strutturali della vecchia interfaccia A. Gli utenti, pur conoscendo la sequenza di azioni necessarie, sono stati costretti a compiere più errori e click per completare il caricamento del file.
 
 \begin{table}[H]
 	\centering
@@ -100,17 +98,17 @@ Nel gruppo B-A, il tempo mediano iniziale sulla versione B è pari a 1:56,5, men
 	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}}                                                 & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                 \\ \cline{2-9} 
+		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}} & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                                                                                       \\ \cline{2-9}
 		\rowcolor{gray!30}
-		                              & \textbf{A}          & \textbf{B}          & \textbf{Variazione \%} & \textbf{Rilevanza}        & \textbf{B}          & \textbf{A}          & \textbf{Variazione \%} & \textbf{Rilevanza}        \\ \hline
-		\textit{Tempo (Media)}        & 2.40.20             & 2.00.13             & \textbf{-25,02\%}      & \pvalue{0,01312}          & 2.00.00             & 1.33.50             & \textbf{-21,81\%}      & \pvalue{0,09526}          \\ \hline
-		\textit{Errori (Media)}       & 1,22                & 0,222               & \textbf{-81,82\%}      & \pvalue{0,00852}          & 0,333               & 0,83                & \textbf{150,00\%}      & \pvalue{0,29556}          \\ \hline
-		\textit{Click (Media)}        & 27,00               & 13,89               & \textbf{-48,56\%}      & \pvalue{0,00030}          & 12,50               & 24,33               & \textbf{94,67\%}       & \pvalue{0,05806}          \\ \hline
-		\textit{Difficoltà (Mediana)} & 1                   & 1                   &                        & \pvalue{}                 & 2                   & 3,5                 &                        & \pvalue{}                 \\ \hline
+		                              & \textbf{A}                                & \textbf{B}                                & \textbf{Variazione \%} & \textbf{Rilevanza} & \textbf{B} & \textbf{A} & \textbf{Variazione \%} & \textbf{Rilevanza} \\ \hline
+		\textit{Tempo (Media)}        & 2.40.20                                   & 2.00.13                                   & \textbf{-25,02\%}      & \pvalue{0,01312}   & 2.00.00    & 1.33.50    & \textbf{-21,81\%}      & \pvalue{0,09526}   \\ \hline
+		\textit{Errori (Media)}       & 1,22                                      & 0,222                                     & \textbf{-81,82\%}      & \pvalue{0,00852}   & 0,333      & 0,83       & \textbf{150,00\%}      & \pvalue{0,29556}   \\ \hline
+		\textit{Click (Media)}        & 27,00                                     & 13,89                                     & \textbf{-48,56\%}      & \pvalue{0,00030}   & 12,50      & 24,33      & \textbf{94,67\%}       & \pvalue{0,05806}   \\ \hline
+		\textit{Difficoltà (Mediana)} & 1                                         & 1                                         &                        & \pvalue{}          & 2          & 3,5        &                        & \pvalue{}          \\ \hline
 	\end{tabular}
 \end{table}
 
-I limiti dell'interfaccia originale emergono chiaramente anche nei dati sulla difficoltà percepita (Figura~\ref{fig:6-c2-2}). Nel gruppo B--A, infatti, si nota un balzo evidente: chi passa dalla nuova interfaccia a quella vecchia trova il compito molto più faticoso, e il punteggio sale fino a raggiungere una media di 3,00. Questo conferma che i difetti della versione originale diventano ancora più fastidiosi per chi si è già abituato alla seconda versione. Nel gruppo A--B, invece, i voti restano molto simili (1,44 contro 1,56). In questo caso, aver usato prima la versione difficile ha aiutato gli utenti a capire come muoversi, ma i piccoli difetti rimasti nella versione B (come il nome del pulsante "Nuovo" che creava confusione) hanno impedito al punteggio di difficoltà di scendere.
+Questa asimmetria è confermata e resa visibile dall'analisi della difficoltà percepita (Figura~\ref{fig:6-c2-2}). Nel gruppo con ordine B--A, si rileva un netto incremento della fatica percepita nel passaggio alla vecchia interfaccia: la mediana sale da 2 a 3,5, con un punteggio medio che compie un salto vistoso attestandosi a 3,00 per la Versione A. Questo incremento testimonia come l'abitudine alla fluidità della versione B renda ancora più frustranti le barriere all'usabilità della versione originale. Al contrario, nel gruppo A--B la mediana si attesta a 1 in entrambe le condizioni e i punteggi medi rimangono molto vicini (1,44 per la versione A e 1,56 per la versione B); in questa sequenza, lo sforzo iniziale speso per comprendere l'interfaccia originale sembra aver appiattito la percezione di difficoltà successiva, dove piccoli dettagli della versione B (come l'ambiguità del pulsante ``Nuovo'') hanno bilanciato i benefici strutturali della riprogettazione.
 
 \begin{figure}[H]
 	\centering

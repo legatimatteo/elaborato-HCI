@@ -4,7 +4,7 @@ Il compito C3 richiedeva all'utente di pianificare un nuovo esame denominato "Ar
 
 \paragraph{Analisi delle prestazioni generali}
 
-Come si può notare dai dati aggregati per il compito C3 (Tabella~\ref{tab:6-c3-1}), il tasso di completamento (Success Rate) si è attestato al 100,00\% per entrambe le versioni del sistema. La versione post-riprogettazione (B) evidenzia miglioramenti su tutte le metriche considerate: la media degli errori si riduce del 57,14\% (da 0,93 a 0,40) e la mediana dei click diminuisce del 34,78\% (da 23 a 15). Si osserva inoltre una riduzione del 21,05\% nel tempo mediano di esecuzione e un calo del 29,27\% nella difficoltà percepita dagli utenti.
+I risultati globali del compito C3 (Tabella~\ref{tab:6-c3-1}) mostrano un'efficacia impeccabile per entrambe le versioni, con la totalità dei partecipanti in grado di completare l'operazione. Tuttavia, la riprogettazione si distingue per una decisa ottimizzazione dell'interazione, evidenziata soprattutto da un abbattimento del 41,96\% nel numero medio di click necessari (da 24,47 a 14,20), una riduzione solida e con forte riscontro statistico. Altre metriche mostrano andamenti positivi ma non determinanti sotto il profilo inferenziale, come la contrazione degli errori e del tempo medio di esecuzione. Questa aumentata fluidità d'uso si riflette positivamente sull'esperienza soggettiva: la mediana della difficoltà percepita passa infatti da 3 (neutra) a 2 (facile).
 
 \begin{figure}[H]
 	\centering
@@ -61,7 +61,7 @@ Come si può notare dai dati aggregati per il compito C3 (Tabella~\ref{tab:6-c3-
 	\end{tabular}
 \end{table}
 
-La riduzione dei tempi, dei click e del tasso di errore indica che il redesign ha migliorato la navigabilità del sistema e la visibilità della sezione dedicata agli esami. La riorganizzazione dell’interfaccia e la semplificazione dei percorsi di accesso hanno consentito una maggiore immediatezza nell’esecuzione del compito e una riduzione del carico cognitivo.
+La riduzione dei tempi, dei click e degli errori suggerisce che il redesign ha migliorato la navigabilità del sistema e la visibilità della sezione dedicata agli esami. La riorganizzazione dell’interfaccia e la semplificazione dei percorsi di accesso hanno consentito una maggiore immediatezza nell’esecuzione del compito e una contrazione del carico cognitivo.
 
 \paragraph{Analisi qualitativa: commenti e osservazioni degli utenti}
 
@@ -85,11 +85,11 @@ Per la versione post-riprogettazione (B), i risultati indicano un miglioramento 
 
 \paragraph{Valutazione dell'effetto di apprendimento}
 
-Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c3-2}) risulta chiaro che, in questo caso, l'esperienza pregressa dell'utente conta meno rispetto alla struttura dell'interfaccia.
+Analizzando i dati in base all'ordine di esecuzione (Tabella~\ref{tab:6-c3-2}), si osserva come le prestazioni siano condizionate dalla sequenza con cui le interfacce vengono provate.
 
-Nel gruppo A--B, il tempo mediano di esecuzione passa da 1:53 (versione A) a 1:27 (versione B), con una riduzione del 23,01\%.
+Nel gruppo con ordine A--B, il passaggio alla versione riprogettata produce un incremento marcato dell'efficienza. Gli utenti registrano un calo del tempo medio di esecuzione del 32,01\% (da 2:14.20 a 1:31.20) e una riduzione del 33,00\% nel numero medio di click (da 22,22 a 14,89). Entrambi i dati testimoniano miglioramenti molto solidi e confermati sul piano statistico. A questi si affianca una discesa non statisticamente rilevante del numero medio di errori.
 
-Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B in 1:46,5, mentre nella successiva interazione con la versione A il tempo mediano aumenta fino a 2:02. Questo risultato suggerisce che l’esperienza maturata con la versione più ottimizzata non si trasferisce in modo efficace alla versione originale, le cui criticità strutturali continuano a incidere in maniera significativa sulle prestazioni, indipendentemente dalla familiarità con il task.
+Nel gruppo con ordine B--A, lo scenario si inverte drasticamente quando si passa al vecchio sistema. L'azione che prima veniva svolta con fluidità sulla versione B incontra forti ostacoli su quella originale: si rileva in particolare un incremento vertiginoso del 111,39\% nel numero medio di click necessari (da 13,17 a 27,83), una variazione marcata e matematicamente significativa. Si registra anche un lieve incremento (non statisticamente confermato) del tempo medio e degli errori medi nel passaggio da B ad A. Questo andamento suggerisce che l’esperienza maturata con la versione più ottimizzata non si trasferisce in modo efficace alla versione originale, le cui criticità strutturali continuano a incidere in maniera decisiva, costringendo gli utenti a una navigazione molto più frammentata e ridondante.
 
 \begin{table}[H]
 	\centering
@@ -100,17 +100,17 @@ Nel gruppo B--A, gli utenti completano inizialmente il compito sulla versione B 
 	\begin{tabular}{|>{\raggedright\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{1.6cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}}                                                 & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                 \\ \cline{2-9} 
+		\textbf{Metrica}              & \multicolumn{4}{c|}{\textbf{Ordine A--B}} & \multicolumn{4}{c|}{\textbf{Ordine B--A}}                                                                                                                       \\ \cline{2-9}
 		\rowcolor{gray!30}
-		                              & \textbf{A}          & \textbf{B}          & \textbf{Variazione \%} & \textbf{Rilevanza}        & \textbf{B}          & \textbf{A}          & \textbf{Variazione \%} & \textbf{Rilevanza}        \\ \hline
-		\textit{Tempo (Media)}        & 2.14.20             & 1.31.20             & \textbf{-32,01\%}      & \pvalue{0,02105}          & 2.00.50             & 2.17.10             & \textbf{13,52\%}       & \pvalue{0,40930}          \\ \hline
-		\textit{Errori (Media)}       & 1,22                & 0,667               & \textbf{-45,45\%}      & \pvalue{0,21446}          & 0,000               & 0,50                & \textbf{Invariato}     & \pvalue{0,20311}          \\ \hline
-		\textit{Click (Media)}        & 22,22               & 14,89               & \textbf{-33,00\%}      & \pvalue{0,00442}          & 13,17               & 27,83               & \textbf{111,39\%}      & \pvalue{0,00755}          \\ \hline
-		\textit{Difficoltà (Mediana)} & 2                   & 1                   &                        & \pvalue{}                 & 2                   & 3,5                 &                        & \pvalue{}                 \\ \hline
+		                              & \textbf{A}                                & \textbf{B}                                & \textbf{Variazione \%} & \textbf{Rilevanza} & \textbf{B} & \textbf{A} & \textbf{Variazione \%} & \textbf{Rilevanza} \\ \hline
+		\textit{Tempo (Media)}        & 2.14.20                                   & 1.31.20                                   & \textbf{-32,01\%}      & \pvalue{0,02105}   & 2.00.50    & 2.17.10    & \textbf{13,52\%}       & \pvalue{0,40930}   \\ \hline
+		\textit{Errori (Media)}       & 1,22                                      & 0,667                                     & \textbf{-45,45\%}      & \pvalue{0,21446}   & 0,000      & 0,50       & \textbf{Invariato}     & \pvalue{0,20311}   \\ \hline
+		\textit{Click (Media)}        & 22,22                                     & 14,89                                     & \textbf{-33,00\%}      & \pvalue{0,00442}   & 13,17      & 27,83      & \textbf{111,39\%}      & \pvalue{0,00755}   \\ \hline
+		\textit{Difficoltà (Mediana)} & 2                                         & 1                                         &                        & \pvalue{}          & 2          & 3,5        &                        & \pvalue{}          \\ \hline
 	\end{tabular}
 \end{table}
 
-Le stesse criticità si riflettono sulle valutazioni di difficoltà riassunte nella Figura~\ref{fig:6-c3-2}. Nel gruppo B–A si nota lo stacco più evidente: gli utenti che iniziano con la Versione B assegnano un punteggio di 2,00, ma al successivo passaggio alla versione originale (A) la difficoltà percepita aumenta sensibilmente, raggiungendo un valore di 3,50. Questo valore dimostra che, dopo aver utilizzato la versione chiara, l'impatto con l'etichetta "StudyFlow AI" e i passaggi forzati dalla dashboard della versione A diventa ancora più frustrante. Nel gruppo A--B, invece, la variazione è stata inferiore alle aspettative (da 2,22 a 1,89), simbolo che aver affrontato prima la versione complicata ha aiutato gli utenti a capire come funzionava la piattaforma, rendendo poi il passaggio alla versione B più morbido, anche se i piccoli difetti rimasti (come la freccia poco intuitiva per cancellare i task) hanno impedito al punteggio di scendere ancora di più.
+Questo divario si riflette coerentemente sulle valutazioni di difficoltà percepita (Figura~\ref{fig:6-c3-2}). Nel gruppo B--A si nota lo stacco più netto: la mediana della difficoltà sale da 2 a 3,5 nel passaggio alla vecchia interfaccia (A), a indicare che dopo aver provato il sistema ottimizzato, le barriere all'usabilità di quello originale (quali la nomenclatura poco intuitiva della sezione esami) risultano ancor più evidenti e penalizzanti. Nel gruppo A--B si osserva un percorso inverso, con la mediana che scende da 2 a 1. In questo caso, l'esperienza iniziale con la versione complessa ha agito da training, rendendo l'approccio alla versione B estremamente fluido, pur con piccoli margini di miglioramento legati ad elementi secondari.
 
 \begin{figure}[H]
 	\centering
