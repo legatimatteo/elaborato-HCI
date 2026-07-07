@@ -4,7 +4,7 @@
 In questo capitolo vengono illustrate alcune possibili direzioni di sviluppo
 della piattaforma, che si collocano su due piani complementari: da un lato la
 risoluzione di alcuni problemi residui emersi durante l'esperimento con gli
-utenti, dall'altro l'estensione del sistema con nuove funzionalità
+utenti e dalla valutazione euristica, dall'altro l'estensione del sistema con nuove funzionalità
 volte ad ampliarne le potenzialità e ad arricchire l'esperienza di studio. Per
 ciascuna proposta vengono esposte la motivazione che la giustifica e i benefici
 attesi in termini di usabilità complessiva.
@@ -14,8 +14,12 @@ attesi in termini di usabilità complessiva.
   L'analisi dei dati ha confermato l'efficacia della riprogettazione; tuttavia,
   negli scenari più articolati (S1 e S2) alcuni utenti hanno descritto il flusso
   come ancora «macchinoso» per i ripetuti spostamenti tra sezioni, segnalando
-  inoltre l'assenza di un supporto contestuale all'orientamento. Si propongono
-  due interventi complementari:
+  inoltre l'assenza di un supporto contestuale all'orientamento. A queste
+  osservazioni si aggiungono due limiti rilevati in fase di valutazione
+  euristica e legati al controllo dell'utente sui contenuti: gli output generati
+  dagli strumenti di intelligenza artificiale non sono modificabili (P68) e i
+  testi inseriti dagli utenti non supportano alcuna formattazione di base (P71).
+  Si propongono pertanto quattro interventi complementari:
   \begin{itemize}
     \item \textbf{Azioni dirette e contestuali}: per ridurre i passaggi nei
     flussi più frequenti, una scorciatoia «Aggiungi
@@ -25,26 +29,56 @@ attesi in termini di usabilità complessiva.
     assistant integrato nelle varie sezioni, capace di rispondere in linguaggio
     naturale e di guidare l'utente durante l'esecuzione dei task, a beneficio in
     particolare di chi incontra difficoltà di orientamento.
+    \item \textbf{Modifica degli output generati dall'IA}: i contenuti prodotti
+    dagli strumenti AI , oggi presentati come output
+    «finali», diventerebbero modificabili e salvabili: l'utente potrebbe così
+    correggere eventuali errori di trascrizione e integrare il testo con le
+    proprie note, riacquisendo il controllo su contenuti che oggi è costretto
+    ad accettare così come sono.
+    \item \textbf{Formattazione di base dei testi}: le descrizioni degli appunti
+    e i commenti verrebbero arricchiti con strumenti di formattazione inline e
+    scorciatoie da tastiera per grassetto, corsivo ed elenchi, permettendo di
+    strutturare i contenuti più lunghi e di evidenziare i passaggi rilevanti, a
+    beneficio della leggibilità complessiva.
   \end{itemize}
-  Entrambi gli interventi mirano a snellire i percorsi di interazione più
-  ricorrenti e a fornire un supporto personalizzato, riducendo il numero di
-  click necessari e il carico cognitivo legato all'uso dell'interfaccia.
+  Nel loro insieme questi interventi mirano a snellire i percorsi di interazione
+  più ricorrenti e ad ampliare il controllo dell'utente sui contenuti, riducendo
+  il numero di click necessari e il carico cognitivo legato all'uso
+  dell'interfaccia.
 
-  \item \textbf{Caricamento ibrido di file e cartelle.} Nell'attuale flusso di
-  caricamento la creazione di una cartella e l'inserimento di un file
-  costituiscono due passaggi distinti e sequenziali: per collocare un documento
-  in una nuova cartella l'utente deve prima crearla e solo successivamente
-  caricarvi il file, un vincolo percepito come rigido. L'esigenza di unificare le
-  due operazioni è emersa in modo indipendente in due diverse attività
-  dell'esperimento, configurandosi come la richiesta di miglioramento più
-  ricorrente. Si propone pertanto un flusso di caricamento ibrido: all'interno
-  della finestra di caricamento, un campo «Destinazione» con un'opzione
-  «+ Nuova cartella» consentirebbe di creare la cartella e di caricarvi
-  contestualmente il file, senza interrompere il flusso. Analogamente alle azioni
-  contestuali descritte in precedenza, un intervento di questo tipo eliminerebbe
-  un passaggio superfluo e renderebbe più fluida un'operazione frequente,
-  riducendo la rigidità segnalata dagli utenti e il carico cognitivo a essa
-  associato.
+  \item \textbf{Caricamento ibrido e organizzazione dei documenti.}
+  L'esperimento con gli utenti e la valutazione euristica hanno fatto emergere
+  due criticità complementari legate alla gestione dei documenti: la rigidità
+  dell'attuale flusso di caricamento, in cui la creazione di una cartella e
+  l'inserimento di un file costituiscono due passaggi distinti e sequenziali, e
+  l'assenza di strumenti organizzativi nella sezione Community, segnalata già in
+  fase di valutazione euristica (P72). Si propongono pertanto due interventi:
+  \begin{itemize}
+    \item \textbf{Flusso di caricamento ibrido}: per collocare un documento in
+    una nuova cartella l'utente deve oggi prima crearla e solo successivamente
+    caricarvi il file, un vincolo percepito come rigido; l'esigenza di unificare
+    le due operazioni è emersa in modo indipendente in due diverse attività
+    dell'esperimento, configurandosi come la richiesta di miglioramento più
+    ricorrente. All'interno della finestra di caricamento, un campo
+    «Destinazione» con un'opzione «+ Nuova cartella» consentirebbe di creare la
+    cartella e di caricarvi contestualmente il file, senza interrompere il
+    flusso ed eliminando un passaggio superfluo in un'operazione frequente.
+    \item \textbf{Sistema di gestione documentale per la Community}: la sezione
+    presenta i contenuti condivisi come un
+    elenco piatto, privo di cartelle e sottocartelle personalizzate, una
+    struttura che con l'aumento dei materiali rischia di rendere la
+    consultazione ingestibile nel lungo periodo. Coerentemente con la scelta
+    progettuale di non replicare nella Community le cartelle personali della
+    sezione Appunti, si propone l'introduzione di un sistema di gestione
+    documentale condiviso, che organizzi gli appunti della community in raccolte
+    gerarchiche per corso di studi, insegnamento e argomento, affiancate da tag
+    e metadati, mantenendo la ricerca e la navigazione efficienti anche al
+    crescere dei contenuti.
+  \end{itemize}
+  I due interventi agiscono sui due estremi del ciclo di vita del documento --
+  il caricamento e la consultazione -- riducendo la rigidità segnalata dagli
+  utenti e garantendo la scalabilità organizzativa della piattaforma nel lungo
+  periodo.
 
   \item \textbf{Ridisegno del flusso di rinomina.} L'analisi dei dati ha
   evidenziato un'unica regressione rispetto alla versione originale, relativa
