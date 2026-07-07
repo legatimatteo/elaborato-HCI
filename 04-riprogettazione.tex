@@ -1,11 +1,11 @@
 \section{Riprogettazione}
-Partendo dai problemi di usabilità identificati nella fase di valutazione euristica, si è proceduto alla riprogettazione dell'interfaccia di BrainBox. In primo luogo, sono stati redatti degli scenari d'uso che hanno permesso di mettere a fuoco le criticità più impattanti dal punto di vista dell'utente: simulando situazioni concrete di utilizzo, è stato più semplice individuare i punti in cui l'interfaccia originale risultava carente o confusionaria e definire le scelte progettuali più rilevanti. Questi scenari vengono riportati nei sottocapitoli dedicati alle 
+Partendo dai problemi di usabilità identificati nella fase di valutazione euristica, si è proceduto alla riprogettazione dell'interfaccia di BrainBox. In primo luogo, sono stati redatti degli scenari d'uso che hanno permesso di mettere a fuoco le criticità più impattanti dal punto di vista dell'utente: simulando situazioni concrete di utilizzo, è stato più semplice individuare i punti in cui l'interfaccia originale risultava carente o confusionaria e definire le scelte progettuali più rilevanti. Questi scenari vengono riportati nei sottocapitoli dedicati alle
 rispettive sezioni. Per quanto riguarda le scelte di layout, struttura visiva e interazione, ci si è invece appoggiati ai design pattern di Jennifer Tidwell, \textit{"Designing Interfaces — Patterns for Effective Interaction Design"} terza edizione e alle leggi della Gestalt, che hanno fornito un riferimento solido su cui basare e giustificare le decisioni progettuali in modo strutturato.
 
 Prima di entrare nel dettaglio delle singole sezioni, vengono presentati gli elementi trasversali che hanno guidato la coerenza dell'intero progetto: i prototipi realizzati in Figma, le scelte di layout adottate per l'intera interfaccia, la palette colori e la traduzione integrale dell'interfaccia in italiano. (Sezione \ref{scelte_globali})
 
-L'attenzione si è concentrata in particolare sulle sezioni principali 
-dell'applicazione, \textit{Appunti}, \textit{Esami}, \textit{Community} e gli strumenti AI, che presentavano le criticità più significative e su cui è stato necessario intervenire in modo più profondo, ripensando non solo aspetti di dettaglio ma in alcuni casi la struttura stessa delle sezioni. Sono state comunque riviste anche \textit{Homepage}, \textit{Registrazione e Login} e \textit{Dashboard}, con interventi più mirati sui problemi riscontrati. Per ciascuna sezione vengono descritti i pattern applicati, le modifiche apportate e i problemi di usabilità 
+L'attenzione si è concentrata in particolare sulle sezioni principali
+dell'applicazione, \textit{Appunti}, \textit{Esami}, \textit{Community} e gli strumenti AI, che presentavano le criticità più significative e su cui è stato necessario intervenire in modo più profondo, ripensando non solo aspetti di dettaglio ma in alcuni casi la struttura stessa delle sezioni. Sono state comunque riviste anche \textit{Homepage}, \textit{Registrazione e Login} e \textit{Dashboard}, con interventi più mirati sui problemi riscontrati. Per ciascuna sezione vengono descritti i pattern applicati, le modifiche apportate e i problemi di usabilità
 risolti; nei casi in cui un problema non sia stato affrontato o sia stato rivalutato, viene fornita una spiegazione esplicita della scelta. (Sezione \ref{implementazioni_per_sezione})
 
 Infine, per facilitare la comprensione, la presentazione di ogni sezione sarà accompagnata dagli screenshot della nuova interfaccia al fine di mostrare visivamente l'effettivo risultato delle modifiche progettuali adottate.
@@ -13,61 +13,61 @@ Infine, per facilitare la comprensione, la presentazione di ogni sezione sarà a
 \subsection{Scelte implementative}
 \label{scelte_globali}
 \subsubsection{Prototipi}
-Prima di procedere con l'implementazione, le principali scelte progettuali sono 
-state tradotte in prototipi realizzati con Figma. L'obiettivo non era definire 
-ogni dettaglio visivo, ma fissare le idee progettuali più rilevanti, struttura 
-delle pagine, organizzazione dei contenuti e collocazione degli elementi 
-principali, in modo da avere un riferimento condiviso durante lo sviluppo. 
-Di seguito vengono presentati i prototipi che rispecchiano più fedelmente 
+Prima di procedere con l'implementazione, le principali scelte progettuali sono
+state tradotte in prototipi realizzati con Figma. L'obiettivo non era definire
+ogni dettaglio visivo, ma fissare le idee progettuali più rilevanti, struttura
+delle pagine, organizzazione dei contenuti e collocazione degli elementi
+principali, in modo da avere un riferimento condiviso durante lo sviluppo.
+Di seguito vengono presentati i prototipi che rispecchiano più fedelmente
 il risultato implementato. \\
 
 Il primo prototipo di Figura \ref{fig:mockup_registrazione} illustra la struttura della modale utilizzata per i form multi-step, di cui la registrazione rappresenta un esempio. Questa struttura è stata mantenuta coerente in tutte le modali presenti nell'applicazione, garantendo all'utente un'esperienza uniforme indipendentemente dall'operazione che sta compiendo. L'idea progettuale era quella di offrire un form pulito e focalizzato, in cui l'utente sa sempre a che punto si trova grazie all'indicatore degli step, può tornare indietro in qualsiasi momento senza perdere i dati già inseriti e, prima di confermare, ha la possibilità di rivedere un riepilogo di tutto ciò che ha compilato.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{./figures/mockup/registrazione_step1}
-    \caption{Mockup della modale}
-    \label{fig:mockup_registrazione}
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/mockup/registrazione_step1}
+	\caption{Mockup della modale}
+	\label{fig:mockup_registrazione}
 \end{figure}
 
 Il secondo prototipo di Figura \ref{fig:mockup_dashboard} mostra l'\textit{Area Utente} riprogettata, che permette di apprezzare alcune delle scelte progettuali più rilevanti dell'intera applicazione. Il pannello di navigazione sinistro è stato completamente rivisto: i nomi delle sezioni sono stati semplificati e resi immediatamente comprensibili, e le funzionalità AI sono state accorpate all'interno di \textit{Appunti}, dove risulta più logico trovarle in quanto i file generati vengono salvati e gestiti insieme agli altri materiali di studio. La \textit{Dashboard} è stata ridisegnata nella suddivisione in blocchi, offrendo una panoramica più chiara e interattiva dell'attività dell'utente e fungendo da anteprima delle principali sezioni dell'applicazione.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{./figures/mockup/dashboard}
-    \caption{Mockup Area Utente (Dashboard)}
-    \label{fig:mockup_dashboard}
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/mockup/dashboard}
+	\caption{Mockup Area Utente (Dashboard)}
+	\label{fig:mockup_dashboard}
 \end{figure}
 
 La Figura \ref{fig:notifiche} e la Figura \ref{fig:calendario} mostrano invece il menu delle notifiche e il menu del calendario, entrambi progettati da zero in quanto assenti nella versione originale. Il calendario in particolare è stato spostato nella navbar, rendendolo accessibile da qualsiasi sezione dell'applicazione senza dover navigare altrove, così da permettere all'utente di consultare le scadenze degli esami in qualsiasi momento.
 
 \begin{figure}[H]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{./figures/mockup/menu-tendina-notifiche}
-         \caption{Menu notifiche}
-         \label{fig:notifiche}
-     \end{subfigure}
-     \qquad
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{./figures/mockup/menu-tendina-calendario}
-         \caption{Menu calendario}
-         \label{fig:calendario}
-     \end{subfigure}
-     
-     \caption{}
-     \label{fig:mockup_menu}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/mockup/menu-tendina-notifiche}
+		\caption{Menu notifiche}
+		\label{fig:notifiche}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/mockup/menu-tendina-calendario}
+		\caption{Menu calendario}
+		\label{fig:calendario}
+	\end{subfigure}
+
+	\caption{}
+	\label{fig:mockup_menu}
 \end{figure}
 
 L'ultimo prototipo di Figura \ref{fig:mockup_appunti} illustra la pagina di visualizzazione di un documento. La scelta progettuale è stata quella di mantenere la struttura generale già presente nella versione originale, intervenendo principalmente sulla chiarezza del pannello laterale destro. In particolare, le informazioni sono state organizzate in due blocchi distinti e visivamente separati (oltre ad un blocco, aggiunto in fase di implementazione, che specifica il nome utente a cui appartiene il documento): i dettagli del documento nella parte superiore e la sezione commenti in quella inferiore, poiché nella versione precedente la mancanza di una separazione netta rendeva il pannello confusionario.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{./figures/mockup/appunti_apri_file.pdf}
-    \caption{Mockup visualizzazione appunti}
-    \label{fig:mockup_appunti}
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/mockup/appunti_apri_file.pdf}
+	\caption{Mockup visualizzazione appunti}
+	\label{fig:mockup_appunti}
 \end{figure}
 
 \subsubsection{Layout}
@@ -79,23 +79,23 @@ Durante la riprogettazione dell'interfaccia si è tenuto conto delle \textit{leg
 La palette adottata per l'interfaccia di BrainBox è composta da quattro colori principali: il bianco, il grigio chiaro, l'azzurro e il nero. La scelta di questi colori segue la regola 60-30-10 di Michal Malewicz, che indica come ripartire i colori in un'interfaccia per ottenere un risultato visivamente bilanciato. Il 60\% dello spazio è occupato dal colore dominante, in questo caso bianco e grigio chiaro insieme, che copre gli elementi più grandi come lo sfondo delle pagine, le card e la sidebar, dando all'interfaccia un aspetto pulito e non pesante. Il 30\% è invece riservato all'azzurro, che è il colore che caratterizza l'interfaccia e compare su tutti gli elementi con cui l'utente interagisce: bottoni, link, bordi dei campi di testo e voci di navigazione attive; questo colore viene declinato in più varianti tonali per coprire i diversi stati interattivi (come attivo, disabilitato e hover) mantenendo coerenza visiva senza impoverire la ricchezza degli elementi. Il nero chiude con il 10\%, usato solo per testo e icone: poca superficie, ma con un contrasto molto alto che rende tutto facilmente leggibile. Fanno eccezione il verde e il rosso, usati in modo molto limitato per i badge di stato, come ad esempio per indicare se un appunto è pubblico o se un esame è scaduto. Il contrasto tra i colori è stato verificato con la formula di luminanza percepita del W3C, che ha confermato che in tutti i casi il testo risulta leggibile sullo sfondo corrispondente.
 
 \begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/Palette principale.pdf}
-        \caption{Palette principale}
-        \label{fig:palette}
-    \end{subfigure}
-    \qquad
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/Sfumature azzurro.pdf}
-        \caption{Sfumature azzurro}
-        \label{fig:sfumature}
-    \end{subfigure}
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/Palette principale.pdf}
+		\caption{Palette principale}
+		\label{fig:palette}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/fig-riprogettazione-fisica/Sfumature azzurro.pdf}
+		\caption{Sfumature azzurro}
+		\label{fig:sfumature}
+	\end{subfigure}
 
-    \caption{Il colore azzurro è stato declinato in una scala di varianti tonali, ciascuna con un ruolo specifico nell'interfaccia: la variante chiara (\texttt{\#5AC8FA}) è usata per elementi secondari come lo stato di elaborazione dei file generati dalle funzioni AI e i passaggi del cursore, il valore base (\texttt{\#007AFF}) è riservato ai bottoni principali, ai link e alle azioni primarie, mentre la variante scura (\texttt{\#0040DD}) viene applicata agli stati di pressione e selezione per dare un feedback visivo immediato all'utente.}
-    \label{fig:palettes}
+	\caption{Il colore azzurro è stato declinato in una scala di varianti tonali, ciascuna con un ruolo specifico nell'interfaccia: la variante chiara (\texttt{\#5AC8FA}) è usata per elementi secondari come lo stato di elaborazione dei file generati dalle funzioni AI e i passaggi del cursore, il valore base (\texttt{\#007AFF}) è riservato ai bottoni principali, ai link e alle azioni primarie, mentre la variante scura (\texttt{\#0040DD}) viene applicata agli stati di pressione e selezione per dare un feedback visivo immediato all'utente.}
+	\label{fig:palettes}
 \end{figure}
 
 \subsubsection{Lingua dell'interfaccia}
@@ -107,37 +107,37 @@ Durante la riprogettazione sono stati sviluppati alcuni componenti trasversali, 
 Il primo è la \textbf{modale di conferma eliminazione} (Figura \ref{fig:confirm_delete}), mostrata ogni volta che l'utente tenta di eliminare un elemento come un appunto o un esame: un pannello sovrapposto con icona di avviso, testo esplicito sull'operazione che si sta per compiere e due pulsanti chiari, \textit{Annulla} e \textit{Elimina}, per confermare o annullare.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/confirm-delete.pdf}
-    \caption{Modale di conferma eliminazione}
-    \label{fig:confirm_delete}
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/confirm-delete.pdf}
+	\caption{Modale di conferma eliminazione}
+	\label{fig:confirm_delete}
 \end{figure}
 
 Il secondo è l'\textbf{empty state} (Figura \ref{fig:empyty_state}), visualizzato ogni volta che una sezione non contiene ancora contenuti. Invece di mostrare semplicemente un messaggio di assenza, invita l'utente ad agire tramite un testo contestuale e uno o più pulsanti con chiamate all'azione chiare.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/empty-state.pdf}
-    \caption{Empty state}
-    \label{fig:empyty_state}
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/empty-state.pdf}
+	\caption{Empty state}
+	\label{fig:empyty_state}
 \end{figure}
 
 Il terzo sono gli \textbf{steps} (Figura \ref{fig:stepper}), impiegati in tutti i wizard multi-step dell'applicazione. Mostrano all'utente i passi del processo, evidenziano quello corrente e indicano quelli già completati, permettendo di orientarsi facilmente all'interno di operazioni articolate.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/stepper.pdf}
-    \caption{Steps}
-    \label{fig:stepper}
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/stepper.pdf}
+	\caption{Steps}
+	\label{fig:stepper}
 \end{figure}
 
 Il quarto è l'\textbf{area di drop dei file} (Figura \ref{fig:dropzone}), utilizzata in tutti i wizard in cui è richiesto il caricamento di un file. Mostra i formati accettati e il limite di dimensione direttamente nell'area di trascinamento, eliminando l'ambiguità su cosa sia possibile caricare.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/dropzone.pdf}
-    \caption{Drop dei file}
-    \label{fig:dropzone}
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/fig-riprogettazione-fisica/dropzone.pdf}
+	\caption{Drop dei file}
+	\label{fig:dropzone}
 \end{figure}
 
 \subsection{Implementazioni per sezione}
@@ -147,13 +147,13 @@ Il quarto è l'\textbf{area di drop dei file} (Figura \ref{fig:dropzone}), utili
 \input{riprogettazione/navbar-sidebar}
 \input{riprogettazione/dashboard}
 \input{riprogettazione/appunti}
-  \input{riprogettazione/visualizzazione-documento}
-  \input{riprogettazione/generatore-trascrizioni-audio}
+\input{riprogettazione/visualizzazione-documento}
+\input{riprogettazione/generatore-trascrizioni-audio}
 \input{riprogettazione/esami}
 \input{riprogettazione/community}
 
 \subsection{Considerazioni finali}
-A conclusione della fase di riprogettazione, è possibile tracciare un bilancio quantitativo e qualitativo degli interventi effettuati a partire dalle criticità emerse durante la valutazione euristica. 
+A conclusione della fase di riprogettazione, è possibile tracciare un bilancio quantitativo e qualitativo degli interventi effettuati a partire dalle criticità emerse durante la valutazione euristica.
 
 Come si evince dalla Tabella \ref{tab:bilancio_riprogettazione}, su un totale di 93 problemi di usabilità individuati, ne sono stati risolti con successo 80. Di questi, 62 sono stati descritti nel dettaglio nei paragrafi precedenti, poiché riguardavano modifiche dirette all'interfaccia e alle singole schermate. I restanti 18 problemi (P3, P13, P15, P16, P19, P22, P23, P29, P31, P35, P40, P43, P53, P56, P58, P65, P82, P83) non sono stati citati esplicitamente prima semplicemente perché sono stati risolti in modo indiretto: riorganizzando la struttura generale del layout, migliorando i flussi di navigazione e applicando alcuni accorgimenti tecnici lato back-end.
 
@@ -166,82 +166,83 @@ Come si evince dalla Tabella \ref{tab:bilancio_riprogettazione}, su un totale di
 	\begin{tabular}{|>{\raggedright\arraybackslash}p{6.5cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{3cm}|}
 		\hline
 		\rowcolor{gray!30}
-		\textbf{Stato del Problema}        & \textbf{Quantità} & \textbf{Percentuale sul Totale} \\ \hline
-		Risolti                            & 80                & \textbf{86,02\%}                \\ \hline
-		Non Risolti                        & 13                & \textbf{13,98\%}                \\ \hline
+		\textbf{Stato del Problema}          & \textbf{Quantità} & \textbf{Percentuale sul Totale} \\ \hline
+		Risolti                              & 80                & \textbf{86,02\%}                \\ \hline
+		Non Risolti                          & 13                & \textbf{13,98\%}                \\ \hline
 		\rowcolor{gray!30}
-		\textbf{Totale Problemi Individuati} & \textbf{93}       & \textbf{100,00\%}               \\ \hline
+		\textbf{Totale Problemi Individuati} & \textbf{93}       &                                 \\ \hline
 	\end{tabular}
 \end{table}
 
-Per quanto riguarda i restanti 13 problemi (elencati per completezza come P14, P33, P63, P68, P71, P72, P73, P75, P76, P77, P78, P80, P89), la Tabella \ref{tab:riepilogo_severita} evidenzia chiaramente le motivazioni per cui si è deciso di lasciarli in sospeso in questo progetto. 
+Per quanto riguarda i 13 problemi non risolti (P14, P33, P63, P68, P71, P72, P73, P75, P76, P77, P78, P80 e P89), la Tabella \ref{tab:riepilogo_severita} ne riassume la distribuzione per grado di severità.
 
-In primo luogo, due di questi (classificati con gravità 0) non costituiscono reali problemi di usabilità; pertanto, si è deciso di non intervenire.
+Due di essi sono classificati con grado di severità 0 e, non rappresentando reali problemi di usabilità, si è deciso di non intervenire. Gli 11 problemi di usabilità effettivamente rimasti appartengono quasi esclusivamente ai livelli di gravità inferiori (grado 1 e 2) e riguardano principalmente funzionalità accessorie o miglioramenti della qualità d'uso, come la ricerca avanzata nei contenuti o la gestione degli appunti tramite sottocartelle personalizzate. Pur riconoscendone l'utilità, i vincoli temporali del progetto hanno reso necessario dare priorità ai flussi principali dell'applicazione, rinviando tali interventi a sviluppi futuri (si veda la Sezione \ref{sviluppi_futuri}).
 
-Il dato più significativo, tuttavia, è il tasso di risoluzione delle criticità maggiori: è stato sistemato con successo il 100\% delle "catastrofi di usabilità" (grado 4). Degli 11 problemi di usabilità rimasti, la quasi totalità appartiene alle categorie di gravità più bassa (grado 1 e 2). Si tratta prevalentemente di mancanze legate a funzionalità aggiuntive o comodità (come ad esempio la ricerca avanzata nei contenuti o la gestione tramite sottocartelle personalizzate). Pur riconoscendone l'utilità, a causa di limiti di tempo si è scelto di dare priorità ai flussi principali, rimandando queste implementazioni a futuri aggiornamenti (Si rimanda alla Sezione \ref{sviluppi_futuri} Sviluppi Futuri).
+È infine significativo osservare che tutte le criticità di severità massima (grado 4) sono state risolte, raggiungendo un tasso di risoluzione del 100\%. Questo risultato conferma come gli interventi si siano concentrati prioritariamente sui problemi con il maggiore impatto sull'esperienza d'uso.
+
 
 \begin{table}[H]
-    \centering
-    \footnotesize
-    \renewcommand{\arraystretch}{1.2}
-    \caption{Riepilogo dello stato di risoluzione dei problemi per grado di severità.}
-    \label{tab:riepilogo_severita}
-    \begin{tabular}{|>{\raggedright\arraybackslash}p{6cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.8cm}|}
-        \hline
-        \rowcolor{gray!30}
-        \textbf{Grado di Severità}         & \textbf{Totale} & \textbf{Risolti} & \textbf{Non Risolti} & \textbf{\% Risolti} \\ \hline
-        0 - Non è un problema di usabilità & 2               & 0                & 2                    & \textbf{0,00\%}   \\ \hline
-        1 - Problema accessorio            & 27              & 25               & 2                    & \textbf{92,59\%}    \\ \hline
-        2 - Problema secondario            & 39              & 31               & 8                    & \textbf{79,49\%}    \\ \hline
-        3 - Problema rilevante             & 21              & 20               & 1                    & \textbf{95,24\%}    \\ \hline
-        4 - Catastrofe di usabilità        & 4               & 4                & 0                    & \textbf{100,00\%}    \\ \hline
-        \rowcolor{gray!30}
-        \textbf{Totale Complessivo}        & \textbf{93}     & \textbf{80}      & \textbf{13}          & \textbf{86,02\%}    \\ \hline
-    \end{tabular}
+	\centering
+	\footnotesize
+	\renewcommand{\arraystretch}{1.2}
+	\caption{Riepilogo dello stato di risoluzione dei problemi per grado di severità.}
+	\label{tab:riepilogo_severita}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{6cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{1.8cm}|}
+		\hline
+		\rowcolor{gray!30}
+		\textbf{Grado di Severità}         & \textbf{Totale} & \textbf{Risolti} & \textbf{Non Risolti} & \textbf{\% Risolti} \\ \hline
+		0 - Non è un problema di usabilità & 2               & 0                & 2                    & \textbf{0,00\%}     \\ \hline
+		1 - Problema accessorio            & 27              & 25               & 2                    & \textbf{92,59\%}    \\ \hline
+		2 - Problema secondario            & 39              & 31               & 8                    & \textbf{79,49\%}    \\ \hline
+		3 - Problema rilevante             & 21              & 20               & 1                    & \textbf{95,24\%}    \\ \hline
+		4 - Catastrofe di usabilità        & 4               & 4                & 0                    & \textbf{100,00\%}   \\ \hline
+		\rowcolor{gray!30}
+		\textbf{Totale Complessivo}        & \textbf{93}     & \textbf{80}      & \textbf{13}          & \textbf{86,02\%}    \\ \hline
+	\end{tabular}
 \end{table}
 
 Infine, per avere un'idea chiara di dove si concentrino i problemi ancora da risolvere, il grafico (Figura \ref{fig:non-risolti}) ne mappa la distribuzione all'interno delle varie sezioni del sito. Come si può notare, la maggior parte delle criticità ancora presenti si concentra nelle sezioni \textit{Appunti} e \textit{Community}.
 
 \begin{figure}[H]
-  \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-        xbar,
-        bar width=14pt,
-        width=0.85\textwidth,
-        height=6.5cm,
-        symbolic y coords={
-          Generatore audio,
-          Generatore trascrizioni,
-          Area Utente,
-          Globale,
-          Community,
-          Appunti
-        },
-        ytick=data,
-        y tick label style={font=\small},
-        xlabel={Numero di Violazioni},
-        xmin=0,
-        xmax=6,
-        xtick={0,1,2,3,4,5,6},
-        xmajorgrids=true,
-        grid style={dashed, gray!30},
-        enlarge y limits=0.15,
-        nodes near coords,
-        nodes near coords align={horizontal},
-        every node near coord/.style={font=\small, color=black},
-      ]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xbar,
+				bar width=14pt,
+				width=0.85\textwidth,
+				height=6.5cm,
+				symbolic y coords={
+						Generatore audio,
+						Generatore trascrizioni,
+						Area Utente,
+						Globale,
+						Community,
+						Appunti
+					},
+				ytick=data,
+				y tick label style={font=\small},
+				xlabel={Numero di Violazioni},
+				xmin=0,
+				xmax=6,
+				xtick={0,1,2,3,4,5,6},
+				xmajorgrids=true,
+				grid style={dashed, gray!30},
+				enlarge y limits=0.15,
+				nodes near coords,
+				nodes near coords align={horizontal},
+				every node near coord/.style={font=\small, color=black},
+			]
 
-      \addplot+[xbar, fill=blue!70, draw=black] coordinates {
-        (1,Generatore audio)
-        (1,Generatore trascrizioni)
-        (1,Area Utente)
-        (2,Globale)
-        (4,Community)
-        (5,Appunti)
-      };
-    \end{axis}
-  \end{tikzpicture}
-  \caption{Distribuzione dei problemi di usabilità non risolti per sezione del sistema.}
-  \label{fig:non-risolti}
+			\addplot+[xbar, fill=blue!70, draw=black] coordinates {
+					(1,Generatore audio)
+					(1,Generatore trascrizioni)
+					(1,Area Utente)
+					(2,Globale)
+					(4,Community)
+					(5,Appunti)
+				};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Distribuzione dei problemi di usabilità non risolti per sezione del sistema.}
+	\label{fig:non-risolti}
 \end{figure}
