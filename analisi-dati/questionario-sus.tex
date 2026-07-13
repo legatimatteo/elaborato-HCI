@@ -1,7 +1,7 @@
 \subsection{Questionario SUS (\textit{System Usability Scale})}
 \label{subsec:questionario_SUS}
 
-In questa sezione vengono analizzati nel dettaglio i risultati ottenuti tramite il questionario System Usability Scale (SUS), somministrato per raccogliere dati quantitativi sulla percezione dell'usabilità complessiva del sistema. L'analisi confronta la versione originale (A) con la versione post-riprogettazione (B), valutando sia le metriche aggregate sia le dinamiche legate all'ordine di esecuzione dei test (A-B e B-A).
+In questa sezione vengono analizzati nel dettaglio i risultati ottenuti tramite il questionario System Usability Scale (SUS), somministrato per raccogliere dati quantitativi sulla percezione dell'usabilità complessiva del sistema. L'analisi confronta la versione originale (A) con la versione post-riprogettazione (B), valutando sia le metriche aggregate sia le dinamiche legate all'ordine di esecuzione dei test (A-B e B-A). Per convalidare la robustezza delle differenze osservate tra le medie dei punteggi, è stato condotto un T-test di Student per campioni appaiati a due code, impostando un livello di significatività convenzionale $\alpha = 0{,}05$.
 
 Il calcolo del punteggio SUS segue un algoritmo standardizzato basato sulle risposte fornite dagli utenti alle 10 domande del questionario, ciascuno valutato su una scala Likert a 5 punti (da 1: ``Fortemente in disaccordo'' a 5: ``Fortemente d'accordo''). Le domande a indice dispari presentano una formulazione positiva, mentre quelli a indice pari hanno una formulazione negativa. Il punteggio finale, espresso su una scala da 0 a 100, viene calcolato come segue:
 \begin{itemize}
@@ -15,7 +15,7 @@ La somma di tutti i punteggi parziali dei 10 quesiti viene successivamente molti
 Il valore finale così ottenuto non rappresenta una percentuale, ma fornisce un indicatore normalizzato dell'usabilità percepita: la letteratura definisce un punteggio pari a 68 come la soglia di usabilità sufficiente (media di riferimento), mentre punteggi superiori a 80 indicano un'usabilità ottimale o eccellente.
 
 \paragraph{Analisi delle prestazioni generali}
-L'analisi aggregata dei punteggi SUS (rappresentata in Figura~\ref{fig:6-sus-1}) rivela una netta preferenza per la Versione B, che ottiene una media di 81,33. Questo valore certifica un'usabilità "eccellente", posizionandosi ben al di sopra della media standard di riferimento, fissata convenzionalmente a 68. Al contrario, la Versione A registra una media globale di 47,67, posizionandosi nettamente sotto la soglia di accettabilità.
+L'analisi aggregata dei punteggi SUS (rappresentata in Figura~\ref{fig:6-sus-1}) rivela una netta preferenza per la Versione B, che ottiene una media di 81,33. Questo valore certifica un'usabilità "eccellente", posizionandosi ben al di sopra della media standard di riferimento, fissata convenzionalmente a 68. Al contrario, la Versione A registra una media globale di 47,67, posizionandosi nettamente sotto la soglia di accettabilità. Il confronto tra le due medie rivela una differenza statisticamente altamente significativa ($p < 0{,}001$), confermando che il divario prestazionale non è frutto di fluttuazioni casuali.
 
 Questa marcata differenza suggerisce che la Versione B risulta significativamente più facile e intuitiva da utilizzare per gli utenti rispetto alla Versione A. Le scelte di riprogettazione, mirate a ridurre il carico cognitivo e a stabilizzare i flussi di navigazione, hanno avuto un impatto ampiamente positivo sulla soddisfazione soggettiva dell'utente finale.
 
@@ -48,14 +48,14 @@ Questa marcata differenza suggerisce che la Versione B risulta significativament
 				};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Confronto generale dei punteggi medi SUS tra Versione A e Versione B.}
+	\caption{Confronto generale dei punteggi medi SUS tra Versione A e Versione B ($p < 0{,}001$).}
 	\label{fig:6-sus-1}
 \end{figure}
 
 \paragraph{Confronto e analisi dell'effetto di ordine (A-B vs B-A)}
 Scomponendo i dati in base alla sequenza di esecuzione, emergono variazioni rilevanti nella valutazione soggettiva che indicano la presenza di un forte effetto di contrasto legato all'ordine di esposizione dei prototipi.
 
-Nel gruppo che ha affrontato la sequenza A-B (Figura~\ref{fig:6-sus-2}), valutando per prima la versione originale, i punteggi medi assegnati alla Versione A si sono attestati a 63,06. Sebbene si tratti di un valore ancora inferiore alla soglia di accettabilità, risulta sensibilmente più alto rispetto alla media globale, complici alcuni picchi di valutazione positiva (fino a 85,00) assegnati da utenti meno critici al primo impatto. Tuttavia, passando alla versione riprogettata, questo sotto-campione ha percepito immediatamente il netto miglioramento, assegnando alla Versione B una media eccellente pari a 89,44, con picchi che hanno sfiorato il punteggio massimo (97,50).
+Nel gruppo che ha affrontato la sequenza A-B (Figura~\ref{fig:6-sus-2}), valutando per prima la versione originale, i punteggi medi assegnati alla Versione A si sono attestati a 63,06. Sebbene si tratti di un valore ancora inferiore alla soglia di accettabilità, risulta sensibilmente più alto rispetto alla media globale, complici alcuni picchi di valutazione positiva (fino a 85,00) assegnati da utenti meno critici al primo impatto. Tuttavia, passando alla versione riprogettata, questo sotto-campione ha percepito immediatamente il netto miglioramento, assegnando alla Versione B una media eccellente pari a 89,44, con picchi che hanno sfiorato il punteggio massimo (97,50). L'incremento registrato nel passaggio dalla Versione A alla Versione B risulta statisticamente significativo ($p = 0{,}002$), validando empiricamente il beneficio percepito dagli utenti in questa sequenza.
 
 \begin{figure}[H]
 	\centering
@@ -86,11 +86,11 @@ Nel gruppo che ha affrontato la sequenza A-B (Figura~\ref{fig:6-sus-2}), valutan
 				};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Punteggi medi SUS relativi al sottogruppo con ordine di esecuzione A-B.}
+	\caption{Punteggi medi SUS relativi al sottogruppo con ordine di esecuzione A-B ($p = 0{,}002$).}
 	\label{fig:6-sus-2}
 \end{figure}
 
-Risultati nettamente differenti si osservano nel gruppo associato all'ordine B-A, come illustrato in Figura~\ref{fig:6-sus-3}. L'esperienza iniziale maturata sulla versione riprogettata (valutata con una media di 69,17) ha fissato un'aspettativa elevata riguardo alla linearità dei flussi e all'immediatezza dell'interfaccia. Di conseguenza, il successivo passaggio alla versione originale ha fortemente accentuato la percezione dei limiti strutturali, portando a una drastica e severa penalizzazione nei giudizi. In questa seconda sequenza, infatti, la Versione A ha registrato un crollo verticale, fermandosi a una media di appena 24,58, con valutazioni minime scese frequentemente tra 15,00 e 25,00.
+Risultati nettamente differenti si osservano nel gruppo associato all'ordine B-A, come illustrato in Figura~\ref{fig:6-sus-3}. L'esperienza iniziale maturata sulla versione riprogettata (valutata con una media di 69,17) ha fissato un'aspettativa elevata riguardo alla linearità dei flussi e all'immediatezza dell'interfaccia. Di conseguenza, il successivo passaggio alla versione originale ha fortemente accentuato la percezione dei limiti strutturali, portando a una drastica e severa penalizzazione nei giudizi. In questa seconda sequenza, infatti, la Versione A ha registrato un crollo verticale, fermandosi a una media di appena 24,58, con valutazioni minime scese frequentemente tra 15,00 e 25,00. Questa severa penalizzazione, confrontata con la valutazione iniziale della Versione B (69,17), evidenzia un deterioramento dell'usabilità statisticamente significativo ($p = 0{,}001$), confermando il forte peso del bias di aspettativa introdotto dall'effetto di contrasto.
 
 \begin{figure}[H]
 	\centering
@@ -121,7 +121,7 @@ Risultati nettamente differenti si osservano nel gruppo associato all'ordine B-A
 				};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Punteggi medi SUS relativi al sottogruppo con ordine di esecuzione B-A.}
+	\caption{Punteggi medi SUS relativi al sottogruppo con ordine di esecuzione B-A ($p = 0{,}001$).}
 	\label{fig:6-sus-3}
 \end{figure}
 
