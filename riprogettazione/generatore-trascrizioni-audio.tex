@@ -24,8 +24,16 @@
 Lo scenario di utilizzo dello Sbobinatore AI ha evidenziato alcune delle criticità più significative dell'intera applicazione. L'utente si trovava davanti a una pagina dedicata con un nome poco chiaro, pulsanti di avvio in posizioni non intuitive, nessuna indicazione sui formati accettati o sui limiti di dimensione, messaggi di errore in inglese e generici, nessun feedback visivo durante l'elaborazione, output non strutturato e, soprattutto, nessuna possibilità di salvare il risultato direttamente tra i propri appunti senza dover scaricare, modificare e ricaricare 
 manualmente il file. Quest'ultima criticità rappresentava il problema di usabilità più grave dell'intera sezione, in quanto interrompeva completamente il flusso di lavoro dell'utente e vanificava l'utilità pratica dello strumento.
 
-La scelta progettuale più rilevante adottata per risolvere questi problemi è stata quella di eliminare le pagine dedicate agli strumenti AI e di integrare le funzionalità di generazione direttamente nella sezione \textit{Appunti}. Questa decisione ha permesso di risolvere in modo strutturale il problema del salvataggio: i file generati, trascrizioni e audio note, vengono ora creati e archiviati direttamente nella sezione \textit{Appunti}, dove l'utente può organizzarli insieme agli altri materiali di studio, allegarli agli esami e gestirli liberamente senza passaggi intermedi. Centralizzare tutto in un unico spazio ha inoltre eliminato la frammentazione tra sezioni separate che rendeva difficile orientarsi 
-nell'applicazione.
+La scelta progettuale più rilevante adottata per risolvere questi problemi è stata quella di eliminare le pagine dedicate agli strumenti AI e di integrare le funzionalità di generazione direttamente nella sezione \textit{Appunti}. Questa decisione ha permesso di risolvere in modo strutturale il problema del salvataggio: i file generati, trascrizioni e audio note, vengono ora creati e archiviati direttamente nella sezione \textit{Appunti}, dove l'utente può organizzarli insieme agli altri materiali di studio, allegarli agli esami e gestirli liberamente senza passaggi intermedi. Centralizzare tutto in un unico spazio ha inoltre eliminato la frammentazione tra sezioni separate che rendeva difficile orientarsi nell'applicazione.
+
+Come illustrato nell'analisi del compito (Figura \ref{fig:ta-gestione-appunti}), l'integrazione di queste funzionalità in un'unica sezione permette ora un'interazione passo-passo più lineare tra l'utente e il sistema, centralizzando la creazione e l'archiviazione in un unico flusso di lavoro.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/fig-riprogettazione-fisica/strumenti-ai/TA - gestione appunti.png}
+    \caption{Analisi del compito \textit{Gestione appunti}}
+    \label{fig:ta-gestione-appunti}
+  \end{figure}
 
 \paragraph{Design pattern applicati}
 \begin{itemize}

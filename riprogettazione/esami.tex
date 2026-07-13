@@ -99,7 +99,16 @@ Il secondo è un ordinamento, che consente di riorganizzare la lista per scadenz
   \label{fig:esami_5}
 \end{figure}
 
-Un'ulteriore e fondamentale implementazione ha riguardato l'ottimizzazione del flusso di creazione di un esame. La modale iniziale è stata ampliata introducendo due step aggiuntivi: la definizione delle attività di studio (task) (Figura \ref{fig:esami_3}) e il collegamento dei materiali precedentemente caricati nella sezione \textit{Appunti} (Figura \ref{fig:esami_4}). Questa modifica consente all'utente di configurare un esame completo in un'unica operazione lineare. Al contrario, la versione originale imponeva un processo fortemente frammentato: l'utente era costretto a inserire prima nome e scadenza, per poi doversi spostare in un'area esterna per la creazione dei task e, solo in un secondo momento, accedere al dettaglio dell'esame per collegare i materiali di studio.
+Un'ulteriore e fondamentale implementazione ha riguardato l'ottimizzazione del flusso di creazione di un esame. Prima di procedere allo sviluppo dell'interfaccia, si è ritenuto essenziale definire la nuova sequenza operativa attraverso un'analisi dei compiti come riportato in Figura \ref{fig:ta-pianificazione-esame}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/fig-riprogettazione-fisica/esami/TA - pianificazione esame.png}
+  \caption{Analisi del compito \textit{Pianificazione esame}}
+  \label{fig:ta-pianificazione-esame}
+\end{figure}
+
+Traducendo concretamente lo schema nell'interfaccia utente, la modale iniziale è stata ampliata introducendo due step aggiuntivi: la definizione delle attività di studio (task) (Figura \ref{fig:esami_3}) e il collegamento dei materiali precedentemente caricati nella sezione \textit{Appunti} (Figura \ref{fig:esami_4}). Questa modifica consente all'utente di configurare un esame completo in un'unica operazione lineare. Al contrario, la versione originale imponeva un processo fortemente frammentato: l'utente era costretto a inserire prima nome e scadenza, per poi doversi spostare in un'area esterna per la creazione dei task e, solo in un secondo momento, accedere al dettaglio dell'esame per collegare i materiali di studio.
 
 \begin{figure}[H]
     \centering
